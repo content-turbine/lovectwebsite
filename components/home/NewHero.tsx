@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import * as Icon from "react-feather";
@@ -172,7 +173,7 @@ const ButtonGroup = styled.div`
   flex-wrap: wrap;
 `;
 
-const Button = styled.a<{ $primary?: boolean }>`
+const Button = styled(Link)<{ $primary?: boolean }>`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -209,6 +210,29 @@ const Button = styled.a<{ $primary?: boolean }>`
       transform: translateY(-2px);
     }
   `}
+`;
+
+const AnchorButton = styled.a<{ $primary?: boolean }>`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: "Averta", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  color: ${({ theme }) => theme.colors.light};
+  border: 2px solid ${({ theme }) => theme.colors.light}40;
+  
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.teal};
+    color: ${({ theme }) => theme.colors.teal};
+    transform: translateY(-2px);
+  }
 `;
 
 const Visual = styled.div`
@@ -339,12 +363,12 @@ export default function NewHero() {
               </TaglineText>
             </TaglineWrapper>
             <ButtonGroup>
-              <Button $primary href="/contact">
+              <Button $primary to="/contact">
                 Talk to Us <Icon.MessageCircle size={18} />
               </Button>
-              <Button href="#see-the-difference">
+              <AnchorButton href="#see-the-difference">
                 See the Difference
-              </Button>
+              </AnchorButton>
             </ButtonGroup>
           </Content>
           
