@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 // Import page components
 import HomePage from "./pages/Home";
@@ -14,19 +15,22 @@ import ResourceLandingPage from "./pages/ResourceLanding";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/freelance" element={<FreelancePage />} />
-        <Route path="/ai" element={<AIPage />} />
-        <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
-        <Route path="/resources/:slug" element={<ResourceLandingPage />} />
-      </Routes>
-    </Layout>
+    <>
+      <ScrollToTop />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/freelance" element={<FreelancePage />} />
+          <Route path="/ai" element={<AIPage />} />
+          <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
+          <Route path="/resources/:slug" element={<ResourceLandingPage />} />
+        </Routes>
+      </Layout>
+    </>
   );
 }
 
