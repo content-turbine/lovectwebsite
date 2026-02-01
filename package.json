@@ -2,10 +2,10 @@
   "name": "content-turbine-website",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "build.dev": "vite build --mode development",
-    "preview": "vite preview"
+  "dev": "vite",
+  "build": "vite build",
+  "build:dev": "vite build --mode development",
+  "preview": "vite preview"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
