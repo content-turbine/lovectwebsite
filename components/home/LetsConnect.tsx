@@ -24,7 +24,7 @@ export default function LetsConnect() {
             options={{ strings: typeText, autoStart: true, loop: true }}
           />
         </TypeText>
-        <Button href={conf.calendly_link} target="_blank">
+        <Button href="/contact">
           Get in touch
         </Button>
       </Content>

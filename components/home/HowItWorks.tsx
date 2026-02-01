@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 
 const Section = styled.section`
-  padding: 8rem 2rem;
+  padding: 4rem 2rem 8rem;
   background: ${({ theme }) => theme.colors.background};
 
   ${sizeAndDown("md")} {
-    padding: 4rem 1.5rem;
+    padding: 2rem 1.5rem 4rem;
   }
 `;
 
