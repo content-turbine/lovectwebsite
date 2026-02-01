@@ -50,7 +50,7 @@ const BannerSection = () => {
             height: "inherit",
             width: "inherit",
           }}
-          src={bannerImage.src}
+          src={bannerImage}
           alt="banner"
         />
       </div>

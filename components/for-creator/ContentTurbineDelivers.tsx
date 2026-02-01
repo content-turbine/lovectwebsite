@@ -14,7 +14,7 @@ const ContentTurbineDelivers = () => {
         <div className="card-container">
           <div className="card ">
             <div className="card-logo">
-              <img src={iconTwo.src} alt="" />
+              <img src={iconTwo} alt="" />
               <h2 className="rem-2 gilroy">
                 Unlimited Earning Opportunities, Anywhere
               </h2>
@@ -31,15 +31,15 @@ const ContentTurbineDelivers = () => {
           <div className="border-two"></div>
         </div>
         <div className="earning-card-img">
-          <img src={earning.src} alt="" />
+          <img src={earning} alt="" />
         </div>
         <div className="card-img extra__customize display-none">
-          <img src={victory.src} alt="" />
+          <img src={victory} alt="" />
         </div>
         <div className="card-container content__branch display-none">
           <div className="card blueSky__color">
             <div className="card-logo">
-              <img src={iconTwo.src} alt="" />
+              <img src={iconTwo} alt="" />
               <h2 className="gilroy rem-2">
                 Ghostwrite or Stand Out, It’s Your Choice
               </h2>
@@ -58,7 +58,7 @@ const ContentTurbineDelivers = () => {
         <div className="card-container content__branch responsive-display">
           <div className="card blueSky__color">
             <div className="card-logo">
-              <img src={iconTwo.src} alt="" />
+              <img src={iconTwo} alt="" />
               <h2 className="gilroy rem-2">
                 Ghostwrite or Stand Out, It’s Your Choice
               </h2>
@@ -74,13 +74,13 @@ const ContentTurbineDelivers = () => {
           <div className="color-two"></div>
         </div>
         <div className="card-img extra__customize left-50 responsive-display">
-          <img src={victory.src} alt="" />
+          <img src={victory} alt="" />
         </div>
 
         <div className="card-container content__branch-third">
           <div className="card blueSky__color third__section__bg">
             <div className="card-logo">
-              <img src={iconTwo.src} alt="" />
+              <img src={iconTwo} alt="" />
               <h2 className="gilroy rem-2">Quality Work, Always</h2>
               <p className="averta">
                 Thanks to our skills matching engine, new gigs matching your
@@ -95,7 +95,7 @@ const ContentTurbineDelivers = () => {
           <div className="color-two"></div>
         </div>
         <div className="quality_work_image">
-          <img src={checklist.src} alt="" />
+          <img src={checklist} alt="" />
         </div>
       </div>
     </div>
