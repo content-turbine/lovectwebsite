@@ -21,12 +21,10 @@ export default function Footer() {
               <ColumnTitle>Company</ColumnTitle>
               <FooterLink to="/about">About</FooterLink>
               <FooterLink to="/services">Services</FooterLink>
-              <FooterLink to="/blog">Blog</FooterLink>
               <FooterLink to="/contact">Contact</FooterLink>
             </LinkColumn>
             <LinkColumn>
               <ColumnTitle>Resources</ColumnTitle>
-              <FooterLink to="/freelance">For Creators</FooterLink>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
             </LinkColumn>
           </LinksSection>
