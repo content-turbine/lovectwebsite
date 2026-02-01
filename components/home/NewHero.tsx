@@ -318,7 +318,7 @@ export default function NewHero() {
             </Subtitle>
             <TaglineWrapper>
               <TaglineText>
-                Not just <StrikeWord>written</StrikeWord>. <HighlightWord>Engineered</HighlightWord> to drive results.
+                <StrikeWord>Not just written.</StrikeWord> <HighlightWord>Engineered to drive results.</HighlightWord>
               </TaglineText>
             </TaglineWrapper>
             <ButtonGroup>
