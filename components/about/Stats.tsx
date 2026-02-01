@@ -1,4 +1,3 @@
-import { useEffect, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
@@ -25,29 +24,8 @@ const data: Difference[] = [
 ];
 
 export default function Stats() {
-  /*A recursive function to increase the number.*/
-  function incrementStat(i: number, id: string, end: number, step: number) {
-    if (typeof document === "undefined") return undefined;
-
-    const element = document?.getElementById(id);
-    if (i <= end) {
-      setTimeout(function () {
-        // @ts-ignore
-        element.innerHTML = String(i + 1);
-      }, step);
-    }
-
-    return undefined;
-  }
-
-  // useEffect(() => {
-  //   incrementStat(0, "STAT_0", 20, Math.abs(Math.floor(100 / 20)));
-  //   incrementStat(0, "STAT_1", 1000, Math.abs(Math.floor(100 / 1000)));
-  //   incrementStat(0, "STAT_2", 100, Math.abs(Math.floor(100 / 100)));
-  // });
-
   return (
-    <Wrapper id="stats">
+    <Wrapper>
       <CFade>
         <Title>Talking about numbers…</Title>
         <CardsContainer>

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { sizeAndDown } from "../styles/responsive";
+import React from "react";
 
 export const mixins = {
   hover: () => css`
@@ -110,6 +111,7 @@ export const MidContent = styled.div`
   }
 `;
 
+// Use proper typing to allow all anchor attributes
 export const A = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.text};
@@ -119,7 +121,7 @@ export const A = styled.a`
   }
 `;
 
-export const Button = styled(A)`
+export const Button = styled.a`
   display: inline-block;
   color: ${({ theme }) => theme.colors.light};
   font-family: "Averta";
@@ -132,6 +134,8 @@ export const Button = styled(A)`
   border-radius: ${({ theme }) => theme.borderRadius};
 
   width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
   &:hover {
     color: ${({ theme }) => theme.colors.light};
   }

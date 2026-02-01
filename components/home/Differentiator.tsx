@@ -155,10 +155,10 @@ export default function Differentiator() {
           </Taglines>
           <FeaturesGrid>
             {features.map((feature, index) => (
-              <Feature key={index}>
+              <div key={index} style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.5rem', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
                 <FeatureTitle>{feature.title}</FeatureTitle>
                 <FeatureDescription>{feature.description}</FeatureDescription>
-              </Feature>
+              </div>
             ))}
           </FeaturesGrid>
         </MainCard>

@@ -193,7 +193,7 @@ export default function WhatWeDo() {
           </ToolsSubtitle>
           <ToolsBadges>
             {tools.map((tool, index) => (
-              <Badge key={index}>{tool}</Badge>
+              <span key={index} style={{ padding: '0.75rem 1.5rem', background: '#26474E10', border: '1px solid #26474E20', borderRadius: '100px', fontSize: '0.9rem', fontWeight: 500, color: '#26474E' }}>{tool}</span>
             ))}
           </ToolsBadges>
         </ToolsSection>

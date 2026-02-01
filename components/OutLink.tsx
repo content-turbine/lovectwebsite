@@ -5,10 +5,10 @@ import { sizeAndDown } from "../styles/responsive";
 interface OutLinkProps {
   href: string;
   circul: string;
-  children: React.ReactChild;
+  children: React.ReactNode;
 }
 
-const Wrapper = styled.a<{ circul: string }>`
+const Wrapper = styled.a<{ $circul: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ export default function OutLink({ href, circul, children }: OutLinkProps) {
   return (
     <Wrapper
       href={href}
-      circul={circul}
+      $circul={circul}
       target="_blank"
       rel="noreferrer noopener"
     >

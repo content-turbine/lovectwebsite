@@ -162,10 +162,10 @@ export default function WhyNow() {
             </Description>
             <PointsList>
               {points.map((point, index) => (
-                <Point key={index}>
+                <li key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.25rem', fontSize: '1rem', lineHeight: 1.6 }}>
                   <PointIcon>{point.icon}</PointIcon>
                   {point.text}
-                </Point>
+                </li>
               ))}
             </PointsList>
           </TextContent>

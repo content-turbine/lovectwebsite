@@ -159,11 +159,11 @@ export default function WhyUs() {
 
         <Grid>
           {differentiators.map((item, index) => (
-            <Card key={index}>
+            <div key={index} style={{ background: 'white', borderRadius: '16px', padding: '2.5rem', border: '1px solid rgba(0, 0, 0, 0.08)', transition: 'all 0.3s ease' }}>
               <CardIcon>{item.icon}</CardIcon>
               <CardTitle>{item.title}</CardTitle>
               <CardDescription>{item.description}</CardDescription>
-            </Card>
+            </div>
           ))}
         </Grid>
 
