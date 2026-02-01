@@ -69,7 +69,7 @@ export default function ServicesHero() {
       <Subtitle>
         We engineer high-authority content that ranks in search, gets cited by AI, and builds trust with developers and technical buyers.
       </Subtitle>
-      <CTAButton href={conf.calendly_link} target="_blank">
+      <CTAButton href="/contact">
         Let's talk <Icon.MessageCircle />
       </CTAButton>
     </StyledHero>
