@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { conf } from "../../constants";
-import turbineIcon from "@/assets/turbine-icon.png";
+import turbineIcon from "@/assets/content-turbine-icon.svg";
 
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
