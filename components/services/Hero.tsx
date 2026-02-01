@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import * as Icon from "react-feather";
+import heroIllustration from "@/assets/services-hero-illustration.png";
 
 const StyledHero = styled.section`
   padding: 8rem 2rem 6rem;
@@ -13,6 +14,20 @@ const StyledHero = styled.section`
   }
 `;
 
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  ${sizeAndDown("md")} {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+`;
+
+const Content = styled.div``;
+
 const Headline = styled.h1`
   font-family: "Gilroy", sans-serif;
   font-size: 4rem;
@@ -20,7 +35,6 @@ const Headline = styled.h1`
   line-height: 1.1;
   color: ${({ theme }) => theme.colors.text};
   margin: 0 0 1.5rem 0;
-  max-width: 700px;
 
   ${sizeAndDown("md")} {
     font-size: 2.5rem;
@@ -34,7 +48,6 @@ const Subtitle = styled.p`
   opacity: 0.6;
   line-height: 1.6;
   margin: 0 0 2.5rem 0;
-  max-width: 550px;
 
   ${sizeAndDown("md")} {
     font-size: 1.15rem;
@@ -70,18 +83,42 @@ const CTAButton = styled(Link)`
   }
 `;
 
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${sizeAndDown("md")} {
+    order: -1;
+  }
+`;
+
+const HeroImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+`;
+
 export default function ServicesHero() {
   return (
     <StyledHero>
-      <Headline>
-        Technical Content That Works Everywhere
-      </Headline>
-      <Subtitle>
-        We engineer high-authority content that ranks in search, gets cited by AI, and builds trust with developers and technical buyers.
-      </Subtitle>
-      <CTAButton to="/contact">
-        Let's talk <Icon.MessageCircle />
-      </CTAButton>
+      <Grid>
+        <Content>
+          <Headline>
+            Technical Content That Works Everywhere
+          </Headline>
+          <Subtitle>
+            We engineer high-authority content that ranks in search, gets cited by AI, and builds trust with developers and technical buyers.
+          </Subtitle>
+          <CTAButton to="/contact">
+            Let's talk <Icon.MessageCircle />
+          </CTAButton>
+        </Content>
+        <ImageWrapper>
+          <HeroImage src={heroIllustration} alt="Technical content engineering illustration" />
+        </ImageWrapper>
+      </Grid>
     </StyledHero>
   );
 }
