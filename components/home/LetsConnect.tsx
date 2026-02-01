@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { size } from "polished";
 import { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import TypewriterComponent from "typewriter-effect";

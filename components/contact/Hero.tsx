@@ -1,13 +1,12 @@
 import axios from "axios";
-import Image from "next/image";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { InputButton, Title } from "../styled";
 
-import { createRef, useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Hero() {

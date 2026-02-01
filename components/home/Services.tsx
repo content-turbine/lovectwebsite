@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { rgba } from "polished";
 import { useEffect, useState } from "react";
 import styled from "styled-components";

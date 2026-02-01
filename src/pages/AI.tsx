@@ -1,7 +1,7 @@
 import BannerSection from "../../components/ai/BannerSection";
 import Clients from "../../components/ai/Clients";
 import Faqs from "../../components/ai/Faqs";
-import Newsletter from "../../components/Newsletter";
+import TrustedBy from "../../components/TrustedBy";
 
 export default function AI() {
   return (
@@ -9,7 +9,7 @@ export default function AI() {
       <BannerSection />
       <Clients />
       <Faqs />
-      <Newsletter />
+      <TrustedBy />
     </>
   );
 }
