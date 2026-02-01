@@ -1,0 +1,211 @@
+import * as Icon from "react-feather";
+import React, { useState } from "react";
+import { rgba } from "polished";
+import styled from "styled-components";
+import { Section, Title } from "../styled";
+import { sizeAndDown } from "../../styles/responsive";
+import { conf } from "../../constants";
+// import img from "./assets/QueIMG.png";
+interface DropdownData {
+    title: string;
+    description: string;
+    color: string;
+  }
+  const data: DropdownData[] = [
+    {
+      color: "#F9968B",
+      title: "When will I get access?",
+      description:
+        "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
+    },
+    {
+      color: "#2CCED2",
+      title: "Who is this for?",
+      description:
+        "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
+    },
+    {
+      color: "#2CCED2",
+      title: "Who is this for?",
+      description:
+        "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
+    },
+    {
+      color: "#F9968B",
+      title: "When will I get access?",
+      description:
+        "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
+    },
+  ];
+  const DropdownSection = styled(Section)`
+    // padding-left: 53px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  `;
+  const DropdownWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+    width: 100%;
+  `;
+  
+  interface DropdownProps {
+    color: string;
+  }
+  
+  const Dropdown = styled.div<DropdownProps>`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 1.25rem;
+  
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    font-family: "Averta";
+  
+    /* border-radius: 17px; */
+    /* border: 4px solid ${({ theme }) => theme.colors.text}; */
+  
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    a {
+      text-decoration: none;
+      color: ${({ theme }) => theme.colors.teal};
+    }
+  
+    h1 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+  
+    h3 {
+      margin: 0.5rem 1rem;
+      font-size: 2rem;
+      font-weight: normal;
+      color: ${({ theme }) => rgba(theme.colors.text, 0.6)};
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    div {
+      display: flex;
+      align-items: center;
+    }
+  
+    .circle {
+      background-color: ${(props) => props.color};
+      height: 41px;
+      width: 41px;
+      border-radius: 50%;
+      margin: 0 0.5rem;
+    }
+  
+    &:hover {
+      h1 {
+        color: ${({ theme }) => theme.colors.teal};
+      }
+      border-color: ${({ theme }) => theme.colors.teal};
+  
+      svg {
+        color: ${({ theme }) => theme.colors.teal};
+      }
+    }
+  
+    ${sizeAndDown("md")} {
+      padding: 1rem;
+      width: 90%;
+  
+      h1 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+  `;
+  
+  const Heading = styled(Title)`
+    font-size: 3rem;
+    text-align: center;
+    border: none;
+  
+    ${sizeAndDown("md")} {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  `;
+const Faqs = () => {
+    const [openDropdown, setOpenDropdowns] = useState<number[]>([]);
+
+  const handleDropdown = (index: number) => {
+    if (openDropdown.includes(index)) {
+      setOpenDropdowns(openDropdown.filter((item) => item !== index));
+    } else {
+      setOpenDropdowns([...openDropdown, index]);
+    }
+  };
+  return (
+    <div className="">
+      <br /><br />
+      <Heading
+        style={{
+          color: "#26474E",
+        }}
+      >
+        Frequently Asked Questions
+      </Heading>
+      <div>
+        <div id="faq-ai" >
+          <DropdownSection>
+            <DropdownWrapper>
+              {data.map((f, index) => (
+                <Dropdown
+                  key={index + f.title}
+                  color={f.color}
+                  onClick={() => handleDropdown(index)}
+                >
+                  <div className="content">
+                    <div className="left">
+                      <h1>{f.title}</h1>
+                    </div>
+                    <div className="right">
+                      {openDropdown.includes(index) ? (
+                        <Icon.ChevronUp />
+                      ) : (
+                        <Icon.ChevronDown />
+                      )}
+                    </div>
+                  </div>
+                  {openDropdown.includes(index) && (
+                    <p
+                      className="gray line-height"
+                      dangerouslySetInnerHTML={{ __html: f.description }}
+                    />
+                  )}
+                </Dropdown>
+              ))}
+            </DropdownWrapper>
+          </DropdownSection>
+        </div>
+        <div 
+        // className="faq-image"
+        >
+          {/* <img src={img.src} alt="" className="" /> */}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Faqs

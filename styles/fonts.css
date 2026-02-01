@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Gilroy";
+  font-weight: bold;
+  src: url("/assets/fonts/Gilroy-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: "Averta";
+  font-weight: bolder;
+  src: url("/assets/fonts/Averta-Bold.otf");
+}
+
+
+@font-face {
+  font-family: "Averta";
+  font-weight: bold;
+  src: url("/assets/fonts/Averta-Semibold.otf");
+}
+
+@font-face {
+  font-family: "Averta";
+  font-weight: normal;
+  src: url("/assets/fonts/Averta-Regular.otf");
+}

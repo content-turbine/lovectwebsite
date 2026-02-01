@@ -1,0 +1,21 @@
+.ai-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+/* media query for mobile */
+@media screen and (max-width: 600px) {
+    .ai-banner {
+        flex-direction: column;
+    }
+    .ai-banner-image-div {
+        width: 350px !important;
+        height: 350px !important;
+    }
+    #faq-ai{
+        
+    }
+}
