@@ -31,14 +31,13 @@ const strikeReveal = keyframes`
 `;
 
 const StyledHero = styled.section`
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, ${({ theme }) => theme.colors.primary} 0%, #1a3a40 100%);
-  padding: 6rem 2rem;
-
+  padding: 3rem 2rem;
   &::before {
     content: "";
     position: absolute;

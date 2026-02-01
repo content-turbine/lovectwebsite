@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
-
+import * as Icon from "react-feather";
 const Section = styled.section`
   padding: 4rem 2rem 8rem;
   background: ${({ theme }) => theme.colors.background};
@@ -195,7 +196,7 @@ const CTAWrapper = styled.div`
   }
 `;
 
-const CTAButton = styled.a`
+const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -218,6 +219,7 @@ const CTAButton = styled.a`
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 32px rgba(44, 206, 210, 0.4);
+    color: ${({ theme }) => theme.colors.light};
   }
   
   &:active {
@@ -294,8 +296,8 @@ export default function HowItWorks() {
         </Timeline>
         
         <CTAWrapper>
-          <CTAButton href="/contact">
-            Let's Go → Book Your Discovery Call
+          <CTAButton to="/contact">
+            Let's Talk <Icon.MessageCircle size={20} />
           </CTAButton>
         </CTAWrapper>
       </Container>
