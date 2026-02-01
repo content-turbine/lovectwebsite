@@ -13,6 +13,22 @@ const pulse = keyframes`
   50% { opacity: 0.8; }
 `;
 
+const popUp = keyframes`
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.9); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+`;
+
+const strikeReveal = keyframes`
+  0% { width: 0; }
+  100% { width: 100%; }
+`;
+
 const StyledHero = styled.section`
   min-height: 100vh;
   display: flex;
@@ -106,18 +122,48 @@ const Subtitle = styled.p`
   }
 `;
 
-const Tagline = styled.p`
-  font-family: "Gilroy", sans-serif;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.teal};
+const TaglineWrapper = styled.div`
   margin-bottom: 2.5rem;
   padding-left: 1rem;
   border-left: 4px solid ${({ theme }) => theme.colors.teal};
+  animation: ${popUp} 0.6s ease-out 0.3s both;
+`;
+
+const TaglineText = styled.p`
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.light};
+  margin: 0;
+  line-height: 1.4;
   
   ${sizeAndDown("md")} {
     font-size: 1.35rem;
   }
+`;
+
+const StrikeWord = styled.span`
+  position: relative;
+  display: inline-block;
+  opacity: 0.7;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    right: -2px;
+    height: 3px;
+    background: ${({ theme }) => theme.colors.peach};
+    transform: translateY(-50%);
+    animation: ${strikeReveal} 0.4s ease-out 0.8s both;
+  }
+`;
+
+const HighlightWord = styled.span`
+  color: ${({ theme }) => theme.colors.teal};
+  animation: ${popUp} 0.5s ease-out 1s both;
+  display: inline-block;
 `;
 
 const ButtonGroup = styled.div`
@@ -270,9 +316,11 @@ export default function NewHero() {
               into high-authority content that ranks in search, shows up in AI answers, 
               and earns trust from real engineers.
             </Subtitle>
-            <Tagline>
-              Not just written. Engineered to drive results.
-            </Tagline>
+            <TaglineWrapper>
+              <TaglineText>
+                Not just <StrikeWord>written</StrikeWord>. <HighlightWord>Engineered</HighlightWord> to drive results.
+              </TaglineText>
+            </TaglineWrapper>
             <ButtonGroup>
               <Button $primary href="/contact">
                 Talk to Us →
