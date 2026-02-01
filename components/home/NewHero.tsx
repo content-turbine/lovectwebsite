@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
-import { conf } from "../../constants";
+import * as Icon from "react-feather";
 import turbineIcon from "@/assets/content-turbine-icon.png";
 
 const float = keyframes`
@@ -341,7 +341,7 @@ export default function NewHero() {
             </TaglineWrapper>
             <ButtonGroup>
               <Button $primary href="/contact">
-                Talk to Us →
+                Talk to Us <Icon.MessageCircle size={18} />
               </Button>
               <Button href="#see-the-difference">
                 See the Difference
