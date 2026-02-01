@@ -145,6 +145,19 @@ const StepContent = styled.div`
   }
 `;
 
+const StepLabel = styled.span`
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.teal};
+  background: rgba(44, 206, 210, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 0.5rem;
+`;
+
 const StepTitle = styled.h3`
   font-family: "Gilroy", sans-serif;
   font-size: 1.5rem;
@@ -173,6 +186,7 @@ const StepHighlight = styled.span`
 const steps = [
   {
     number: "1",
+    label: "Explore",
     title: "Discovery Call",
     description: (
       <>
@@ -184,7 +198,8 @@ const steps = [
   },
   {
     number: "2",
-    title: "Kickoff & Deep Dive",
+    label: "Sync",
+    title: "The Brain Dump",
     description: (
       <>
         We schedule <StepHighlight>1-on-1 interviews</StepHighlight> with your leadership team to extract vision 
@@ -195,7 +210,8 @@ const steps = [
   },
   {
     number: "3",
-    title: "Strategy, Production & First Output",
+    label: "Ship",
+    title: "Strategy, Production & Go Live",
     description: (
       <>
         Based on our kickoff, we analyze your existing setup, define strategy and a roadmap, and start production. 
@@ -227,6 +243,7 @@ export default function HowItWorks() {
                 <StepCircle>{step.number}</StepCircle>
               </CircleWrapper>
               <StepContent>
+                <StepLabel>{step.label}</StepLabel>
                 <StepTitle>{step.title}</StepTitle>
                 <StepDescription>{step.description}</StepDescription>
               </StepContent>
