@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { sizeAndDown } from "../../styles/responsive";
 
 const Section = styled.section`
@@ -47,112 +46,123 @@ const Subtitle = styled.p`
   font-size: 1.125rem;
   color: ${({ theme }) => theme.colors.text};
   opacity: 0.7;
-  max-width: 700px;
+  max-width: 650px;
   margin: 0 auto;
   line-height: 1.7;
 `;
 
-const Grid = styled.div`
+const ComparisonWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto 1fr;
   gap: 2rem;
-  margin-bottom: 3rem;
+  align-items: stretch;
 
   ${sizeAndDown("md")} {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 `;
 
-const Card = styled.div`
-  background: ${({ theme }) => theme.colors.light};
+const Column = styled.div<{ $variant: "old" | "new" }>`
+  background: ${({ $variant, theme }) =>
+    $variant === "old" ? theme.colors.light : theme.colors.primary};
   border-radius: 20px;
   padding: 2.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  border: 1px solid ${({ $variant }) =>
+    $variant === "old" ? "rgba(0, 0, 0, 0.08)" : "transparent"};
 
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  ${sizeAndDown("md")} {
+    padding: 2rem 1.5rem;
   }
 `;
 
-const CardIcon = styled.div`
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}15, ${({ theme }) => theme.colors.teal}30);
-  border-radius: 14px;
+const ColumnTitle = styled.h3<{ $variant: "old" | "new" }>`
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${({ $variant, theme }) =>
+    $variant === "old" ? theme.colors.text : theme.colors.light};
+  margin: 0 0 2rem;
+  text-align: center;
+  opacity: ${({ $variant }) => ($variant === "old" ? 0.6 : 1)};
+
+  ${sizeAndDown("md")} {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+const ItemList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const Item = styled.li<{ $variant: "old" | "new" }>`
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: ${({ $variant, theme }) =>
+    $variant === "old" ? theme.colors.text : theme.colors.light};
+  opacity: ${({ $variant }) => ($variant === "old" ? 0.7 : 0.95)};
+`;
+
+const ItemIcon = styled.span<{ $variant: "old" | "new" }>`
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  background: ${({ $variant, theme }) =>
+    $variant === "old" ? "rgba(0, 0, 0, 0.05)" : `${theme.colors.teal}30`};
 `;
 
-const CardTitle = styled.h3`
-  font-family: "Averta", sans-serif;
+const Divider = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  ${sizeAndDown("md")} {
+    padding: 0.5rem 0;
+  }
+`;
+
+const VSBadge = styled.span`
+  font-family: "Gilroy", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.text};
-  margin: 0 0 0.75rem;
-`;
-
-const CardDescription = styled.p`
-  font-size: 1rem;
-  line-height: 1.7;
-  color: ${({ theme }) => theme.colors.text};
-  opacity: 0.75;
-  margin: 0;
-`;
-
-const CTAContainer = styled.div`
-  text-align: center;
-  margin-top: 2rem;
-`;
-
-const CompareLink = styled(Link)`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: "Averta", sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.primary};
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 10px;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.light};
-  }
-
-  svg {
-    width: 18px;
-    height: 18px;
+  color: ${({ theme }) => theme.colors.teal};
+  background: ${({ theme }) => theme.colors.teal}15;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  
+  ${sizeAndDown("md")} {
+    padding: 0.75rem 1.5rem;
   }
 `;
 
-const differentiators = [
-  {
-    icon: "🧠",
-    title: "SME-Driven Depth",
-    description:
-      "Real subject-matter experts collaborate with your team—not surface-level writers chasing keywords.",
-  },
-  {
-    icon: "🤖",
-    title: "Built for AI Discovery",
-    description:
-      "Structured for AI search engines (GEO/AEO). Your content becomes the answer, not just another result.",
-  },
-  {
-    icon: "📚",
-    title: "Knowledge Architecture",
-    description:
-      "We build reusable content libraries that compound over time—not one-off blog posts that decay.",
-  },
+const oldWayItems = [
+  { icon: "📝", text: "Generic content mills and freelancer marketplaces" },
+  { icon: "🔍", text: "Keyword-stuffed blog posts for SEO" },
+  { icon: "📄", text: "One-off articles that decay over time" },
+  { icon: "🤖", text: "AI-generated content with no expertise" },
+  { icon: "📊", text: "Vanity metrics: views and shares" },
+];
+
+const newWayItems = [
+  { icon: "🧠", text: "SME-driven content with deep technical depth" },
+  { icon: "🎯", text: "Structured for AI answers (GEO/AEO) + SEO" },
+  { icon: "📚", text: "Reusable knowledge libraries that compound" },
+  { icon: "⚡", text: "AI as accelerator, humans as experts" },
+  { icon: "📈", text: "Business outcomes: pipeline and authority" },
 ];
 
 export default function Differentiator() {
@@ -160,32 +170,43 @@ export default function Differentiator() {
     <Section>
       <Container>
         <Header>
-          <Eyebrow>Why Content Turbine</Eyebrow>
-          <Title>What Sets Us Apart</Title>
+          <Eyebrow>What Sets Us Apart</Eyebrow>
+          <Title>Technical content is evolving</Title>
           <Subtitle>
-            Most content agencies produce words. We engineer technical knowledge 
-            ecosystems that power both human discovery and AI answers.
+            Most content agencies produce words. We engineer knowledge ecosystems 
+            that power both human discovery and AI answers.
           </Subtitle>
         </Header>
 
-        <Grid>
-          {differentiators.map((item, index) => (
-            <Card key={index}>
-              <CardIcon>{item.icon}</CardIcon>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
-            </Card>
-          ))}
-        </Grid>
+        <ComparisonWrapper>
+          <Column $variant="old">
+            <ColumnTitle $variant="old">The Old Way</ColumnTitle>
+            <ItemList>
+              {oldWayItems.map((item, index) => (
+                <Item key={index} $variant="old">
+                  <ItemIcon $variant="old">{item.icon}</ItemIcon>
+                  {item.text}
+                </Item>
+              ))}
+            </ItemList>
+          </Column>
 
-        <CTAContainer>
-          <CompareLink to="/compare">
-            See how we compare
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </CompareLink>
-        </CTAContainer>
+          <Divider>
+            <VSBadge>VS</VSBadge>
+          </Divider>
+
+          <Column $variant="new">
+            <ColumnTitle $variant="new">The Content Turbine Way</ColumnTitle>
+            <ItemList>
+              {newWayItems.map((item, index) => (
+                <Item key={index} $variant="new">
+                  <ItemIcon $variant="new">{item.icon}</ItemIcon>
+                  {item.text}
+                </Item>
+              ))}
+            </ItemList>
+          </Column>
+        </ComparisonWrapper>
       </Container>
     </Section>
   );
