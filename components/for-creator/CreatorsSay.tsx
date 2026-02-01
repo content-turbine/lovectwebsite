@@ -11,6 +11,7 @@ interface FeedbackType {
   short: string;
   designation: string;
 }
+
 const FeedbackData: FeedbackType[] = [
   {
     photo: "icons/yugabytedb-logo.png",
@@ -60,24 +61,19 @@ export default function CreatorsSay() {
 
   return (
     <StyledTestimonials>
-      <Title
-        style={{
-          fontSize: "3rem",
-          fontFamily: "Gilroy, sans-serif",
-        }}
-      >
+      <StyledTitle>
         What our customers say about us
-      </Title>
+      </StyledTitle>
 
       <Slider {...sliderSettings}>
         {FeedbackData.map((item, index) => (
           <div key={index}>
             <Card>
               <div className="image">
-                <Sparkle top="0" left="-5%"></Sparkle>
-                <Sparkle top="90%" left="30%"></Sparkle>
-                <Sparkle top="0" left="85%"></Sparkle>
-                <img src={`assets/${item.photo}`} />
+                <Sparkle $top="0" $left="-5%" />
+                <Sparkle $top="90%" $left="30%" />
+                <Sparkle $top="0" $left="85%" />
+                <img src={`assets/${item.photo}`} alt={item.name} />
               </div>
               <div className="content">
                 <p className="short">&quot;{item.short}&quot;</p>
@@ -92,6 +88,7 @@ export default function CreatorsSay() {
     </StyledTestimonials>
   );
 }
+
 const StyledTestimonials = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.light};
@@ -104,7 +101,6 @@ const StyledTestimonials = styled.div`
     font-size: 3rem;
     color: ${({ theme }) => theme.colors.light};
     border-color: ${({ theme }) => theme.colors.light};
-
     border: none;
   }
 
@@ -118,10 +114,17 @@ const StyledTestimonials = styled.div`
   }
 `;
 
-const Sparkle = styled.div<{ top: string; left: string }>`
+const StyledTitle = styled(Title)`
+  font-size: 3rem;
+  font-family: "Gilroy", sans-serif;
+  color: ${({ theme }) => theme.colors.light};
+  border: none;
+`;
+
+const Sparkle = styled.div<{ $top: string; $left: string }>`
   position: absolute;
-  top: ${(props) => props.top};
-  left: ${(props) => props.left};
+  top: ${(props) => props.$top};
+  left: ${(props) => props.$left};
   background: ${({ theme }) => theme.colors.peach};
   height: 0.5rem;
   width: 0.5rem;

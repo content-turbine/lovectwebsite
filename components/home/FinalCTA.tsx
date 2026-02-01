@@ -110,11 +110,11 @@ export default function FinalCTA() {
           Go from reactive content to a <span>turbine of technical authority</span>.
         </Title>
         <Subtitle>
-          Let's build content that drives discovery, earns trust, and compounds over time.
+          Let&apos;s build content that drives discovery, earns trust, and compounds over time.
         </Subtitle>
-        <Button href={conf.calendly_link} target="_blank">
+        <a href={conf.calendly_link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1.25rem 3rem', background: '#2CCED2', color: '#26474E', fontFamily: 'Averta, sans-serif', fontSize: '1.125rem', fontWeight: 700, textDecoration: 'none', borderRadius: '12px', transition: 'all 0.3s ease' }}>
           Start Your Strategy Session →
-        </Button>
+        </a>
       </Container>
     </Section>
   );

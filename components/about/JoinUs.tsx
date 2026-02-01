@@ -2,21 +2,19 @@ import Image from "next/image";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
-import { Button, Title } from "../styled";
+import { Title } from "../styled";
+import Link from "next/link";
 
 export default function JoinUs() {
   return (
     <Container>
       <CFade>
-        <img src={"assets/illustrations/join.svg"} />
+        <img src={"assets/illustrations/join.svg"} alt="Join Us" />
         <Content>
           <Title>Looking to accelerate your career journey?</Title>
-          <Button
-          href="/freelance"
-            rel="noreferrer noopener"
-          >
+          <JoinButton href="/freelance">
             Join Us
-          </Button>
+          </JoinButton>
         </Content>
       </CFade>
     </Container>
@@ -64,5 +62,27 @@ const Content = styled.div`
     h1 {
       font-size: 2.5rem;
     }
+  }
+`;
+
+const JoinButton = styled.a`
+  display: inline-block;
+  color: ${({ theme }) => theme.colors.light};
+  font-family: "Averta";
+  font-weight: 700;
+  background-color: ${({ theme }) => theme.colors.peach};
+  padding: 1rem 2rem;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    color: ${({ theme }) => theme.colors.light};
+  }
+  &:active {
+    transform: scale(1);
   }
 `;

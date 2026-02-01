@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { size } from "polished";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
@@ -11,18 +9,10 @@ interface TeamMember {
 }
 
 const teamMembers: TeamMember[] = [
-  // {
-  //   photo: "georgina_burns.jpeg",
-  //   name: "Georgina Burns",
-  // },
   {
     photo: "sharal_edited.jpeg",
     name: "Sharal Pinto",
   },
-  // {
-  //   photo: "andy_oram.jpeg",
-  //   name: "Andy Oram",
-  // },
 ];
 
 export default function Team() {

@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styled, { css, keyframes } from "styled-components";
 import { conf } from "../constants";
-import { A } from "./styled";
 import { rgba } from "polished";
 import { sizeAndDown } from "../styles/responsive";
 import * as Icon from "react-feather";
-import { useRouter } from "next/router";
-import Image from "next/image";
+
 interface NLinkProps {
   name: string;
   pathname: string;
@@ -35,11 +33,6 @@ export const navbar_links: NLinkProps[] = [
     pathname: "/freelance",
     isButton: false,
   },
-  // {
-  //   name: "AI",
-  //   pathname: "/ai",
-  //   isButton: false,
-  // },
   {
     name: "Let's Chat",
     pathname: "/contact",
@@ -53,7 +46,6 @@ export default function Navbar() {
   const toggleMenu = () => {
     if (document !== null && window !== null) {
       const el = document.getElementById("navbar");
-      console.log(el?.offsetTop);
       if (el && el?.offsetTop > 400 && !menuOpen) {
         window.scrollTo({
           top: el?.offsetTop,
@@ -65,7 +57,7 @@ export default function Navbar() {
   };
 
   const mlinks_comp = (
-    <MLinks menuOpen={menuOpen} id="nav_links">
+    <MLinks $menuOpen={menuOpen}>
       {navbar_links.map((l: NLinkProps) => (
         <ScrollLink
           key={"nav_link_" + l.name}
@@ -81,7 +73,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Nav menuOpen={menuOpen} id="navbar">
+      <Nav id="navbar">
         <div className="logo">
           <Link href="/">
             <Logo>
@@ -90,11 +82,11 @@ export default function Navbar() {
           </Link>
         </div>
         <Hamburger onClick={toggleMenu}>
-          {menuOpen ? <Icon.X></Icon.X> : <Icon.Menu></Icon.Menu>}
+          {menuOpen ? <Icon.X /> : <Icon.Menu />}
         </Hamburger>
         <DLinkWrapper>{mlinks_comp}</DLinkWrapper>
       </Nav>
-      <MLinkWrapper menuOpen={menuOpen}>{mlinks_comp}</MLinkWrapper>
+      <MLinkWrapper $menuOpen={menuOpen}>{mlinks_comp}</MLinkWrapper>
     </>
   );
 }
@@ -110,7 +102,7 @@ export const ScrollLink = function NavLink(props: ScrollLinkProps) {
     <NavA
       href={props.pathname}
       rel="noopener noreferrer"
-      isButton={props.isButton}
+      $isButton={props.isButton}
     >
       {props.name}
     </NavA>
@@ -128,13 +120,15 @@ const FadeInAnimation = keyframes`
   }
 `;
 
-const NavA = styled(A)<{ isButton: boolean }>`
+const NavA = styled.a<{ $isButton: boolean }>`
   display: flex;
   align-items: center;
   position: relative;
   margin: 0 2rem;
   color: ${({ theme }) => theme.colors.light};
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -162,7 +156,7 @@ const NavA = styled(A)<{ isButton: boolean }>`
   }
 
   ${(props) =>
-    props.isButton &&
+    props.$isButton &&
     css`
       background-color: ${({ theme }) => theme.colors.peach};
       padding: 0.75rem;
@@ -193,7 +187,7 @@ const NavA = styled(A)<{ isButton: boolean }>`
   }
 `;
 
-const Nav = styled.nav<mobileProps>`
+const Nav = styled.nav`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -202,6 +196,7 @@ const Nav = styled.nav<mobileProps>`
   margin: 0 auto;
   position: sticky;
   top: 0;
+  z-index: 1000;
   background-color: ${({ theme }) => theme.colors.primary};
   ${sizeAndDown("sm")} {
     padding: 0.5rem 1rem;
@@ -210,6 +205,8 @@ const Nav = styled.nav<mobileProps>`
 
 const Hamburger = styled.div`
   display: none;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.light};
   ${sizeAndDown("md")} {
     display: inherit;
     svg {
@@ -227,11 +224,11 @@ const DLinkWrapper = styled.div`
   }
 `;
 
-interface mobileProps {
-  menuOpen: boolean;
+interface MobileProps {
+  $menuOpen: boolean;
 }
 
-const MLinkWrapper = styled.div<mobileProps>`
+const MLinkWrapper = styled.div<MobileProps>`
   position: fixed;
   top: 4rem;
   display: none;
@@ -244,7 +241,7 @@ const MLinkWrapper = styled.div<mobileProps>`
     border: 1px solid ${({ theme }) => rgba(theme.colors.light, 0.2)};
 
     ${(props) =>
-      props.menuOpen &&
+      props.$menuOpen &&
       css`
         display: inherit;
       `}
@@ -253,7 +250,7 @@ const MLinkWrapper = styled.div<mobileProps>`
   padding: 3rem 0;
 `;
 
-const MLinks = styled.div<mobileProps>`
+const MLinks = styled.div<MobileProps>`
   font-size: 1.25rem;
   display: flex;
   align-items: center;
@@ -271,12 +268,9 @@ const MLinks = styled.div<mobileProps>`
     animation-fill-mode: both;
     animation-play-state: running;
 
-    /* width: 100vw; */
     ${(props) =>
-      props.menuOpen &&
+      props.$menuOpen &&
       css`
-        /* position: relative; */
-        /* margin: 0rem -2rem; */
         border-radius: 12px;
         display: flex;
         flex-direction: column;
@@ -290,12 +284,14 @@ const MLinks = styled.div<mobileProps>`
   }
 `;
 
-const Logo = styled(A)`
+const Logo = styled.a`
   display: flex;
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
+  cursor: pointer;
 
   img {
     margin-right: 1rem;

@@ -1,8 +1,9 @@
 import { ChevronLeft, ChevronRight } from "react-feather";
 import styled from "styled-components";
 import { sizeAndDown } from "./responsive";
+import React from "react";
 
-const Icon = styled.div`
+const Icon = styled.div<{ className?: string; onClick?: () => void }>`
   height: 20px;
   width: 20px;
   z-index: 99;
@@ -28,8 +29,13 @@ const Icon = styled.div`
   }
 `;
 
-export function NextArrow(props: any) {
-  const { className, style, onClick } = props;
+interface ArrowProps {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+}
+
+export function NextArrow({ className, style, onClick }: ArrowProps) {
   return (
     <Icon className={className} style={{ ...style }} onClick={onClick}>
       <ChevronRight />
@@ -37,8 +43,7 @@ export function NextArrow(props: any) {
   );
 }
 
-export function PrevArrow(props: any) {
-  const { className, style, onClick } = props;
+export function PrevArrow({ className, style, onClick }: ArrowProps) {
   return (
     <Icon className={className} style={{ ...style }} onClick={onClick}>
       <ChevronLeft />

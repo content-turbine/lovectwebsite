@@ -116,11 +116,11 @@ export default function Resources() {
 
         <Grid>
           {resources.map((resource, index) => (
-            <ResourceCard key={index} href={resource.href}>
+            <a key={index} href={resource.href} style={{ background: 'white', borderRadius: '16px', padding: '2rem', border: '1px solid rgba(0, 0, 0, 0.08)', textDecoration: 'none', transition: 'all 0.3s ease', display: 'block' }}>
               <ResourceIcon>{resource.icon}</ResourceIcon>
               <ResourceTitle>{resource.title}</ResourceTitle>
               <ResourceArrow>Read more →</ResourceArrow>
-            </ResourceCard>
+            </a>
           ))}
         </Grid>
       </Container>

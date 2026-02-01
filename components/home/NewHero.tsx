@@ -179,6 +179,8 @@ const FloatingCard = styled.div<{ $delay?: number; $top?: string; $right?: strin
   top: ${({ $top }) => $top || "auto"};
   right: ${({ $right }) => $right || "auto"};
   left: ${({ $left }) => $left || "auto"};
+  display: flex;
+  align-items: center;
   
   ${sizeAndDown("md")} {
     display: none;

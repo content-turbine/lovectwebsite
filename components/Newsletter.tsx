@@ -1,16 +1,14 @@
 import axios from "axios";
-import Image from "next/image";
-import { toNamespacedPath } from "path";
 import { rgba } from "polished";
-import { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import styled from "styled-components";
 import { sizeAndDown } from "../styles/responsive";
-import { Button, Input, Title } from "./styled";
+import { Title } from "./styled";
 import toast, { Toaster } from "react-hot-toast";
 import { CFade } from "./Animation";
 
 export default function Newsletter() {
-  const [email, setEmail] = useState<string>();
+  const [email, setEmail] = useState<string>("");
 
   const handleSubmit = () => {
     axios
@@ -22,12 +20,12 @@ export default function Newsletter() {
           },
         ],
       })
-      .then((response) => {
+      .then(() => {
         toast.success("Thank you for submitting the form.");
         setEmail("");
       })
       .catch((error) => {
-        toast.error(error.response.data.message);
+        toast.error(error.response?.data?.message || "An error occurred");
       });
   };
 
@@ -41,31 +39,18 @@ export default function Newsletter() {
             <Input
               placeholder="Enter your email address"
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event: ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
             />
-            <Button onClick={handleSubmit}>Subscribe</Button>
+            <SubmitButton type="button" onClick={handleSubmit}>Subscribe</SubmitButton>
           </Form>
         </div>
-        <img src={"assets/illustrations/mail.svg"} />
+        <img src={"assets/illustrations/mail.svg"} alt="Newsletter" />
       </CFade>
 
       <Toaster position="bottom-center" reverseOrder={false} />
     </Container>
   );
 }
-
-const ModalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-
-  h1 {
-    margin: 1rem 0 1rem 0;
-  }
-`;
 
 const Container = styled.div`
   display: flex;
@@ -105,4 +90,41 @@ const Container = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+`;
+
+const Input = styled.input`
+  border-radius: 10px;
+  border: none;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-family: "Averta";
+
+  &::placeholder {
+    color: #7a7878;
+  }
+`;
+
+const SubmitButton = styled.button`
+  display: inline-block;
+  color: ${({ theme }) => theme.colors.light};
+  font-family: "Averta";
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: ${({ theme }) => theme.colors.peach};
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    color: ${({ theme }) => theme.colors.light};
+  }
+  &:active {
+    transform: scale(1);
+  }
 `;

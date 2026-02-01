@@ -184,7 +184,7 @@ export default function HowItWorks() {
               <StepDescription>{step.description}</StepDescription>
               <StepDetails>
                 {step.details.map((detail, i) => (
-                  <StepDetail key={i}>{detail}</StepDetail>
+                  <li key={i} style={{ fontSize: '0.875rem', color: '#2CCED2', padding: '0.35rem 0', paddingLeft: '1.25rem', position: 'relative' }}>→ {detail}</li>
                 ))}
               </StepDetails>
             </Step>

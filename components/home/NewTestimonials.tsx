@@ -137,7 +137,7 @@ export default function NewTestimonials() {
         <TestimonialsGrid>
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index}>
-              <QuoteMark>"</QuoteMark>
+              <QuoteMark>&ldquo;</QuoteMark>
               <Quote>{testimonial.quote}</Quote>
               <Author>
                 <AuthorAvatar>{testimonial.avatar}</AuthorAvatar>

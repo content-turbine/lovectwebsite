@@ -1,7 +1,8 @@
 // import original module declarations
 import "styled-components";
+import { CSSProp } from "styled-components";
 
-// and extend them!
+// Extend styled-components module
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
@@ -14,5 +15,12 @@ declare module "styled-components" {
       teal: string;
     };
     borderRadius: string;
+  }
+}
+
+// Allow css prop on all elements
+declare module "react" {
+  interface Attributes {
+    css?: CSSProp;
   }
 }
