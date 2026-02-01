@@ -107,12 +107,17 @@ const Subtitle = styled.p`
 `;
 
 const Tagline = styled.p`
-  font-size: 1rem;
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
   color: ${({ theme }) => theme.colors.teal};
-  font-style: italic;
   margin-bottom: 2.5rem;
   padding-left: 1rem;
-  border-left: 3px solid ${({ theme }) => theme.colors.teal};
+  border-left: 4px solid ${({ theme }) => theme.colors.teal};
+  
+  ${sizeAndDown("md")} {
+    font-size: 1.35rem;
+  }
 `;
 
 const ButtonGroup = styled.div`
@@ -236,9 +241,19 @@ const MainVisual = styled.div`
   }
 `;
 
-const TurbineIcon = styled.div`
-  font-size: 5rem;
-  color: ${({ theme }) => theme.colors.teal};
+const FloatingBubble = styled.div<{ $size: string; $top?: string; $right?: string; $left?: string; $bottom?: string; $delay?: number }>`
+  position: absolute;
+  width: ${({ $size }) => $size};
+  height: ${({ $size }) => $size};
+  background: ${({ theme }) => theme.colors.teal}20;
+  border: 1px solid ${({ theme }) => theme.colors.teal}40;
+  border-radius: 50%;
+  animation: ${float} 6s ease-in-out infinite;
+  animation-delay: ${({ $delay }) => $delay || 0}s;
+  top: ${({ $top }) => $top || "auto"};
+  right: ${({ $right }) => $right || "auto"};
+  left: ${({ $left }) => $left || "auto"};
+  bottom: ${({ $bottom }) => $bottom || "auto"};
 `;
 
 export default function NewHero() {
@@ -247,7 +262,6 @@ export default function NewHero() {
       <Container>
         <Grid>
           <Content>
-            <Eyebrow>Content Turbine</Eyebrow>
             <Title>
               Technical Content Built for <span>Humans, Search & AI</span>
             </Title>
@@ -257,14 +271,14 @@ export default function NewHero() {
               and earns trust from real engineers.
             </Subtitle>
             <Tagline>
-              Not just written. Engineered.
+              Not just written. Engineered to drive results.
             </Tagline>
             <ButtonGroup>
-              <Button $primary href={conf.calendly_link} target="_blank">
-                Get a Demo →
+              <Button $primary href="/contact">
+                Talk to Us →
               </Button>
-              <Button href="/services">
-                See Work
+              <Button href="/sample">
+                Try a Sample
               </Button>
             </ButtonGroup>
           </Content>
@@ -283,7 +297,11 @@ export default function NewHero() {
               <CardText>Developer-First</CardText>
             </FloatingCard>
             <MainVisual>
-              <TurbineIcon>⚙️</TurbineIcon>
+              <FloatingBubble $size="60px" $top="20%" $left="15%" $delay={0.5} />
+              <FloatingBubble $size="40px" $top="60%" $right="20%" $delay={1.2} />
+              <FloatingBubble $size="80px" $bottom="10%" $left="30%" $delay={0.8} />
+              <FloatingBubble $size="30px" $top="40%" $right="10%" $delay={1.8} />
+              <FloatingBubble $size="50px" $top="10%" $right="25%" $delay={2.2} />
             </MainVisual>
           </Visual>
         </Grid>
