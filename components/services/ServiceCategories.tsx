@@ -10,6 +10,60 @@ interface ServiceCategory {
   icon: React.ReactNode;
 }
 
+const discoveryItems = [
+  "Technical Deep Dives",
+  "Stakeholder Interviews", 
+  "Audience Analysis",
+  "Competitive Landscape",
+  "Product Architecture Review",
+  "Goals & KPI Alignment",
+];
+
+const strategyCategories: ServiceCategory[] = [
+  {
+    title: "Content Strategy",
+    description: "Transform from ad-hoc content to a laser-focused program that doesn't rely on chance. Prioritize the most impactful distribution channels and content types.",
+    color: "#FEF9C3",
+    icon: <Icon.Target size={24} />,
+    items: [
+      "Content Audits",
+      "Topic Identification",
+      "Editorial Calendars",
+      "Distribution Strategy",
+      "Messaging Development",
+      "Campaign Planning",
+    ],
+  },
+  {
+    title: "SEO / AEO Strategy",
+    description: "Get visibility into how you're appearing in Google Search, AI Overviews, and popular LLM-based tools. Build a plan to optimize your presence across each.",
+    color: "#E0F2FE",
+    icon: <Icon.TrendingUp size={24} />,
+    items: [
+      "Keyword Research",
+      "Goal Setting & Forecasting",
+      "Topic Prioritization",
+      "Technical SEO Audits",
+      "Content & AEO Audits",
+      "Strategy Creation",
+    ],
+  },
+  {
+    title: "Content Operations",
+    description: "From reporting and performance analysis to populating content into your CMS, we handle your content from ideation through publication.",
+    color: "#F1F5F9",
+    icon: <Icon.Settings size={24} />,
+    items: [
+      "Analytics & Dashboards",
+      "CMS Uploads",
+      "Conversion Tracking",
+      "AI Workflow Implementation",
+      "Performance Analysis",
+      "Attribution Reporting",
+    ],
+  },
+];
+
 const productionCategories: ServiceCategory[] = [
   {
     title: "Developer Content",
@@ -69,81 +123,50 @@ const productionCategories: ServiceCategory[] = [
   },
 ];
 
-const strategyCategories: ServiceCategory[] = [
-  {
-    title: "Content Strategy",
-    description: "Transform from ad-hoc content to a laser-focused program that doesn't rely on chance. Prioritize the most impactful distribution channels and content types.",
-    color: "#FEF9C3",
-    icon: <Icon.Target size={24} />,
-    items: [
-      "Content Audits",
-      "Topic Identification",
-      "Editorial Calendars",
-      "Distribution Strategy",
-      "Messaging Development",
-      "Campaign Planning",
-    ],
-  },
-  {
-    title: "SEO / AEO Strategy",
-    description: "Get visibility into how you're appearing in Google Search, AI Overviews, and popular LLM-based tools. Build a plan to optimize your presence across each.",
-    color: "#E0F2FE",
-    icon: <Icon.TrendingUp size={24} />,
-    items: [
-      "Keyword Research",
-      "Goal Setting & Forecasting",
-      "Topic Prioritization",
-      "Technical SEO Audits",
-      "Content & AEO Audits",
-      "Strategy Creation",
-    ],
-  },
-  {
-    title: "Content Operations",
-    description: "From reporting and performance analysis to populating content into your CMS, we handle your content from ideation through publication.",
-    color: "#F1F5F9",
-    icon: <Icon.Settings size={24} />,
-    items: [
-      "Analytics & Dashboards",
-      "CMS Uploads",
-      "Conversion Tracking",
-      "AI Workflow Implementation",
-      "Performance Analysis",
-      "Attribution Reporting",
-    ],
-  },
-];
-
 export default function ServiceCategories() {
   return (
-    <>
-      <Section>
+    <FlowContainer>
+      {/* Flow Line */}
+      <FlowLine />
+      
+      {/* Stage 1: Discovery */}
+      <FlowStage>
+        <StageMarker>
+          <StageNumber>1</StageNumber>
+        </StageMarker>
+        <StageLabel>Explore</StageLabel>
         <SectionHeader>
-          <SectionTitle>Content Production</SectionTitle>
+          <SectionTitle>Discovery</SectionTitle>
           <SectionSubtitle>
-            We embed ourselves in your organization to deliver expert content for every stage of the buyer journey.
+            We immerse ourselves in your product, market, and technical landscape to build a deep understanding.
           </SectionSubtitle>
         </SectionHeader>
         
-        <CategoriesGrid>
-          {productionCategories.map((category, index) => (
-            <CategoryCard key={index} $bgColor={category.color}>
-              <CardHeader>
-                <IconWrapper>{category.icon}</IconWrapper>
-                <CategoryTitle>{category.title}</CategoryTitle>
-              </CardHeader>
-              <CategoryDescription>{category.description}</CategoryDescription>
-              <ItemsList>
-                {category.items.map((item, i) => (
-                  <Item key={i}>{item}</Item>
-                ))}
-              </ItemsList>
-            </CategoryCard>
-          ))}
-        </CategoriesGrid>
-      </Section>
+        <DiscoveryCard>
+          <DiscoveryIcon>
+            <Icon.Compass size={32} />
+          </DiscoveryIcon>
+          <DiscoveryContent>
+            <DiscoveryTitle>The Brain Dump</DiscoveryTitle>
+            <DiscoveryDescription>
+              Through 1-on-1 interviews with your leadership, engineering, and product teams, we extract the vision, 
+              technical depth, and strategic priorities that will fuel your content program.
+            </DiscoveryDescription>
+          </DiscoveryContent>
+          <DiscoveryItems>
+            {discoveryItems.map((item, i) => (
+              <DiscoveryItem key={i}>{item}</DiscoveryItem>
+            ))}
+          </DiscoveryItems>
+        </DiscoveryCard>
+      </FlowStage>
 
-      <Section>
+      {/* Stage 2: Strategy */}
+      <FlowStage>
+        <StageMarker>
+          <StageNumber>2</StageNumber>
+        </StageMarker>
+        <StageLabel>Plan</StageLabel>
         <SectionHeader>
           <SectionTitle>Strategy</SectionTitle>
           <SectionSubtitle>
@@ -167,49 +190,238 @@ export default function ServiceCategories() {
             </CategoryCard>
           ))}
         </StrategyGrid>
-      </Section>
-    </>
+      </FlowStage>
+
+      {/* Stage 3: Content Production */}
+      <FlowStage>
+        <StageMarker>
+          <StageNumber>3</StageNumber>
+        </StageMarker>
+        <StageLabel>Ship</StageLabel>
+        <SectionHeader>
+          <SectionTitle>Content Production</SectionTitle>
+          <SectionSubtitle>
+            We embed ourselves in your organization to deliver expert content for every stage of the buyer journey.
+          </SectionSubtitle>
+        </SectionHeader>
+        
+        <CategoriesGrid>
+          {productionCategories.map((category, index) => (
+            <CategoryCard key={index} $bgColor={category.color}>
+              <CardHeader>
+                <IconWrapper>{category.icon}</IconWrapper>
+                <CategoryTitle>{category.title}</CategoryTitle>
+              </CardHeader>
+              <CategoryDescription>{category.description}</CategoryDescription>
+              <ItemsList>
+                {category.items.map((item, i) => (
+                  <Item key={i}>{item}</Item>
+                ))}
+              </ItemsList>
+            </CategoryCard>
+          ))}
+        </CategoriesGrid>
+      </FlowStage>
+    </FlowContainer>
   );
 }
 
-const Section = styled.section`
+const FlowContainer = styled.div`
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem 5rem;
+  padding-left: 5rem;
 
   ${sizeAndDown("md")} {
     padding: 0 1.5rem 3rem;
+    padding-left: 3.5rem;
   }
 `;
 
+const FlowLine = styled.div`
+  position: absolute;
+  left: 2.5rem;
+  top: 2rem;
+  bottom: 5rem;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    ${({ theme }) => theme.colors.teal} 0%,
+    ${({ theme }) => theme.colors.primary} 50%,
+    ${({ theme }) => theme.colors.peach} 100%
+  );
+  border-radius: 2px;
+
+  ${sizeAndDown("md")} {
+    left: 1rem;
+    width: 2px;
+  }
+`;
+
+const FlowStage = styled.section`
+  position: relative;
+  margin-bottom: 5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  ${sizeAndDown("md")} {
+    margin-bottom: 3rem;
+  }
+`;
+
+const StageMarker = styled.div`
+  position: absolute;
+  left: -3.5rem;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}, ${({ theme }) => theme.colors.primary});
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(44, 206, 210, 0.3);
+  z-index: 2;
+
+  ${sizeAndDown("md")} {
+    left: -2.5rem;
+    width: 36px;
+    height: 36px;
+  }
+`;
+
+const StageNumber = styled.span`
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+
+  ${sizeAndDown("md")} {
+    font-size: 1rem;
+  }
+`;
+
+const StageLabel = styled.span`
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.teal};
+  background: rgba(44, 206, 210, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+`;
+
 const SectionHeader = styled.div`
-  text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: "Gilroy", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.text};
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.75rem 0;
 
   ${sizeAndDown("md")} {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 `;
 
 const SectionSubtitle = styled.p`
   font-family: "Averta", sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.text};
   opacity: 0.6;
-  margin: 0 auto;
+  margin: 0;
   max-width: 600px;
 
   ${sizeAndDown("md")} {
     font-size: 1rem;
   }
+`;
+
+const DiscoveryCard = styled.div`
+  background: linear-gradient(135deg, rgba(44, 206, 210, 0.08), rgba(44, 206, 210, 0.02));
+  border: 1px solid rgba(44, 206, 210, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem 2rem;
+
+  ${sizeAndDown("md")} {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+`;
+
+const DiscoveryIcon = styled.div`
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}, ${({ theme }) => theme.colors.primary});
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  ${sizeAndDown("md")} {
+    width: 48px;
+    height: 48px;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+`;
+
+const DiscoveryContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const DiscoveryTitle = styled.h3`
+  font-family: "Averta", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0 0 0.5rem 0;
+`;
+
+const DiscoveryDescription = styled.p`
+  font-family: "Averta", sans-serif;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.text};
+  opacity: 0.7;
+  line-height: 1.6;
+  margin: 0;
+`;
+
+const DiscoveryItems = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+`;
+
+const DiscoveryItem = styled.span`
+  font-family: "Averta", sans-serif;
+  font-size: 0.85rem;
+  background: rgba(44, 206, 210, 0.15);
+  color: ${({ theme }) => theme.colors.text};
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  white-space: nowrap;
 `;
 
 const CategoriesGrid = styled.div`
