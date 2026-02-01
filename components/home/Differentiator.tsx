@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
+import AIComparisonWidget from "./AIComparisonWidget";
 
 const Section = styled.section`
   padding: 8rem 2rem;
@@ -207,6 +208,8 @@ export default function Differentiator() {
             </ItemList>
           </Column>
         </ComparisonWrapper>
+
+        <AIComparisonWidget />
       </Container>
     </Section>
   );
