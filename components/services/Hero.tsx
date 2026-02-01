@@ -1,7 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
-import { conf } from "../../constants";
-import { Button } from "../styled";
 import * as Icon from "react-feather";
 
 const StyledHero = styled.section`
@@ -42,13 +41,19 @@ const Subtitle = styled.p`
   }
 `;
 
-const CTAButton = styled(Button)`
+const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.light};
   padding: 1rem 1.75rem;
   font-size: 1rem;
+  font-family: "Averta", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: all 0.2s ease-in-out;
 
   svg {
     width: 18px;
@@ -56,7 +61,12 @@ const CTAButton = styled(Button)`
   }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
+    color: ${({ theme }) => theme.colors.light};
+  }
+  
+  &:active {
+    transform: scale(1);
   }
 `;
 
@@ -69,7 +79,7 @@ export default function ServicesHero() {
       <Subtitle>
         We engineer high-authority content that ranks in search, gets cited by AI, and builds trust with developers and technical buyers.
       </Subtitle>
-      <CTAButton href="/contact">
+      <CTAButton to="/contact">
         Let's talk <Icon.MessageCircle />
       </CTAButton>
     </StyledHero>
