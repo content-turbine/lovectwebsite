@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { sizeAndDown } from "../../styles/responsive";
 
 const Section = styled.section`
@@ -12,7 +13,7 @@ const Section = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 `;
 
@@ -31,10 +32,11 @@ const Eyebrow = styled.span`
 
 const Title = styled.h2`
   font-family: "Gilroy", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
-  margin: 1rem 0 1rem;
+  margin: 1rem 0 1.5rem;
+  line-height: 1.2;
 
   ${sizeAndDown("md")} {
     font-size: 2rem;
@@ -50,86 +52,106 @@ const Subtitle = styled.p`
   line-height: 1.7;
 `;
 
-const MainCard = styled.div`
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.primary} 0%, #1a3a40 100%);
-  border-radius: 24px;
-  padding: 4rem;
-  color: ${({ theme }) => theme.colors.light};
-  text-align: center;
-  margin-bottom: 2rem;
-
-  ${sizeAndDown("md")} {
-    padding: 2.5rem 1.5rem;
-  }
-`;
-
-const MainTitle = styled.h3`
-  font-family: "Gilroy", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 1.5rem;
-
-  ${sizeAndDown("md")} {
-    font-size: 1.5rem;
-  }
-`;
-
-const Taglines = styled.div`
-  margin-bottom: 2.5rem;
-`;
-
-const Tagline = styled.p`
-  font-size: 1.125rem;
-  margin: 0.5rem 0;
-  opacity: 0.85;
-  
-  span {
-    color: ${({ theme }) => theme.colors.teal};
-    font-weight: 600;
-  }
-`;
-
-const FeaturesGrid = styled.div`
+const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  text-align: left;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
 
   ${sizeAndDown("md")} {
     grid-template-columns: 1fr;
   }
 `;
 
-const Feature = styled.div`
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+const Card = styled.div`
+  background: ${({ theme }) => theme.colors.light};
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  }
 `;
 
-const FeatureTitle = styled.h4`
+const CardIcon = styled.div`
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}15, ${({ theme }) => theme.colors.teal}30);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+`;
+
+const CardTitle = styled.h3`
   font-family: "Averta", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.teal};
-  margin: 0 0 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0 0 0.75rem;
 `;
 
-const FeatureDescription = styled.p`
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.85;
+const CardDescription = styled.p`
+  font-size: 1rem;
+  line-height: 1.7;
+  color: ${({ theme }) => theme.colors.text};
+  opacity: 0.75;
   margin: 0;
 `;
 
-const features = [
+const CTAContainer = styled.div`
+  text-align: center;
+  margin-top: 2rem;
+`;
+
+const CompareLink = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Averta", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.primary};
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
+  border-radius: 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.light};
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+`;
+
+const differentiators = [
   {
-    title: "SME-driven content engineering",
-    description: "Not surface-level writing. Deep technical collaboration with your experts.",
+    icon: "🧠",
+    title: "SME-Driven Depth",
+    description:
+      "Real subject-matter experts collaborate with your team—not surface-level writers chasing keywords.",
   },
   {
-    title: "AI optimization built into engineering",
-    description: "Content that AI can answer from, not just compete with. Not tacked on.",
+    icon: "🤖",
+    title: "Built for AI Discovery",
+    description:
+      "Structured for AI search engines (GEO/AEO). Your content becomes the answer, not just another result.",
+  },
+  {
+    icon: "📚",
+    title: "Knowledge Architecture",
+    description:
+      "We build reusable content libraries that compound over time—not one-off blog posts that decay.",
   },
 ];
 
@@ -138,30 +160,32 @@ export default function Differentiator() {
     <Section>
       <Container>
         <Header>
-          <Eyebrow>vs Draft.dev & Copytree</Eyebrow>
+          <Eyebrow>Why Content Turbine</Eyebrow>
           <Title>What Sets Us Apart</Title>
           <Subtitle>
-            While Draft.dev produces developer-friendly content and Copytree focuses on 
-            AI-accelerated writing workflows, Content Turbine builds structured knowledge 
-            ecosystems that power both AI and human discovery.
+            Most content agencies produce words. We engineer technical knowledge 
+            ecosystems that power both human discovery and AI answers.
           </Subtitle>
         </Header>
 
-        <MainCard>
-          <MainTitle>Real Tech Expertise. Architected Authority.</MainTitle>
-          <Taglines>
-            <Tagline>Not just prompts. <span>Not just posts.</span></Tagline>
-            <Tagline>Architected <span>authority</span>.</Tagline>
-          </Taglines>
-          <FeaturesGrid>
-            {features.map((feature, index) => (
-              <div key={index} style={{ background: 'rgba(255, 255, 255, 0.08)', borderRadius: '16px', padding: '1.5rem', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                <FeatureTitle>{feature.title}</FeatureTitle>
-                <FeatureDescription>{feature.description}</FeatureDescription>
-              </div>
-            ))}
-          </FeaturesGrid>
-        </MainCard>
+        <Grid>
+          {differentiators.map((item, index) => (
+            <Card key={index}>
+              <CardIcon>{item.icon}</CardIcon>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
+          ))}
+        </Grid>
+
+        <CTAContainer>
+          <CompareLink to="/compare">
+            See how we compare
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </CompareLink>
+        </CTAContainer>
       </Container>
     </Section>
   );
