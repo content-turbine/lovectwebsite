@@ -168,7 +168,7 @@ const newWayItems = [
 
 export default function Differentiator() {
   return (
-    <Section>
+    <Section id="see-the-difference">
       <Container>
         <Header>
           <Eyebrow>What Sets Us Apart</Eyebrow>

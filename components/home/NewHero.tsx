@@ -325,7 +325,7 @@ export default function NewHero() {
               <Button $primary href="/contact">
                 Talk to Us →
               </Button>
-              <Button href="/sample">
+              <Button href="#see-the-difference">
                 Try a Sample
               </Button>
             </ButtonGroup>
