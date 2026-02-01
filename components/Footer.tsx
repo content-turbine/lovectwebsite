@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
 import { sizeAndDown } from "../styles/responsive";
@@ -10,24 +10,24 @@ export default function Footer() {
       <Container>
         <TopRow>
           <BrandSection>
-            <Logo>
-              <Link href="/">Content Turbine</Link>
-            </Logo>
+            <LogoTitle>
+              <Link to="/">Content Turbine</Link>
+            </LogoTitle>
             <Tagline>Technical Content Built for the Future of Search & AI Discovery</Tagline>
           </BrandSection>
           
           <LinksSection>
             <LinkColumn>
               <ColumnTitle>Company</ColumnTitle>
-              <FooterLink href="/about">About</FooterLink>
-              <FooterLink href="/services">Services</FooterLink>
-              <FooterLink href="/blog">Blog</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
+              <FooterLink to="/about">About</FooterLink>
+              <FooterLink to="/services">Services</FooterLink>
+              <FooterLink to="/blog">Blog</FooterLink>
+              <FooterLink to="/contact">Contact</FooterLink>
             </LinkColumn>
             <LinkColumn>
               <ColumnTitle>Resources</ColumnTitle>
-              <FooterLink href="/freelance">For Creators</FooterLink>
-              <FooterLink href="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/freelance">For Creators</FooterLink>
+              <FooterLink to="/privacy">Privacy Policy</FooterLink>
             </LinkColumn>
           </LinksSection>
 
@@ -56,9 +56,9 @@ export default function Footer() {
         <BottomRow>
           <Copyright>© 2026 Content Turbine</Copyright>
           <BottomLinks>
-            <Link href="/privacy">Privacy</Link>
+            <Link to="/privacy">Privacy</Link>
             <span>•</span>
-            <Link href="/writers_portal_agreement">Terms</Link>
+            <Link to="/writers_portal_agreement">Terms</Link>
           </BottomLinks>
         </BottomRow>
       </Container>
@@ -94,7 +94,7 @@ const TopRow = styled.div`
 
 const BrandSection = styled.div``;
 
-const Logo = styled.h2`
+const LogoTitle = styled.h2`
   font-family: "Gilroy", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -143,7 +143,7 @@ const ColumnTitle = styled.h4`
   margin: 0 0 0.5rem;
 `;
 
-const FooterLink = styled.a`
+const FooterLink = styled(Link)`
   font-size: 0.95rem;
   color: ${({ theme }) => theme.colors.light};
   opacity: 0.8;
