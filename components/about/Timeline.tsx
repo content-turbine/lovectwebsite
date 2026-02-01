@@ -47,9 +47,9 @@ const timelineData: TimelineEvent[] = [
     highlight: "1000+ collaterals",
   },
   {
-    phase: "The Evolution",
-    title: "Architected Authority",
-    description: "Beyond content. We build structured knowledge libraries that compound—optimized for humans AND AI discovery.",
+    phase: "The Outcome",
+    title: "Content That Compounds",
+    description: "Beyond one-off pieces. We build structured knowledge libraries that grow your authority over time—optimized for humans, search engines, and AI discovery.",
     icon: "🚀",
   },
 ];
@@ -60,7 +60,7 @@ export default function Timeline() {
       <Fade triggerOnce>
         <TimelineHeader>
           <HeaderBadge>Our Story</HeaderBadge>
-          <HeaderTitle>From Frustration to Framework</HeaderTitle>
+          <HeaderTitle>From Frustration to Outcomes</HeaderTitle>
         </TimelineHeader>
       </Fade>
 
