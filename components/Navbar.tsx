@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
-import { conf } from "../constants";
 import { rgba } from "polished";
 import { sizeAndDown } from "../styles/responsive";
 import * as Icon from "react-feather";
@@ -59,14 +58,14 @@ export default function Navbar() {
   const mlinks_comp = (
     <MLinks $menuOpen={menuOpen}>
       {navbar_links.map((l: NLinkProps) => (
-        <ScrollLink
+        <NavLinkStyled
           key={"nav_link_" + l.name}
-          name={l.name}
-          pathname={l.pathname}
-          menuOpen={menuOpen}
-          setMenuClosed={toggleMenu}
-          isButton={l.isButton}
-        />
+          to={l.pathname}
+          $isButton={l.isButton}
+          onClick={() => menuOpen && toggleMenu()}
+        >
+          {l.name}
+        </NavLinkStyled>
       ))}
     </MLinks>
   );
@@ -75,7 +74,7 @@ export default function Navbar() {
     <>
       <Nav id="navbar">
         <div className="logo">
-          <Link href="/">
+          <Link to="/">
             <Logo>
               <img src={"/assets/logo.svg"} alt="Content Turbine Logo" />
             </Logo>
@@ -91,24 +90,6 @@ export default function Navbar() {
   );
 }
 
-interface ScrollLinkProps extends NLinkProps {
-  setMenuClosed: () => void;
-  menuOpen: boolean;
-  isButton: boolean;
-}
-
-export const ScrollLink = function NavLink(props: ScrollLinkProps) {
-  return (
-    <NavA
-      href={props.pathname}
-      rel="noopener noreferrer"
-      $isButton={props.isButton}
-    >
-      {props.name}
-    </NavA>
-  );
-};
-
 const FadeInAnimation = keyframes`  
   from { 
     opacity: 0; 
@@ -120,7 +101,7 @@ const FadeInAnimation = keyframes`
   }
 `;
 
-const NavA = styled.a<{ $isButton: boolean }>`
+const NavLinkStyled = styled(Link)<{ $isButton: boolean }>`
   display: flex;
   align-items: center;
   position: relative;
@@ -276,7 +257,7 @@ const MLinks = styled.div<MobileProps>`
         flex-direction: column;
         width: 94vw;
 
-        ${NavA} {
+        ${NavLinkStyled} {
           font-size: 2rem;
           margin: 1rem 0;
         }
@@ -284,7 +265,7 @@ const MLinks = styled.div<MobileProps>`
   }
 `;
 
-const Logo = styled.a`
+const Logo = styled.span`
   display: flex;
   align-items: center;
   font-size: 1.5rem;

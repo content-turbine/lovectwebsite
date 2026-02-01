@@ -13,7 +13,9 @@
     "@material-ui/icons": "^4.11.3",
     "@material-ui/utils": "^4.11.3",
     "@mui/icons-material": "^5.8.4",
+    "@types/react-dom": "^19.2.3",
     "@types/react-google-recaptcha": "^2.1.5",
+    "@vitejs/plugin-react": "^5.1.2",
     "axios": "^0.26.0",
     "next": "12.0.10",
     "node-fetch": "^3.2.3",
@@ -27,11 +29,13 @@
     "react-hook-form": "^7.27.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.4.0",
+    "react-router-dom": "^7.13.0",
     "react-slick": "^0.28.1",
     "react-styled-flex": "^2.2.0",
     "sharp": "^0.30.2",
     "styled-flex-component": "^3.0.5",
     "typewriter-effect": "^2.18.2",
+    "vite": "^7.3.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
