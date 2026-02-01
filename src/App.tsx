@@ -10,6 +10,7 @@ import PrivacyPage from "./pages/Privacy";
 import FreelancePage from "./pages/Freelance";
 import AIPage from "./pages/AI";
 import WritersPortalAgreementPage from "./pages/WritersPortalAgreement";
+import ResourceLandingPage from "./pages/ResourceLanding";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/freelance" element={<FreelancePage />} />
         <Route path="/ai" element={<AIPage />} />
         <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
+        <Route path="/resources/:slug" element={<ResourceLandingPage />} />
       </Routes>
     </Layout>
   );

@@ -198,23 +198,23 @@ const steps = [
   },
   {
     number: "2",
-    label: "Sync",
-    title: "The Brain Dump",
+    label: "Plan",
+    title: "The Brain Dump & Strategy",
     description: (
       <>
         We schedule <StepHighlight>1-on-1 interviews</StepHighlight> with your leadership team to extract vision 
-        and thought leadership content ideas. We also gather product details, brand guidelines, positioning, 
-        ICPs, competitors — and ideally get access to your CMS and analytics.
+        and thought leadership content ideas. We gather product details, brand guidelines, positioning, 
+        ICPs, and competitors. Then we analyze your setup and define your <StepHighlight>content strategy and roadmap</StepHighlight>.
       </>
     ),
   },
   {
     number: "3",
     label: "Ship",
-    title: "Strategy, Production & Go Live",
+    title: "Production & Go Live",
     description: (
       <>
-        Based on our kickoff, we analyze your existing setup, define strategy and a roadmap, and start production. 
+        With strategy locked in, we kick off production immediately. 
         You'll have your <StepHighlight>first content published within 3 weeks</StepHighlight>. We then execute 
         on weekly content delivery and monthly reporting & strategy calls to stay aligned with your goals.
       </>
