@@ -126,17 +126,23 @@ const Tile = styled.div`
 `;
 
 const LogoContainer = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.teal};
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1rem 1.25rem;
   width: fit-content;
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  min-height: 60px;
 
   img {
-    height: 40px;
+    height: 32px;
     width: auto;
-    max-width: 120px;
+    max-width: 100px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
   }
 `;
 
