@@ -226,6 +226,11 @@ const DropdownContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  
+  ${sizeAndDown("md")} {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const DropdownTrigger = styled.span<{ $isButton: boolean }>`
@@ -249,6 +254,7 @@ const DropdownTrigger = styled.span<{ $isButton: boolean }>`
   ${sizeAndDown("md")} {
     font-size: 2rem;
     margin: 1rem 0;
+    justify-content: center;
   }
 `;
 
@@ -278,15 +284,16 @@ const DropdownMenu = styled.div<{ $isOpen?: boolean; $isMobile?: boolean }>`
     css`
       position: static;
       transform: none;
-      min-width: 100%;
+      width: 100%;
       margin-top: 0;
       border: none;
-      padding: 0.5rem 0 0.5rem 1.5rem;
+      padding: 0.5rem 0;
       background: transparent;
       opacity: ${$isOpen ? 1 : 0};
       visibility: ${$isOpen ? "visible" : "hidden"};
       max-height: ${$isOpen ? "300px" : "0"};
       overflow: hidden;
+      text-align: center;
 
       ${DropdownContainer}:hover & {
         opacity: ${$isOpen ? 1 : 0};
@@ -310,7 +317,8 @@ const DropdownItem = styled(Link)`
 
   ${sizeAndDown("md")} {
     font-size: 1.25rem;
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
+    text-align: center;
   }
 `;
 
