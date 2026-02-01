@@ -10,13 +10,31 @@ interface ServiceCategory {
   icon: React.ReactNode;
 }
 
-const discoveryItems = [
-  "Technical Deep Dives",
-  "Stakeholder Interviews", 
-  "Audience Analysis",
-  "Competitive Landscape",
-  "Product Architecture Review",
-  "Goals & KPI Alignment",
+const discoveryCategories: ServiceCategory[] = [
+  {
+    title: "Discovery Call",
+    description: "Before we begin, we want to make sure we're a good fit for you. In our 30-minute discovery session, we'll explore where your business is at, what your content goals are, and walk you through our content strategy, production, and promotion processes.",
+    color: "#E0F7F8",
+    icon: <Icon.Phone size={24} />,
+    items: [
+      "Business Assessment",
+      "Content Goals Review",
+      "Strategy Walkthrough",
+      "Fit Evaluation",
+    ],
+  },
+  {
+    title: "The Brain Dump",
+    description: "Through 1-on-1 interviews with your leadership, engineering, and product teams, we extract the vision, technical depth, and strategic priorities that will fuel your content program.",
+    color: "#E8F4F8",
+    icon: <Icon.Compass size={24} />,
+    items: [
+      "Technical Deep Dives",
+      "Stakeholder Interviews",
+      "Audience Analysis",
+      "Product Architecture Review",
+    ],
+  },
 ];
 
 const strategyCategories: ServiceCategory[] = [
@@ -142,23 +160,22 @@ export default function ServiceCategories() {
           </SectionSubtitle>
         </SectionHeader>
         
-        <DiscoveryCard>
-          <DiscoveryIcon>
-            <Icon.Compass size={32} />
-          </DiscoveryIcon>
-          <DiscoveryContent>
-            <DiscoveryTitle>The Brain Dump</DiscoveryTitle>
-            <DiscoveryDescription>
-              Through 1-on-1 interviews with your leadership, engineering, and product teams, we extract the vision, 
-              technical depth, and strategic priorities that will fuel your content program.
-            </DiscoveryDescription>
-          </DiscoveryContent>
-          <DiscoveryItems>
-            {discoveryItems.map((item, i) => (
-              <DiscoveryItem key={i}>{item}</DiscoveryItem>
-            ))}
-          </DiscoveryItems>
-        </DiscoveryCard>
+        <DiscoveryGrid>
+          {discoveryCategories.map((category, index) => (
+            <CategoryCard key={index} $bgColor={category.color}>
+              <CardHeader>
+                <IconWrapper>{category.icon}</IconWrapper>
+                <CategoryTitle>{category.title}</CategoryTitle>
+              </CardHeader>
+              <CategoryDescription>{category.description}</CategoryDescription>
+              <ItemsList>
+                {category.items.map((item, i) => (
+                  <Item key={i}>{item}</Item>
+                ))}
+              </ItemsList>
+            </CategoryCard>
+          ))}
+        </DiscoveryGrid>
       </FlowStage>
 
       {/* Stage 2: Strategy */}
@@ -346,82 +363,14 @@ const SectionSubtitle = styled.p`
   }
 `;
 
-const DiscoveryCard = styled.div`
-  background: linear-gradient(135deg, rgba(44, 206, 210, 0.08), rgba(44, 206, 210, 0.02));
-  border: 1px solid rgba(44, 206, 210, 0.2);
-  border-radius: 20px;
-  padding: 2.5rem;
+const DiscoveryGrid = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
-  gap: 1.5rem 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 
   ${sizeAndDown("md")} {
     grid-template-columns: 1fr;
-    padding: 1.5rem;
-    gap: 1rem;
   }
-`;
-
-const DiscoveryIcon = styled.div`
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}, ${({ theme }) => theme.colors.primary});
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-
-  ${sizeAndDown("md")} {
-    width: 48px;
-    height: 48px;
-    
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-`;
-
-const DiscoveryContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const DiscoveryTitle = styled.h3`
-  font-family: "Averta", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.text};
-  margin: 0 0 0.5rem 0;
-`;
-
-const DiscoveryDescription = styled.p`
-  font-family: "Averta", sans-serif;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.text};
-  opacity: 0.7;
-  line-height: 1.6;
-  margin: 0;
-`;
-
-const DiscoveryItems = styled.div`
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-`;
-
-const DiscoveryItem = styled.span`
-  font-family: "Averta", sans-serif;
-  font-size: 0.85rem;
-  background: rgba(44, 206, 210, 0.15);
-  color: ${({ theme }) => theme.colors.text};
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  white-space: nowrap;
 `;
 
 const CategoriesGrid = styled.div`
