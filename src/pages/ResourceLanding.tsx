@@ -4,6 +4,14 @@ import { useParams } from "react-router-dom";
 import { sizeAndDown } from "../../styles/responsive";
 import * as Icon from "react-feather";
 import { conf } from "../../constants";
+import { z } from "zod";
+import toast, { Toaster } from "react-hot-toast";
+
+const leadSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please enter a valid email").max(255, "Email must be less than 255 characters"),
+  company: z.string().trim().min(1, "Company is required").max(100, "Company must be less than 100 characters"),
+});
 
 interface ResourceData {
   slug: string;
@@ -85,15 +93,53 @@ export default function ResourceLanding() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    const validation = leadSchema.safeParse(formState);
+    if (!validation.success) {
+      const firstError = validation.error.issues[0];
+      toast.error(firstError.message);
+      return;
+    }
+
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: conf.web3forms_key,
+          name: formState.name,
+          email: formState.email,
+          company: formState.company,
+          resource_requested: resource?.title,
+          resource_type: resource?.type,
+          subject: `New Lead: ${resource?.title} Download`,
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setIsSubmitted(true);
+        toast.success("Thank you! Check your email for the resource.");
+      } else {
+        throw new Error(data.message || "Submission failed");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <Page>
+      <Toaster position="bottom-center" />
       <HeroSection $gradient={resource.gradient}>
         <HeroContent>
           <ResourceType>{resource.type}</ResourceType>

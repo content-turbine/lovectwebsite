@@ -4,6 +4,7 @@ export const conf = {
   tagline: "",
   deploy_url: "https://contentturbine.com",
   calendly_link: "https://calendly.com/sharalpinto/quick-sync?month=2022-03",
+  web3forms_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your actual key from web3forms.com
 };
 
 // TODO: update social links
