@@ -1,6 +1,5 @@
 import Timeline from "../../components/about/Timeline";
 import Team from "../../components/about/Team";
-import JoinUs from "../../components/about/JoinUs";
 import TrustedBy from "../../components/TrustedBy";
 
 export default function About() {
@@ -8,7 +7,6 @@ export default function About() {
     <>
       <Timeline />
       <Team />
-      <JoinUs />
       <TrustedBy />
     </>
   );
