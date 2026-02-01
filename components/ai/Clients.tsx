@@ -57,7 +57,7 @@ const Clients = () => {
               margin: "10px",
             }}
           >
-            <img src={d.image.src} alt={d.name} />
+            <img src={d.image} alt={d.name} />
           </div>
         ))}
       </div>

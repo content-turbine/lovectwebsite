@@ -107,7 +107,7 @@ export default function FAQ() {
           </DropdownSection>
         </div>
         <div className="faq-image">
-          <img src={img.src} alt="FAQ" className="" />
+          <img src={img} alt="FAQ" className="" />
         </div>
       </div>
     </div>

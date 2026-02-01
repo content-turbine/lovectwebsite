@@ -22,7 +22,7 @@ const WritersPortalBanner = () => {
         </WaitlistButton>
       </div>
       <div className="banner-box-image">
-        <img src={vectorImg.src} alt="Writers Portal" />
+        <img src={vectorImg} alt="Writers Portal" />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const HandleTheRest = () => {
       </h1>
       <div className="handle-reset-section">
         <div className="handle-the-reset-img">
-          <img src={img.src} alt="" />
+          <img src={img} alt="" />
         </div>
         <div className="handle-the-reset-text">
           <p className="averta gray rem-1 line-height">
