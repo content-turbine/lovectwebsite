@@ -249,16 +249,15 @@ export default function NewHero() {
           <Content>
             <Eyebrow>Content Turbine</Eyebrow>
             <Title>
-              Technical Content That Drives <span>Discovery, Trust & Growth</span>
+              Technical Content Built for <span>Humans, Search & AI</span>
             </Title>
             <Subtitle>
-              We help B2B software and developer-focused companies build high-authority 
-              technical content that ranks in AI search, performs in SEO, and converts 
-              engineers, architects, and technical buyers at scale.
+              Content Turbine helps B2B software companies turn deep technical expertise 
+              into high-authority content that ranks in search, shows up in AI answers, 
+              and earns trust from real engineers.
             </Subtitle>
             <Tagline>
-              A smarter way to produce technical content — faster, more credible, 
-              and built for the AI era.
+              Not just written. Engineered.
             </Tagline>
             <ButtonGroup>
               <Button $primary href={conf.calendly_link} target="_blank">
