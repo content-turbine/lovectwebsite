@@ -158,31 +158,36 @@ const EventCard = styled.div<{ $isProblem?: boolean }>`
   gap: 1.25rem;
   padding: 1.5rem;
   max-width: 550px;
-  background: ${({ $isProblem }) => 
+  background: ${({ $isProblem, theme }) => 
     $isProblem 
-      ? "linear-gradient(135deg, rgba(255, 100, 100, 0.08), rgba(255, 150, 100, 0.05))"
-      : "rgba(255, 255, 255, 0.03)"
+      ? "linear-gradient(135deg, rgba(255, 100, 100, 0.12), rgba(255, 150, 100, 0.08))"
+      : `linear-gradient(135deg, ${theme.colors.teal}15, ${theme.colors.teal}08)`
   };
   backdrop-filter: blur(10px);
-  border: 1px solid ${({ $isProblem, theme }) => 
+  border: 2px solid ${({ $isProblem, theme }) => 
     $isProblem 
-      ? "rgba(255, 100, 100, 0.2)"
-      : "rgba(255, 255, 255, 0.08)"
+      ? "rgba(255, 100, 100, 0.3)"
+      : theme.colors.teal + "40"
   };
   border-radius: 16px;
   transition: all 0.3s ease;
+  box-shadow: ${({ $isProblem, theme }) => 
+    $isProblem 
+      ? "0 8px 24px rgba(255, 100, 100, 0.1)"
+      : `0 8px 24px ${theme.colors.teal}15`
+  };
   
   &:hover {
     transform: translateY(-4px);
-    box-shadow: ${({ $isProblem }) => 
+    box-shadow: ${({ $isProblem, theme }) => 
       $isProblem 
-        ? "0 20px 40px rgba(255, 100, 100, 0.15)"
-        : "0 20px 40px rgba(0, 0, 0, 0.2)"
+        ? "0 20px 40px rgba(255, 100, 100, 0.2)"
+        : `0 20px 40px ${theme.colors.teal}25`
     };
     border-color: ${({ $isProblem, theme }) => 
       $isProblem 
-        ? "rgba(255, 100, 100, 0.4)"
-        : theme.colors.teal + "40"
+        ? "rgba(255, 100, 100, 0.5)"
+        : theme.colors.teal + "70"
     };
   }
   
