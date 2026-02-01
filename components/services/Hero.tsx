@@ -64,10 +64,10 @@ export default function ServicesHero() {
   return (
     <StyledHero>
       <Headline>
-        Architected Authority for technical products
+        Technical Content That Works Everywhere
       </Headline>
       <Subtitle>
-        Create a structured knowledge ecosystem tailored to your goals—whether you're building developer awareness or scaling content operations.
+        We engineer high-authority content that ranks in search, gets cited by AI, and builds trust with developers and technical buyers.
       </Subtitle>
       <CTAButton href={conf.calendly_link} target="_blank">
         Let's talk <Icon.MessageCircle />

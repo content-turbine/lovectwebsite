@@ -9,7 +9,15 @@ interface NLinkProps {
   name: string;
   pathname: string;
   isButton: boolean;
+  isDropdown?: boolean;
+  dropdownItems?: { name: string; pathname: string }[];
 }
+
+const resourceDropdownItems = [
+  { name: "AI Content Framework", pathname: "/resources/ai-content-framework" },
+  { name: "Content Audit Checklist", pathname: "/resources/content-audit-checklist" },
+  { name: "AEO Playbook", pathname: "/resources/aeo-playbook" },
+];
 
 export const navbar_links: NLinkProps[] = [
   {
@@ -34,8 +42,10 @@ export const navbar_links: NLinkProps[] = [
   },
   {
     name: "Resources",
-    pathname: "/resources/ai-content-framework",
+    pathname: "/resources",
     isButton: false,
+    isDropdown: true,
+    dropdownItems: resourceDropdownItems,
   },
   {
     name: "Let's Chat",
@@ -46,6 +56,7 @@ export const navbar_links: NLinkProps[] = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     if (document !== null && window !== null) {
@@ -60,18 +71,60 @@ export default function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
+  const renderNavLink = (l: NLinkProps, isMobile: boolean = false) => {
+    if (l.isDropdown && l.dropdownItems) {
+      return (
+        <DropdownContainer
+          key={"nav_link_" + l.name}
+          onMouseEnter={() => !isMobile && setDropdownOpen(true)}
+          onMouseLeave={() => !isMobile && setDropdownOpen(false)}
+        >
+          <DropdownTrigger
+            $isButton={false}
+            onClick={() => isMobile && setDropdownOpen(!dropdownOpen)}
+          >
+            {l.name}
+            <Icon.ChevronDown size={16} style={{ marginLeft: "4px" }} />
+          </DropdownTrigger>
+          <DropdownMenu $isOpen={isMobile ? dropdownOpen : undefined} $isMobile={isMobile}>
+            {l.dropdownItems.map((item) => (
+              <DropdownItem
+                key={item.pathname}
+                to={item.pathname}
+                onClick={() => {
+                  if (menuOpen) toggleMenu();
+                  setDropdownOpen(false);
+                }}
+              >
+                {item.name}
+              </DropdownItem>
+            ))}
+          </DropdownMenu>
+        </DropdownContainer>
+      );
+    }
+
+    return (
+      <NavLinkStyled
+        key={"nav_link_" + l.name}
+        to={l.pathname}
+        $isButton={l.isButton}
+        onClick={() => menuOpen && toggleMenu()}
+      >
+        {l.name}
+      </NavLinkStyled>
+    );
+  };
+
   const mlinks_comp = (
     <MLinks $menuOpen={menuOpen}>
-      {navbar_links.map((l: NLinkProps) => (
-        <NavLinkStyled
-          key={"nav_link_" + l.name}
-          to={l.pathname}
-          $isButton={l.isButton}
-          onClick={() => menuOpen && toggleMenu()}
-        >
-          {l.name}
-        </NavLinkStyled>
-      ))}
+      {navbar_links.map((l) => renderNavLink(l, false))}
+    </MLinks>
+  );
+
+  const mobileLinks_comp = (
+    <MLinks $menuOpen={menuOpen}>
+      {navbar_links.map((l) => renderNavLink(l, true))}
     </MLinks>
   );
 
@@ -90,7 +143,7 @@ export default function Navbar() {
         </Hamburger>
         <DLinkWrapper>{mlinks_comp}</DLinkWrapper>
       </Nav>
-      <MLinkWrapper $menuOpen={menuOpen}>{mlinks_comp}</MLinkWrapper>
+      <MLinkWrapper $menuOpen={menuOpen}>{mobileLinks_comp}</MLinkWrapper>
     </>
   );
 }
@@ -170,6 +223,98 @@ const NavLinkStyled = styled(Link)<{ $isButton: boolean }>`
     animation-direction: normal;
     animation-fill-mode: both;
     animation-play-state: running;
+  }
+`;
+
+const DropdownContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+const DropdownTrigger = styled.span<{ $isButton: boolean }>`
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 2rem;
+  color: ${({ theme }) => theme.colors.light};
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.teal};
+  }
+
+  ${sizeAndDown("lg")} {
+    margin: 0 1rem;
+  }
+
+  ${sizeAndDown("md")} {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+`;
+
+const DropdownMenu = styled.div<{ $isOpen?: boolean; $isMobile?: boolean }>`
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => rgba(theme.colors.light, 0.15)};
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+  margin-top: 0.5rem;
+
+  ${DropdownContainer}:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ${({ $isMobile, $isOpen }) =>
+    $isMobile &&
+    css`
+      position: static;
+      transform: none;
+      min-width: 100%;
+      margin-top: 0;
+      border: none;
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      background: transparent;
+      opacity: ${$isOpen ? 1 : 0};
+      visibility: ${$isOpen ? "visible" : "hidden"};
+      max-height: ${$isOpen ? "300px" : "0"};
+      overflow: hidden;
+
+      ${DropdownContainer}:hover & {
+        opacity: ${$isOpen ? 1 : 0};
+        visibility: ${$isOpen ? "visible" : "hidden"};
+      }
+    `}
+`;
+
+const DropdownItem = styled(Link)`
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: ${({ theme }) => theme.colors.light};
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: ${({ theme }) => rgba(theme.colors.teal, 0.15)};
+    color: ${({ theme }) => theme.colors.teal};
+  }
+
+  ${sizeAndDown("md")} {
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
   }
 `;
 
