@@ -1,266 +1,287 @@
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
-import { CFade } from "../Animation";
+import { Fade, Slide } from "react-awesome-reveal";
 
 interface TimelineEvent {
-  year: string;
+  phase: string;
   title: string;
   description: string;
   icon: string;
   highlight?: string;
+  isProblem?: boolean;
 }
 
 const timelineData: TimelineEvent[] = [
   {
-    year: "The Spark",
-    title: "A Frustration Became a Mission",
-    description: "Tired of seeing brilliant tech products buried under buzzwords and fluff. Developers deserved better—content that respects their intelligence.",
+    phase: "The Problem",
+    title: "Technical Content Was Broken",
+    description: "Brilliant tech products buried under buzzwords. Developers drowning in fluff. Marketing that talked AT technical audiences, not WITH them.",
+    icon: "🔥",
+    isProblem: true,
+  },
+  {
+    phase: "The Insight",
+    title: "Developers Hate Being Sold To",
+    description: "They want to learn, not be marketed to. They want proof, not promises. They want code, not claims.",
     icon: "💡",
-    highlight: "The idea was born"
+    isProblem: true,
   },
   {
-    year: "The Foundation",
-    title: "Assembling the Right Minds",
-    description: "Engineers, writers, and marketers who shared one belief: technical content should teach, not trick. No jargon. No fluff. Just value.",
-    icon: "🧱",
-  },
-  {
-    year: "First Win",
-    title: "Proving the Model Works",
-    description: "Our first client saw 3x engagement on technical docs. Word spread. The 'anti-fluff' approach resonated with dev-focused companies.",
+    phase: "The Mission",
+    title: "No-Fluff Technical Content",
+    description: "We assembled engineers, writers, and marketers who believe technical content should teach, not trick.",
     icon: "🎯",
   },
   {
-    year: "Scaling Up",
-    title: "20+ Companies Trust Us",
-    description: "From startups to enterprises, we've helped teams cut through noise and connect with technical audiences authentically.",
+    phase: "The Proof",
+    title: "20+ Companies Trusted Us",
+    description: "From startups to enterprises—3x engagement on docs, developer communities built from scratch.",
     icon: "📈",
-    highlight: "20+ customers"
+    highlight: "20+ customers",
   },
   {
-    year: "The Library",
-    title: "1000+ Pieces Created",
-    description: "Blogs, docs, tutorials, case studies—each one crafted to earn developer trust, not just clicks.",
+    phase: "The Scale",
+    title: "1000+ Pieces That Work",
+    description: "Blogs, docs, tutorials, case studies—each crafted to earn developer trust, not just clicks.",
     icon: "📚",
-    highlight: "1000+ collaterals"
+    highlight: "1000+ collaterals",
   },
   {
-    year: "Today",
+    phase: "The Evolution",
     title: "Architected Authority",
-    description: "We've evolved beyond content. We build structured knowledge libraries that compound—optimized for humans AND AI discovery.",
+    description: "Beyond content. We build structured knowledge libraries that compound—optimized for humans AND AI discovery.",
     icon: "🚀",
-  },
-  {
-    year: "Tomorrow",
-    title: "Your Story Joins Ours",
-    description: "Every tech company has a story worth telling right. We're here to help you tell yours—without the fluff.",
-    icon: "✨",
   },
 ];
 
 export default function Timeline() {
   return (
     <TimelineWrapper>
-      <CFade>
+      <Fade triggerOnce>
         <TimelineHeader>
-          <HeaderIcon>📖</HeaderIcon>
-          <HeaderTitle>Our Journey</HeaderTitle>
-          <HeaderSubtitle>From frustration to framework—here's how we got here</HeaderSubtitle>
+          <HeaderBadge>Our Story</HeaderBadge>
+          <HeaderTitle>From Frustration to Framework</HeaderTitle>
         </TimelineHeader>
-        
-        <TimelineContainer>
-          <TimelineLine />
-          {timelineData.map((event, index) => (
-            <TimelineItem key={index} $isLeft={index % 2 === 0}>
-              <TimelineContent $isLeft={index % 2 === 0}>
-                <TimelineIcon>{event.icon}</TimelineIcon>
-                <TimelineYear>{event.year}</TimelineYear>
-                <TimelineTitle>{event.title}</TimelineTitle>
-                <TimelineDescription>{event.description}</TimelineDescription>
-                {event.highlight && (
-                  <TimelineHighlight>{event.highlight}</TimelineHighlight>
-                )}
-              </TimelineContent>
-              <TimelineDot $hasHighlight={!!event.highlight} />
-            </TimelineItem>
-          ))}
-        </TimelineContainer>
-      </CFade>
+      </Fade>
+
+      <ZigZagContainer>
+        {timelineData.map((event, index) => (
+          <ZigZagRow key={index} $isEven={index % 2 === 0}>
+            <Slide 
+              direction={index % 2 === 0 ? "left" : "right"} 
+              triggerOnce 
+              delay={index * 100}
+            >
+              <EventCard $isProblem={event.isProblem}>
+                <EventIcon $isProblem={event.isProblem}>{event.icon}</EventIcon>
+                <EventContent>
+                  <EventPhase $isProblem={event.isProblem}>{event.phase}</EventPhase>
+                  <EventTitle>{event.title}</EventTitle>
+                  <EventDescription>{event.description}</EventDescription>
+                  {event.highlight && (
+                    <EventHighlight>{event.highlight}</EventHighlight>
+                  )}
+                </EventContent>
+                <Connector $isEven={index % 2 === 0} $isLast={index === timelineData.length - 1} />
+              </EventCard>
+            </Slide>
+          </ZigZagRow>
+        ))}
+      </ZigZagContainer>
     </TimelineWrapper>
   );
 }
 
 const TimelineWrapper = styled.section`
-  padding: 5rem 2rem;
-  max-width: 1200px;
+  padding: 4rem 2rem 2rem;
+  max-width: 1100px;
   margin: 0 auto;
+  overflow: hidden;
   
   ${sizeAndDown("md")} {
-    padding: 3rem 1rem;
+    padding: 3rem 1rem 1rem;
   }
 `;
 
 const TimelineHeader = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
-`;
-
-const HeaderIcon = styled.div`
-  font-size: 3rem;
-  margin-bottom: 1rem;
-`;
-
-const HeaderTitle = styled.h2`
-  font-family: "Gilroy", sans-serif;
-  font-size: 3rem;
-  color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 0.5rem;
-  
-  ${sizeAndDown("md")} {
-    font-size: 2.2rem;
-  }
-`;
-
-const HeaderSubtitle = styled.p`
-  font-family: "Averta", sans-serif;
-  font-size: 1.25rem;
-  color: ${({ theme }) => theme.colors.text};
-  opacity: 0.7;
-`;
-
-const TimelineContainer = styled.div`
-  position: relative;
-  padding: 2rem 0;
-`;
-
-const TimelineLine = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    ${({ theme }) => theme.colors.teal} 10%,
-    ${({ theme }) => theme.colors.teal} 90%,
-    transparent
-  );
-  transform: translateX(-50%);
-  
-  ${sizeAndDown("md")} {
-    left: 20px;
-  }
-`;
-
-const TimelineItem = styled.div<{ $isLeft: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: ${({ $isLeft }) => ($isLeft ? "flex-start" : "flex-end")};
-  position: relative;
   margin-bottom: 3rem;
-  
-  ${sizeAndDown("md")} {
-    justify-content: flex-start;
-    padding-left: 50px;
-  }
 `;
 
-const TimelineContent = styled.div<{ $isLeft: boolean }>`
-  width: 42%;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  position: relative;
-  transition: all 0.3s ease;
-  
-  ${({ $isLeft }) => $isLeft ? `
-    margin-right: auto;
-    margin-left: 0;
-  ` : `
-    margin-left: auto;
-    margin-right: 0;
-  `}
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: ${({ theme }) => theme.colors.teal}40;
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  ${sizeAndDown("md")} {
-    width: 100%;
-    margin: 0;
-  }
-`;
-
-const TimelineDot = styled.div<{ $hasHighlight: boolean }>`
-  position: absolute;
-  left: 50%;
-  width: ${({ $hasHighlight }) => ($hasHighlight ? "20px" : "14px")};
-  height: ${({ $hasHighlight }) => ($hasHighlight ? "20px" : "14px")};
-  background: ${({ theme, $hasHighlight }) => 
-    $hasHighlight ? theme.colors.peach : theme.colors.teal};
-  border-radius: 50%;
-  transform: translateX(-50%);
-  border: 3px solid ${({ theme }) => theme.colors.background || "#0f0f0f"};
-  z-index: 2;
-  box-shadow: ${({ $hasHighlight }) => 
-    $hasHighlight ? "0 0 20px rgba(255, 150, 100, 0.5)" : "0 0 10px rgba(0, 200, 200, 0.3)"};
-  
-  ${sizeAndDown("md")} {
-    left: 20px;
-  }
-`;
-
-const TimelineIcon = styled.div`
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-`;
-
-const TimelineYear = styled.span`
+const HeaderBadge = styled.span`
   display: inline-block;
   font-family: "Gilroy", sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.teal};
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  background: ${({ theme }) => theme.colors.teal}15;
+  border-radius: 20px;
 `;
 
-const TimelineTitle = styled.h3`
+const HeaderTitle = styled.h1`
   font-family: "Gilroy", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.8rem;
   color: ${({ theme }) => theme.colors.text};
-  margin-bottom: 0.75rem;
+  margin: 0;
   
   ${sizeAndDown("md")} {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 `;
 
-const TimelineDescription = styled.p`
-  font-family: "Averta", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.7;
+const ZigZagContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+`;
+
+const ZigZagRow = styled.div<{ $isEven: boolean }>`
+  display: flex;
+  justify-content: ${({ $isEven }) => ($isEven ? "flex-start" : "flex-end")};
+  padding: ${({ $isEven }) => ($isEven ? "0 0 0 0" : "0 0 0 15%")};
+  
+  ${sizeAndDown("md")} {
+    justify-content: center;
+    padding: 0;
+  }
+`;
+
+const EventCard = styled.div<{ $isProblem?: boolean }>`
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  max-width: 550px;
+  background: ${({ $isProblem }) => 
+    $isProblem 
+      ? "linear-gradient(135deg, rgba(255, 100, 100, 0.08), rgba(255, 150, 100, 0.05))"
+      : "rgba(255, 255, 255, 0.03)"
+  };
+  backdrop-filter: blur(10px);
+  border: 1px solid ${({ $isProblem, theme }) => 
+    $isProblem 
+      ? "rgba(255, 100, 100, 0.2)"
+      : "rgba(255, 255, 255, 0.08)"
+  };
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: ${({ $isProblem }) => 
+      $isProblem 
+        ? "0 20px 40px rgba(255, 100, 100, 0.15)"
+        : "0 20px 40px rgba(0, 0, 0, 0.2)"
+    };
+    border-color: ${({ $isProblem, theme }) => 
+      $isProblem 
+        ? "rgba(255, 100, 100, 0.4)"
+        : theme.colors.teal + "40"
+    };
+  }
+  
+  ${sizeAndDown("md")} {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+`;
+
+const EventIcon = styled.div<{ $isProblem?: boolean }>`
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${({ $isProblem, theme }) => 
+    $isProblem 
+      ? "rgba(255, 100, 100, 0.15)"
+      : theme.colors.teal + "15"
+  };
+  border-radius: 12px;
+`;
+
+const EventContent = styled.div`
+  flex: 1;
+`;
+
+const EventPhase = styled.span<{ $isProblem?: boolean }>`
+  display: inline-block;
+  font-family: "Gilroy", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: ${({ $isProblem, theme }) => 
+    $isProblem ? "#ff6b6b" : theme.colors.teal
+  };
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.25rem;
+`;
+
+const EventTitle = styled.h3`
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.25rem;
   color: ${({ theme }) => theme.colors.text};
-  opacity: 0.8;
+  margin: 0 0 0.5rem 0;
+  
+  ${sizeAndDown("md")} {
+    font-size: 1.1rem;
+  }
+`;
+
+const EventDescription = styled.p`
+  font-family: "Averta", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: ${({ theme }) => theme.colors.text};
+  opacity: 0.75;
   margin: 0;
 `;
 
-const TimelineHighlight = styled.span`
+const EventHighlight = styled.span`
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}20, ${({ theme }) => theme.colors.peach}20);
-  border: 1px solid ${({ theme }) => theme.colors.teal}40;
-  border-radius: 20px;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal}25, ${({ theme }) => theme.colors.peach}20);
+  border: 1px solid ${({ theme }) => theme.colors.teal}50;
+  border-radius: 16px;
   font-family: "Gilroy", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.teal};
+`;
+
+const Connector = styled.div<{ $isEven: boolean; $isLast: boolean }>`
+  display: ${({ $isLast }) => ($isLast ? "none" : "block")};
+  position: absolute;
+  bottom: -1rem;
+  ${({ $isEven }) => ($isEven ? "right: 30px" : "left: 30px")};
+  width: 2px;
+  height: 1rem;
+  background: ${({ theme }) => theme.colors.teal}40;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: ${({ theme }) => theme.colors.teal};
+    border-radius: 50%;
+  }
+  
+  ${sizeAndDown("md")} {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
 `;
