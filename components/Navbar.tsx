@@ -31,21 +31,16 @@ export const navbar_links: NLinkProps[] = [
     isButton: false,
   },
   {
-    name: "About",
-    pathname: "/about",
-    isButton: false,
-  },
-  {
-    name: "For Creator",
-    pathname: "/freelance",
-    isButton: false,
-  },
-  {
     name: "Resources",
     pathname: "/resources",
     isButton: false,
     isDropdown: true,
     dropdownItems: resourceDropdownItems,
+  },
+  {
+    name: "About",
+    pathname: "/about",
+    isButton: false,
   },
   {
     name: "Let's Chat",
