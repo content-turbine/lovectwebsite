@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { conf } from "../../constants";
-import turbineIcon from "@/assets/content-turbine-logo-white.png";
+import turbineIcon from "@/assets/content-turbine-icon.png";
 
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -313,8 +313,7 @@ const TurbineImage = styled.img`
   height: auto;
   object-fit: contain;
   animation: ${spinSlow} 15s linear infinite;
-  filter: drop-shadow(0 0 20px rgba(44, 206, 210, 0.5));
-  image-rendering: -webkit-optimize-contrast;
+  filter: invert(1) drop-shadow(0 0 20px rgba(44, 206, 210, 0.5));
   
   ${sizeAndDown("md")} {
     max-width: 150px;
