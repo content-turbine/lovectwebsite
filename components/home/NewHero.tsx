@@ -238,8 +238,37 @@ const AnchorButton = styled.a<{ $primary?: boolean }>`
 const Visual = styled.div`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+`;
+
+const MobileCards = styled.div`
+  display: none;
+  
+  ${sizeAndDown("md")} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+`;
+
+const MobileCard = styled.div`
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  animation: ${popUp} 0.5s ease-out both;
+  
+  &:nth-child(1) { animation-delay: 0.2s; }
+  &:nth-child(2) { animation-delay: 0.4s; }
+  &:nth-child(3) { animation-delay: 0.6s; }
 `;
 
 const FloatingCard = styled.div<{ $delay?: number; $top?: string; $right?: string; $left?: string }>`
@@ -393,6 +422,20 @@ export default function NewHero() {
               <FloatingBubble $size="30px" $top="40%" $right="10%" $delay={1.8} />
               <FloatingBubble $size="50px" $top="10%" $right="25%" $delay={2.2} />
             </MainVisual>
+            <MobileCards>
+              <MobileCard>
+                <CardIcon>🎯</CardIcon>
+                <CardText>AI-Optimized</CardText>
+              </MobileCard>
+              <MobileCard>
+                <CardIcon>⚡</CardIcon>
+                <CardText>SEO-Ready</CardText>
+              </MobileCard>
+              <MobileCard>
+                <CardIcon>🔧</CardIcon>
+                <CardText>Developer-First</CardText>
+              </MobileCard>
+            </MobileCards>
           </Visual>
         </Grid>
       </Container>
