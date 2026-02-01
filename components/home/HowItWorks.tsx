@@ -183,6 +183,48 @@ const StepHighlight = styled.span`
   font-weight: 600;
 `;
 
+const CTAWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-left: 80px;
+  
+  ${sizeAndDown("md")} {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+`;
+
+const CTAButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    ${({ theme }) => theme.colors.teal} 0%,
+    ${({ theme }) => theme.colors.primary} 100%
+  );
+  color: ${({ theme }) => theme.colors.light};
+  box-shadow: 0 8px 24px rgba(44, 206, 210, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(44, 206, 210, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+`;
+
 const steps = [
   {
     number: "1",
@@ -250,6 +292,12 @@ export default function HowItWorks() {
             </StepRow>
           ))}
         </Timeline>
+        
+        <CTAWrapper>
+          <CTAButton href="/contact">
+            Let's Go → Book Your Discovery Call
+          </CTAButton>
+        </CTAWrapper>
       </Container>
     </Section>
   );
