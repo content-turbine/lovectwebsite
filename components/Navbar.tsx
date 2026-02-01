@@ -33,6 +33,11 @@ export const navbar_links: NLinkProps[] = [
     isButton: false,
   },
   {
+    name: "Resources",
+    pathname: "/resources/ai-content-framework",
+    isButton: false,
+  },
+  {
     name: "Let's Chat",
     pathname: "/contact",
     isButton: true,
