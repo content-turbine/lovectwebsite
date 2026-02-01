@@ -23,33 +23,21 @@ const discoveryCategories: ServiceCategory[] = [
       "Fit Evaluation",
     ],
   },
-  {
-    title: "The Brain Dump",
-    description: "Through 1-on-1 interviews with your leadership, engineering, and product teams, we extract the vision, technical depth, and strategic priorities that will fuel your content program.",
-    color: "#E8F4F8",
-    icon: <Icon.Compass size={24} />,
-    items: [
-      "Technical Deep Dives",
-      "Stakeholder Interviews",
-      "Audience Analysis",
-      "Product Architecture Review",
-    ],
-  },
 ];
 
 const strategyCategories: ServiceCategory[] = [
   {
-    title: "Content Strategy",
-    description: "Transform from ad-hoc content to a laser-focused program that doesn't rely on chance. Prioritize the most impactful distribution channels and content types.",
+    title: "The Brain Dump & Content Strategy",
+    description: "Through 1-on-1 interviews with your leadership, engineering, and product teams, we extract vision and thought leadership content ideas. We gather product details, brand guidelines, positioning, ICPs, and competitors to define your content strategy and roadmap.",
     color: "#FEF9C3",
     icon: <Icon.Target size={24} />,
     items: [
+      "Stakeholder Interviews",
+      "Technical Deep Dives",
       "Content Audits",
       "Topic Identification",
       "Editorial Calendars",
       "Distribution Strategy",
-      "Messaging Development",
-      "Campaign Planning",
     ],
   },
   {
