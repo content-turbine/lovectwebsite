@@ -2,6 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { conf } from "../../constants";
+import turbineIcon from "@/assets/turbine-icon.png";
 
 const float = keyframes`
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -302,6 +303,23 @@ const FloatingBubble = styled.div<{ $size: string; $top?: string; $right?: strin
   bottom: ${({ $bottom }) => $bottom || "auto"};
 `;
 
+const spinSlow = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
+
+const TurbineImage = styled.img`
+  width: 180px;
+  height: 180px;
+  animation: ${spinSlow} 15s linear infinite;
+  filter: drop-shadow(0 0 20px rgba(44, 206, 210, 0.5));
+  
+  ${sizeAndDown("md")} {
+    width: 140px;
+    height: 140px;
+  }
+`;
+
 export default function NewHero() {
   return (
     <StyledHero>
@@ -345,6 +363,7 @@ export default function NewHero() {
               <CardText>Developer-First</CardText>
             </FloatingCard>
             <MainVisual>
+              <TurbineImage src={turbineIcon} alt="Content Turbine" />
               <FloatingBubble $size="60px" $top="20%" $left="15%" $delay={0.5} />
               <FloatingBubble $size="40px" $top="60%" $right="20%" $delay={1.2} />
               <FloatingBubble $size="80px" $bottom="10%" $left="30%" $delay={0.8} />
