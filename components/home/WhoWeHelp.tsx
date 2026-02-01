@@ -111,10 +111,10 @@ export default function WhoWeHelp() {
 
         <RolesGrid>
           {roles.map((role, index) => (
-            <div key={index} style={{ background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '16px', padding: '2rem', transition: 'all 0.3s ease' }}>
+            <RoleCard key={index}>
               <RoleTitle>{role.title}</RoleTitle>
               <RoleValue>{role.value}</RoleValue>
-            </div>
+            </RoleCard>
           ))}
         </RolesGrid>
       </Container>
