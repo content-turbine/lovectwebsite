@@ -30,7 +30,8 @@ const resourcesData: ResourceData[] = [
     type: "Framework",
     title: "The AI-Era Content Strategy Framework",
     headline: "Build content that wins in the age of AI search",
-    description: "A comprehensive framework to create technical content that performs across Google, AI Overviews, ChatGPT, Perplexity, and emerging LLM-based discovery tools. Stop guessing—start building structured authority.",
+    description:
+      "A comprehensive framework to create technical content that performs across Google, AI Overviews, ChatGPT, Perplexity, and emerging LLM-based discovery tools. Stop guessing—start building structured authority.",
     benefits: [
       "Understand how AI tools evaluate and surface content",
       "Structure your content for maximum discoverability",
@@ -46,7 +47,8 @@ const resourcesData: ResourceData[] = [
     type: "Checklist",
     title: "Technical Content Audit Checklist",
     headline: "50+ checkpoints to evaluate your developer content",
-    description: "A practical, actionable checklist to audit your developer documentation, tutorials, API references, and technical blog posts. Identify gaps, prioritize improvements, and benchmark against industry standards.",
+    description:
+      "A practical, actionable checklist to audit your developer documentation, tutorials, API references, and technical blog posts. Identify gaps, prioritize improvements, and benchmark against industry standards.",
     benefits: [
       "Assess content accuracy and technical depth",
       "Evaluate code samples for best practices",
@@ -62,7 +64,8 @@ const resourcesData: ResourceData[] = [
     type: "Playbook",
     title: "Answer Engine Optimization Playbook",
     headline: "Get cited by ChatGPT, Perplexity, and Claude",
-    description: "Practical strategies to optimize your content for AI-powered search and discovery. Learn what makes content quotable, how to structure for LLM consumption, and tactics to increase your citation rate.",
+    description:
+      "Practical strategies to optimize your content for AI-powered search and discovery. Learn what makes content quotable, how to structure for LLM consumption, and tactics to increase your citation rate.",
     benefits: [
       "Understand how LLMs select and cite sources",
       "Format content for AI consumption patterns",
@@ -93,7 +96,7 @@ export default function ResourceLanding() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form data
     const validation = leadSchema.safeParse(formState);
     if (!validation.success) {
@@ -103,7 +106,7 @@ export default function ResourceLanding() {
     }
 
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -122,7 +125,7 @@ export default function ResourceLanding() {
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         setIsSubmitted(true);
         toast.success("Thank you! Check your email for the resource.");
@@ -170,15 +173,21 @@ export default function ResourceLanding() {
           <SectionTitle>Who This Is For</SectionTitle>
           <AudienceGrid>
             <AudienceCard>
-              <AudienceIcon><Icon.Users size={24} /></AudienceIcon>
+              <AudienceIcon>
+                <Icon.Users size={24} />
+              </AudienceIcon>
               <AudienceLabel>Developer Marketing Teams</AudienceLabel>
             </AudienceCard>
             <AudienceCard>
-              <AudienceIcon><Icon.Edit3 size={24} /></AudienceIcon>
+              <AudienceIcon>
+                <Icon.Edit3 size={24} />
+              </AudienceIcon>
               <AudienceLabel>Technical Content Leaders</AudienceLabel>
             </AudienceCard>
             <AudienceCard>
-              <AudienceIcon><Icon.TrendingUp size={24} /></AudienceIcon>
+              <AudienceIcon>
+                <Icon.TrendingUp size={24} />
+              </AudienceIcon>
               <AudienceLabel>Growth & SEO Managers</AudienceLabel>
             </AudienceCard>
           </AudienceGrid>
@@ -193,8 +202,7 @@ export default function ResourceLanding() {
                 </SuccessIcon>
                 <SuccessTitle>Check your inbox!</SuccessTitle>
                 <SuccessText>
-                  We've sent the {resource.type.toLowerCase()} to your email. 
-                  Want to discuss your content strategy?
+                  We've sent the {resource.type.toLowerCase()} to your email. Want to discuss your content strategy?
                 </SuccessText>
                 <CTAButton href={conf.calendly_link} target="_blank">
                   Book a Discovery Call <Icon.ArrowRight size={16} />
@@ -203,9 +211,7 @@ export default function ResourceLanding() {
             ) : (
               <>
                 <FormTitle>Get the {resource.type}</FormTitle>
-                <FormSubtitle>
-                  Enter your details and we'll send {resource.title} straight to your inbox.
-                </FormSubtitle>
+                <FormSubtitle>Enter your details and you can download {resource.title} right away.</FormSubtitle>
                 <Form onSubmit={handleSubmit}>
                   <FormGroup>
                     <Label>Full Name</Label>
@@ -240,9 +246,7 @@ export default function ResourceLanding() {
                   <SubmitButton type="submit" disabled={isSubmitting}>
                     {isSubmitting ? "Sending..." : `Download ${resource.type}`}
                   </SubmitButton>
-                  <PrivacyNote>
-                    We respect your privacy. Unsubscribe anytime.
-                  </PrivacyNote>
+                  <PrivacyNote>We respect your privacy. Unsubscribe anytime.</PrivacyNote>
                 </Form>
               </>
             )}
