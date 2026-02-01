@@ -1,9 +1,8 @@
-import Image from "next/image";
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
 import { Title } from "../styled";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 export default function JoinUs() {
   return (
@@ -12,7 +11,7 @@ export default function JoinUs() {
         <img src={"assets/illustrations/join.svg"} alt="Join Us" />
         <Content>
           <Title>Looking to accelerate your career journey?</Title>
-          <JoinButton href="/freelance">
+          <JoinButton to="/freelance">
             Join Us
           </JoinButton>
         </Content>
@@ -65,7 +64,7 @@ const Content = styled.div`
   }
 `;
 
-const JoinButton = styled.a`
+const JoinButton = styled(Link)`
   display: inline-block;
   color: ${({ theme }) => theme.colors.light};
   font-family: "Averta";

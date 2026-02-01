@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { MidContent, Para, Title } from "../styled";

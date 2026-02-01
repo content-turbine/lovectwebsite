@@ -3,7 +3,7 @@ import OurStory from "../../components/about/OurStory";
 import Stats from "../../components/about/Stats";
 import Team from "../../components/about/Team";
 import JoinUs from "../../components/about/JoinUs";
-import Newsletter from "../../components/Newsletter";
+import TrustedBy from "../../components/TrustedBy";
 
 export default function About() {
   return (
@@ -13,7 +13,7 @@ export default function About() {
       <Stats />
       <Team />
       <JoinUs />
-      <Newsletter />
+      <TrustedBy />
     </>
   );
 }

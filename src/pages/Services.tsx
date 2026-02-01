@@ -3,7 +3,7 @@ import WhatWeOffer from "../../components/services/WhatWeOffer";
 import OurProcess from "../../components/services/OurProcess";
 import FAQ from "../../components/services/FAQ";
 import Share from "../../components/services/Share";
-import Newsletter from "../../components/Newsletter";
+import TrustedBy from "../../components/TrustedBy";
 
 export default function Services() {
   return (
@@ -13,7 +13,7 @@ export default function Services() {
       <OurProcess />
       <FAQ />
       <Share />
-      <Newsletter />
+      <TrustedBy />
     </>
   );
 }

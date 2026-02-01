@@ -6,7 +6,7 @@ import WhatWeDo from "../../components/home/WhatWeDo";
 import WhoWeHelp from "../../components/home/WhoWeHelp";
 import Resources from "../../components/home/Resources";
 import LetsConnect from "../../components/home/LetsConnect";
-import Newsletter from "../../components/Newsletter";
+import TrustedBy from "../../components/TrustedBy";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <WhoWeHelp />
       <Resources />
       <LetsConnect />
-      <Newsletter />
+      <TrustedBy />
     </>
   );
 }

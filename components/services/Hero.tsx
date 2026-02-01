@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { MidContent, Title, Button } from "../styled";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
-import Image from "next/image";
+
 import { size } from "polished";
 import { conf } from "../../constants";
 

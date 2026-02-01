@@ -1,11 +1,11 @@
 import Hero from "../../components/contact/Hero";
-import Newsletter from "../../components/Newsletter";
+import TrustedBy from "../../components/TrustedBy";
 
 export default function Contact() {
   return (
     <>
       <Hero />
-      <Newsletter />
+      <TrustedBy />
     </>
   );
 }

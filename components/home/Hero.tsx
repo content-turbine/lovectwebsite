@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
+import styled from "styled-components";
 import { MidContent, Title, Button } from "../styled";
 import { sizeAndDown } from "../../styles/responsive";
-import { CFade } from "../Animation";
 import TypewriterComponent from "typewriter-effect";
 import { conf } from "../../constants";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 const StyledHero = styled.div`
   padding: 7rem 0;
