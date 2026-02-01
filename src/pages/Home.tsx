@@ -1,7 +1,6 @@
 import NewHero from "../../components/home/NewHero";
 import Differentiator from "../../components/home/Differentiator";
 import HowItWorks from "../../components/home/HowItWorks";
-import NewTestimonials from "../../components/home/NewTestimonials";
 import WhatWeDo from "../../components/home/WhatWeDo";
 import WhoWeHelp from "../../components/home/WhoWeHelp";
 import Resources from "../../components/home/Resources";
@@ -14,9 +13,8 @@ export default function Home() {
       <NewHero />
       <Differentiator />
       <HowItWorks />
-      <NewTestimonials />
-      <WhatWeDo />
       <WhoWeHelp />
+      <WhatWeDo />
       <Resources />
       <LetsConnect />
       <TrustedBy />

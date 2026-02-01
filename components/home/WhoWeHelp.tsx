@@ -83,20 +83,20 @@ const RoleValue = styled.p`
 
 const roles = [
   {
-    title: "Head of Content",
-    value: "Higher visibility with less manual rewrite",
+    title: "Brand Managers",
+    value: "Build lasting authority that differentiates your brand in crowded markets",
   },
   {
-    title: "Product Marketing",
-    value: "Credible content that converts technical buyers",
+    title: "Product Marketers",
+    value: "Technical content that converts developers and technical buyers",
+  },
+  {
+    title: "Content Managers",
+    value: "Scale quality output without sacrificing depth or accuracy",
   },
   {
     title: "Developer Relations",
-    value: "Tutorial & example-first content that developers trust",
-  },
-  {
-    title: "SEO / Growth",
-    value: "Content that ranks now — not just tomorrow",
+    value: "Tutorial-first content with runnable examples developers trust",
   },
 ];
 
