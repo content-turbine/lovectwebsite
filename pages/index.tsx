@@ -1,25 +1,29 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Hero from "../components/home/Hero";
 import Layout from "../components/Layout";
-import LetsConnect from "../components/home/LetsConnect";
-import Newsletter from "../components/Newsletter";
-import Reasons from "../components/home/Reasons";
-import Services from "../components/home/Services";
-import Testimonials from "../components/home/Testimonials";
-import Share from "../components/services/Share";
+import NewHero from "../components/home/NewHero";
+import WhyUs from "../components/home/WhyUs";
+import HowItWorks from "../components/home/HowItWorks";
+import WhatWeDo from "../components/home/WhatWeDo";
+import WhoWeHelp from "../components/home/WhoWeHelp";
+import WhyNow from "../components/home/WhyNow";
+import NewTestimonials from "../components/home/NewTestimonials";
+import Differentiator from "../components/home/Differentiator";
+import Resources from "../components/home/Resources";
+import FinalCTA from "../components/home/FinalCTA";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Hero />
-      <Services />
-      <Reasons />
-      <Testimonials />
-      <LetsConnect />
-      {/* <Newsletter /> */}
-      <Share />
+      <NewHero />
+      <WhyUs />
+      <HowItWorks />
+      <WhatWeDo />
+      <WhoWeHelp />
+      <WhyNow />
+      <NewTestimonials />
+      <Differentiator />
+      <Resources />
+      <FinalCTA />
     </Layout>
   );
 };
