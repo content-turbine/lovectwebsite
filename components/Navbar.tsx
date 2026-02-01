@@ -107,6 +107,7 @@ export default function Navbar() {
         onClick={() => menuOpen && toggleMenu()}
       >
         {l.name}
+        {l.isButton && <Icon.MessageCircle size={16} style={{ marginLeft: "6px" }} />}
       </NavLinkStyled>
     );
   };
