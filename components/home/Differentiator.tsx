@@ -161,7 +161,7 @@ const oldWayItems = [
 const newWayItems = [
   { icon: "🧠", text: "SME-driven content with deep technical depth" },
   { icon: "🎯", text: "Structured for AI answers (GEO/AEO) + SEO" },
-  { icon: "📚", text: "Reusable knowledge libraries that compound" },
+  { icon: "📚", text: "Thought leadership topics that compound" },
   { icon: "⚡", text: "AI as accelerator, humans as experts" },
   { icon: "📈", text: "Business outcomes: pipeline and authority" },
 ];

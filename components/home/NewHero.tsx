@@ -326,7 +326,7 @@ export default function NewHero() {
                 Talk to Us →
               </Button>
               <Button href="#see-the-difference">
-                Try a Sample
+                See the Difference
               </Button>
             </ButtonGroup>
           </Content>
