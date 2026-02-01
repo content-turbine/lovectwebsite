@@ -37,7 +37,6 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@types/node": "17.0.14",
     "@types/react": "17.0.38",
     "@types/react-slick": "^0.23.8",
     "@types/styled-components": "^5.1.26",
@@ -48,8 +47,8 @@
     "fork-ts-checker-webpack-plugin": "^7.2.1",
     "styled-components": "^5.3.11",
     "typescript": "4.5.5",
-    "vite": "^5.4.2",
-    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^7.3.1",
+    "@vitejs/plugin-react": "^5.1.2",
     "tailwindcss": "^3.4.11",
     "postcss": "^8.4.47",
     "autoprefixer": "^10.4.20",
