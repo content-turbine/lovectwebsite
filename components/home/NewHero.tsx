@@ -309,14 +309,15 @@ const spinSlow = keyframes`
 `;
 
 const TurbineImage = styled.img`
-  width: 180px;
-  height: 180px;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
   animation: ${spinSlow} 15s linear infinite;
   filter: drop-shadow(0 0 20px rgba(44, 206, 210, 0.5));
+  image-rendering: -webkit-optimize-contrast;
   
   ${sizeAndDown("md")} {
-    width: 140px;
-    height: 140px;
+    max-width: 150px;
   }
 `;
 
