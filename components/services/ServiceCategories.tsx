@@ -2,143 +2,209 @@ import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import * as Icon from "react-feather";
 
-interface ServiceItem {
-  name: string;
-}
-
 interface ServiceCategory {
   title: string;
   description: string;
   color: string;
-  items: ServiceItem[];
+  items: string[];
+  icon: React.ReactNode;
 }
 
-const categories: ServiceCategory[] = [
+const productionCategories: ServiceCategory[] = [
   {
     title: "Developer Content",
-    description: "Enable developers to make the best use of your product with clear, accurate technical content.",
-    color: "#2CCED2",
+    description: "Enable developers to build faster with clear, accurate technical content that showcases your product's capabilities.",
+    color: "#E8F4F8",
+    icon: <Icon.Code size={24} />,
     items: [
-      { name: "Developer Guides" },
-      { name: "How-to Articles" },
-      { name: "API Documentation" },
-      { name: "Tutorials & Quickstarts" },
-      { name: "Integration Guides" },
-      { name: "Sample Apps & OSS" },
+      "Developer Guides",
+      "How-to Articles",
+      "API Documentation",
+      "Tutorials & Quickstarts",
+      "Integration Guides",
+      "Sample Apps & OSS",
     ],
   },
   {
     title: "Thought Leadership",
-    description: "Establish authority with SME-driven content that showcases deep product and industry expertise.",
-    color: "#F9968B",
+    description: "Great content both delights and educates. Grow awareness and establish authority with SME-driven content series.",
+    color: "#FEF3F2",
+    icon: <Icon.Award size={24} />,
     items: [
-      { name: "Blog Articles" },
-      { name: "Whitepapers & Ebooks" },
-      { name: "Industry Reports" },
-      { name: "Email Newsletters" },
-      { name: "Podcasts" },
-      { name: "Social Content" },
+      "Blog Articles",
+      "Whitepapers & Ebooks",
+      "Industry Reports",
+      "Email Newsletters",
+      "Podcasts",
+      "Social Content",
     ],
   },
   {
     title: "SEO & AEO",
-    description: "Optimize for both traditional search and AI answer engines with structured, authoritative content.",
-    color: "#26474E",
+    description: "Increase traffic and conversions with high-quality organic content. Optimize for answer engine disruption.",
+    color: "#F0FDF4",
+    icon: <Icon.Search size={24} />,
     items: [
-      { name: "Answer Engine Optimization" },
-      { name: "Hub & Spoke Architecture" },
-      { name: "Content Refreshes" },
-      { name: "Keyword Research" },
-      { name: "Technical SEO" },
-      { name: "AI-optimized Content" },
+      "Answer Engine Optimization",
+      "Hub & Spoke Architecture",
+      "Content Refreshes",
+      "Keyword Research",
+      "AI-optimized Content",
+      "Technical SEO",
     ],
   },
   {
     title: "Product Marketing",
-    description: "Tell a compelling product story that resonates with technical buyers.",
-    color: "#2CCED2",
+    description: "We learn your product, industry, and audience to help you tell a compelling and accurate product story.",
+    color: "#FDF4FF",
+    icon: <Icon.Package size={24} />,
     items: [
-      { name: "Case Studies" },
-      { name: "Competitive Analysis" },
-      { name: "Product Comparisons" },
-      { name: "Landing Pages" },
-      { name: "Feature Videos" },
-      { name: "One Pagers" },
+      "Case Studies",
+      "Competitive Analysis",
+      "Product Comparisons",
+      "Landing Pages",
+      "Feature Videos",
+      "One Pagers",
+    ],
+  },
+];
+
+const strategyCategories: ServiceCategory[] = [
+  {
+    title: "Content Strategy",
+    description: "Transform from ad-hoc content to a laser-focused program that doesn't rely on chance. Prioritize the most impactful distribution channels and content types.",
+    color: "#FEF9C3",
+    icon: <Icon.Target size={24} />,
+    items: [
+      "Content Audits",
+      "Topic Identification",
+      "Editorial Calendars",
+      "Distribution Strategy",
+      "Messaging Development",
+      "Campaign Planning",
     ],
   },
   {
-    title: "Content Strategy",
-    description: "Transform ad-hoc content into a focused program with clear goals and measurable outcomes.",
-    color: "#F9968B",
+    title: "SEO / AEO Strategy",
+    description: "Get visibility into how you're appearing in Google Search, AI Overviews, and popular LLM-based tools. Build a plan to optimize your presence across each.",
+    color: "#E0F2FE",
+    icon: <Icon.TrendingUp size={24} />,
     items: [
-      { name: "Content Audits" },
-      { name: "Topic Identification" },
-      { name: "Editorial Calendars" },
-      { name: "Distribution Strategy" },
-      { name: "Performance Analytics" },
-      { name: "Campaign Planning" },
+      "Keyword Research",
+      "Goal Setting & Forecasting",
+      "Topic Prioritization",
+      "Technical SEO Audits",
+      "Content & AEO Audits",
+      "Strategy Creation",
+    ],
+  },
+  {
+    title: "Content Operations",
+    description: "From reporting and performance analysis to populating content into your CMS, we handle your content from ideation through publication.",
+    color: "#F1F5F9",
+    icon: <Icon.Settings size={24} />,
+    items: [
+      "Analytics & Dashboards",
+      "CMS Uploads",
+      "Conversion Tracking",
+      "AI Workflow Implementation",
+      "Performance Analysis",
+      "Attribution Reporting",
     ],
   },
 ];
 
 export default function ServiceCategories() {
   return (
-    <Container>
-      <SectionTitle>Content Production</SectionTitle>
-      <SectionSubtitle>
-        We embed ourselves in your organization to deliver expert content for every stage of the buyer journey.
-      </SectionSubtitle>
-      
-      <CategoriesGrid>
-        {categories.map((category, index) => (
-          <CategoryCard key={index} $accentColor={category.color}>
-            <CardHeader>
-              <CategoryTitle>{category.title}</CategoryTitle>
-              <Icon.ArrowUpRight size={24} />
-            </CardHeader>
-            <CategoryDescription>{category.description}</CategoryDescription>
-            <ItemsList>
-              {category.items.map((item, i) => (
-                <Item key={i}>{item.name}</Item>
-              ))}
-            </ItemsList>
-          </CategoryCard>
-        ))}
-      </CategoriesGrid>
-    </Container>
+    <>
+      <Section>
+        <SectionHeader>
+          <SectionTitle>Content Production</SectionTitle>
+          <SectionSubtitle>
+            We embed ourselves in your organization to deliver expert content for every stage of the buyer journey.
+          </SectionSubtitle>
+        </SectionHeader>
+        
+        <CategoriesGrid>
+          {productionCategories.map((category, index) => (
+            <CategoryCard key={index} $bgColor={category.color}>
+              <CardHeader>
+                <IconWrapper>{category.icon}</IconWrapper>
+                <CategoryTitle>{category.title}</CategoryTitle>
+              </CardHeader>
+              <CategoryDescription>{category.description}</CategoryDescription>
+              <ItemsList>
+                {category.items.map((item, i) => (
+                  <Item key={i}>{item}</Item>
+                ))}
+              </ItemsList>
+            </CategoryCard>
+          ))}
+        </CategoriesGrid>
+      </Section>
+
+      <Section>
+        <SectionHeader>
+          <SectionTitle>Strategy</SectionTitle>
+          <SectionSubtitle>
+            Run a strategy sprint to sharply define your content program.
+          </SectionSubtitle>
+        </SectionHeader>
+        
+        <StrategyGrid>
+          {strategyCategories.map((category, index) => (
+            <CategoryCard key={index} $bgColor={category.color}>
+              <CardHeader>
+                <IconWrapper>{category.icon}</IconWrapper>
+                <CategoryTitle>{category.title}</CategoryTitle>
+              </CardHeader>
+              <CategoryDescription>{category.description}</CategoryDescription>
+              <ItemsList>
+                {category.items.map((item, i) => (
+                  <Item key={i}>{item}</Item>
+                ))}
+              </ItemsList>
+            </CategoryCard>
+          ))}
+        </StrategyGrid>
+      </Section>
+    </>
   );
 }
 
-const Container = styled.section`
+const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 2rem 6rem;
+  padding: 0 2rem 5rem;
 
   ${sizeAndDown("md")} {
-    padding: 1rem 1.5rem 4rem;
+    padding: 0 1.5rem 3rem;
   }
+`;
+
+const SectionHeader = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: "Gilroy", sans-serif;
   font-size: 3rem;
   font-weight: 400;
-  text-align: center;
   color: ${({ theme }) => theme.colors.text};
   margin: 0 0 1rem 0;
 
   ${sizeAndDown("md")} {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 `;
 
 const SectionSubtitle = styled.p`
   font-family: "Averta", sans-serif;
-  font-size: 1.25rem;
-  text-align: center;
+  font-size: 1.15rem;
   color: ${({ theme }) => theme.colors.text};
-  opacity: 0.7;
-  margin: 0 auto 3rem;
+  opacity: 0.6;
+  margin: 0 auto;
   max-width: 600px;
 
   ${sizeAndDown("md")} {
@@ -156,20 +222,29 @@ const CategoriesGrid = styled.div`
   }
 `;
 
+const StrategyGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  ${sizeAndDown("md")} {
+    grid-template-columns: 1fr;
+  }
+`;
+
 interface CardProps {
-  $accentColor: string;
+  $bgColor: string;
 }
 
 const CategoryCard = styled.div<CardProps>`
-  background: ${({ $accentColor }) => $accentColor}15;
+  background: ${({ $bgColor }) => $bgColor};
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 
   &:hover {
-    border-color: ${({ $accentColor }) => $accentColor};
     transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   }
 
   ${sizeAndDown("md")} {
@@ -179,19 +254,22 @@ const CategoryCard = styled.div<CardProps>`
 
 const CardHeader = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.75rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+`;
 
-  svg {
-    color: ${({ theme }) => theme.colors.text};
-    opacity: 0.4;
-  }
+const IconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.colors.text};
+  opacity: 0.7;
 `;
 
 const CategoryTitle = styled.h3`
   font-family: "Averta", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
@@ -199,11 +277,11 @@ const CategoryTitle = styled.h3`
 
 const CategoryDescription = styled.p`
   font-family: "Averta", sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: ${({ theme }) => theme.colors.text};
   opacity: 0.7;
-  line-height: 1.5;
-  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
 `;
 
 const ItemsList = styled.div`
@@ -214,10 +292,10 @@ const ItemsList = styled.div`
 
 const Item = styled.span`
   font-family: "Averta", sans-serif;
-  font-size: 0.875rem;
-  background: ${({ theme }) => theme.colors.light};
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.7);
   color: ${({ theme }) => theme.colors.text};
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 20px;
   white-space: nowrap;
 `;
