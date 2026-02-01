@@ -26,7 +26,7 @@ export default function CalendlyEmbed() {
       <CalendlyContainer>
         <div
           className="calendly-inline-widget"
-          data-url="https://calendly.com/contentturbine/discovery-call?hide_gdpr_banner=1&background_color=f5fbff&text_color=17252a&primary_color=2cced2"
+          data-url="https://calendly.com/sharalpinto/quick-sync?hide_gdpr_banner=1&background_color=f5fbff&text_color=17252a&primary_color=2cced2"
           style={{
             minWidth: "320px",
             height: "700px",
