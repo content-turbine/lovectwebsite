@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
 
 // Import page components
 import HomePage from "./pages/Home";
@@ -30,6 +31,7 @@ function App() {
           <Route path="/resources/:slug" element={<ResourceLandingPage />} />
         </Routes>
       </Layout>
+      <Analytics />
     </>
   );
 }
