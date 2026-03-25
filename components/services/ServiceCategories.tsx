@@ -70,7 +70,7 @@ const strategyCategories: ServiceCategory[] = [
   },
 ];
 
-const productionCategories: ServiceCategory[] = [
+const createCategories: ServiceCategory[] = [
   {
     title: "Developer Content",
     description: "Enable developers to build faster with clear, accurate technical content that showcases your product's capabilities.",
@@ -100,20 +100,6 @@ const productionCategories: ServiceCategory[] = [
     ],
   },
   {
-    title: "SEO & AEO",
-    description: "Increase traffic and conversions with high-quality organic content. Optimize for answer engine disruption.",
-    color: "#F0FDF4",
-    icon: <Icon.Search size={24} />,
-    items: [
-      "Answer Engine Optimization",
-      "Hub & Spoke Architecture",
-      "Content Refreshes",
-      "Keyword Research",
-      "AI-optimized Content",
-      "Technical SEO",
-    ],
-  },
-  {
     title: "Product Marketing",
     description: "We learn your product, industry, and audience to help you tell a compelling and accurate product story.",
     color: "#FDF4FF",
@@ -125,6 +111,65 @@ const productionCategories: ServiceCategory[] = [
       "Landing Pages",
       "Feature Videos",
       "One Pagers",
+    ],
+  },
+];
+
+const optimizeCategories: ServiceCategory[] = [
+  {
+    title: "Content Review & Audits",
+    description: "Get expert eyes on your existing technical content. Our team reviews for accuracy, clarity, messaging alignment, and developer experience.",
+    color: "#FEF9C3",
+    icon: <Icon.CheckCircle size={24} />,
+    items: [
+      "Technical Accuracy Review",
+      "Clarity & Readability",
+      "Messaging Alignment",
+      "Developer Experience Audit",
+      "Content Scoring",
+      "Actionable Recommendations",
+    ],
+  },
+  {
+    title: "SEO Optimization",
+    description: "Improve the search performance of your existing content library with technical audits, keyword optimization, and strategic refreshes.",
+    color: "#F0FDF4",
+    icon: <Icon.Search size={24} />,
+    items: [
+      "Technical SEO Audits",
+      "Keyword Optimization",
+      "Content Refreshes",
+      "Hub & Spoke Architecture",
+      "Internal Linking Strategy",
+      "Performance Tracking",
+    ],
+  },
+  {
+    title: "AEO & AI Readiness",
+    description: "Restructure and optimize your existing content to get cited by AI tools, appear in answer engines, and stay discoverable in the age of LLMs.",
+    color: "#E0F2FE",
+    icon: <Icon.Cpu size={24} />,
+    items: [
+      "Answer Engine Optimization",
+      "AI Citation Readiness",
+      "Structured Data & Schema",
+      "Content Restructuring",
+      "LLM Discoverability",
+      "Competitive AI Visibility",
+    ],
+  },
+  {
+    title: "Content Gap Analysis",
+    description: "Identify missing topics, untapped opportunities, and strategic gaps in your existing content library.",
+    color: "#F1F5F9",
+    icon: <Icon.Compass size={24} />,
+    items: [
+      "Topic Coverage Mapping",
+      "Competitor Content Analysis",
+      "Buyer Journey Gaps",
+      "Keyword Opportunities",
+      "Content Prioritization",
+      "Roadmap Recommendations",
     ],
   },
 ];
@@ -197,21 +242,50 @@ export default function ServiceCategories() {
         </StrategyGrid>
       </FlowStage>
 
-      {/* Stage 3: Content Production */}
+      {/* Stage 3: Content Services */}
       <FlowStage>
         <StageMarker>
           <StageNumber>3</StageNumber>
         </StageMarker>
         <StageLabel>Ship</StageLabel>
         <SectionHeader>
-          <SectionTitle>Content Production</SectionTitle>
+          <SectionTitle>Content Services</SectionTitle>
           <SectionSubtitle>
-            We embed ourselves in your organization to deliver expert content for every stage of the buyer journey.
+            Whether you need new content created or existing content improved, we bring the expertise.
           </SectionSubtitle>
         </SectionHeader>
+
+        <SubSectionHeader>
+          <SubSectionIcon><Icon.PenTool size={20} /></SubSectionIcon>
+          <SubSectionTitle>Create</SubSectionTitle>
+          <SubSectionDesc>Net-new content crafted by subject matter experts</SubSectionDesc>
+        </SubSectionHeader>
         
+        <StrategyGrid>
+          {createCategories.map((category, index) => (
+            <CategoryCard key={index} $bgColor={category.color}>
+              <CardHeader>
+                <IconWrapper>{category.icon}</IconWrapper>
+                <CategoryTitle>{category.title}</CategoryTitle>
+              </CardHeader>
+              <CategoryDescription>{category.description}</CategoryDescription>
+              <ItemsList>
+                {category.items.map((item, i) => (
+                  <Item key={i}>{item}</Item>
+                ))}
+              </ItemsList>
+            </CategoryCard>
+          ))}
+        </StrategyGrid>
+
+        <SubSectionHeader style={{ marginTop: '3rem' }}>
+          <SubSectionIcon><Icon.RefreshCw size={20} /></SubSectionIcon>
+          <SubSectionTitle>Optimize & Review</SubSectionTitle>
+          <SubSectionDesc>Improve what you already have with expert analysis</SubSectionDesc>
+        </SubSectionHeader>
+
         <CategoriesGrid>
-          {productionCategories.map((category, index) => (
+          {optimizeCategories.map((category, index) => (
             <CategoryCard key={index} $bgColor={category.color}>
               <CardHeader>
                 <IconWrapper>{category.icon}</IconWrapper>
@@ -320,6 +394,42 @@ const StageLabel = styled.span`
   padding: 0.35rem 0.75rem;
   border-radius: 100px;
   margin-bottom: 0.75rem;
+`;
+
+const SubSectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+`;
+
+const SubSectionIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(44, 206, 210, 0.1);
+  color: ${({ theme }) => theme.colors.teal};
+`;
+
+const SubSectionTitle = styled.h3`
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0;
+`;
+
+const SubSectionDesc = styled.p`
+  font-family: "Averta", sans-serif;
+  font-size: 0.95rem;
+  color: ${({ theme }) => theme.colors.text};
+  opacity: 0.5;
+  margin: 0;
+  width: 100%;
 `;
 
 const SectionHeader = styled.div`
