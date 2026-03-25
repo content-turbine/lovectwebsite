@@ -242,21 +242,50 @@ export default function ServiceCategories() {
         </StrategyGrid>
       </FlowStage>
 
-      {/* Stage 3: Content Production */}
+      {/* Stage 3: Content Services */}
       <FlowStage>
         <StageMarker>
           <StageNumber>3</StageNumber>
         </StageMarker>
         <StageLabel>Ship</StageLabel>
         <SectionHeader>
-          <SectionTitle>Content Production</SectionTitle>
+          <SectionTitle>Content Services</SectionTitle>
           <SectionSubtitle>
-            We embed ourselves in your organization to deliver expert content for every stage of the buyer journey.
+            Whether you need new content created or existing content improved, we bring the expertise.
           </SectionSubtitle>
         </SectionHeader>
+
+        <SubSectionHeader>
+          <SubSectionIcon><Icon.PenTool size={20} /></SubSectionIcon>
+          <SubSectionTitle>Create</SubSectionTitle>
+          <SubSectionDesc>Net-new content crafted by subject matter experts</SubSectionDesc>
+        </SubSectionHeader>
         
+        <StrategyGrid>
+          {createCategories.map((category, index) => (
+            <CategoryCard key={index} $bgColor={category.color}>
+              <CardHeader>
+                <IconWrapper>{category.icon}</IconWrapper>
+                <CategoryTitle>{category.title}</CategoryTitle>
+              </CardHeader>
+              <CategoryDescription>{category.description}</CategoryDescription>
+              <ItemsList>
+                {category.items.map((item, i) => (
+                  <Item key={i}>{item}</Item>
+                ))}
+              </ItemsList>
+            </CategoryCard>
+          ))}
+        </StrategyGrid>
+
+        <SubSectionHeader style={{ marginTop: '3rem' }}>
+          <SubSectionIcon><Icon.RefreshCw size={20} /></SubSectionIcon>
+          <SubSectionTitle>Optimize & Review</SubSectionTitle>
+          <SubSectionDesc>Improve what you already have with expert analysis</SubSectionDesc>
+        </SubSectionHeader>
+
         <CategoriesGrid>
-          {productionCategories.map((category, index) => (
+          {optimizeCategories.map((category, index) => (
             <CategoryCard key={index} $bgColor={category.color}>
               <CardHeader>
                 <IconWrapper>{category.icon}</IconWrapper>
