@@ -388,7 +388,7 @@ export default function NewHero() {
             </Subtitle>
             <TaglineWrapper>
               <TaglineText>
-                <StrikeWord>Not just written.</StrikeWord> <HighlightWord>Engineered to drive results.</HighlightWord>
+                <StrikeWord>Not just written.</StrikeWord> <HighlightWord>AI-assisted, human-approved.</HighlightWord>
               </TaglineText>
             </TaglineWrapper>
             <ButtonGroup>
