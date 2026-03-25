@@ -432,7 +432,7 @@ const SubSectionDesc = styled.p`
   width: 100%;
 `;
 
-
+const SectionHeader = styled.div`
   margin-bottom: 2.5rem;
 `;
 
