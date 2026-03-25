@@ -70,7 +70,7 @@ const strategyCategories: ServiceCategory[] = [
   },
 ];
 
-const productionCategories: ServiceCategory[] = [
+const createCategories: ServiceCategory[] = [
   {
     title: "Developer Content",
     description: "Enable developers to build faster with clear, accurate technical content that showcases your product's capabilities.",
@@ -100,20 +100,6 @@ const productionCategories: ServiceCategory[] = [
     ],
   },
   {
-    title: "SEO & AEO",
-    description: "Increase traffic and conversions with high-quality organic content. Optimize for answer engine disruption.",
-    color: "#F0FDF4",
-    icon: <Icon.Search size={24} />,
-    items: [
-      "Answer Engine Optimization",
-      "Hub & Spoke Architecture",
-      "Content Refreshes",
-      "Keyword Research",
-      "AI-optimized Content",
-      "Technical SEO",
-    ],
-  },
-  {
     title: "Product Marketing",
     description: "We learn your product, industry, and audience to help you tell a compelling and accurate product story.",
     color: "#FDF4FF",
@@ -125,6 +111,65 @@ const productionCategories: ServiceCategory[] = [
       "Landing Pages",
       "Feature Videos",
       "One Pagers",
+    ],
+  },
+];
+
+const optimizeCategories: ServiceCategory[] = [
+  {
+    title: "Content Review & Audits",
+    description: "Get expert eyes on your existing technical content. Our team reviews for accuracy, clarity, messaging alignment, and developer experience.",
+    color: "#FEF9C3",
+    icon: <Icon.CheckCircle size={24} />,
+    items: [
+      "Technical Accuracy Review",
+      "Clarity & Readability",
+      "Messaging Alignment",
+      "Developer Experience Audit",
+      "Content Scoring",
+      "Actionable Recommendations",
+    ],
+  },
+  {
+    title: "SEO Optimization",
+    description: "Improve the search performance of your existing content library with technical audits, keyword optimization, and strategic refreshes.",
+    color: "#F0FDF4",
+    icon: <Icon.Search size={24} />,
+    items: [
+      "Technical SEO Audits",
+      "Keyword Optimization",
+      "Content Refreshes",
+      "Hub & Spoke Architecture",
+      "Internal Linking Strategy",
+      "Performance Tracking",
+    ],
+  },
+  {
+    title: "AEO & AI Readiness",
+    description: "Restructure and optimize your existing content to get cited by AI tools, appear in answer engines, and stay discoverable in the age of LLMs.",
+    color: "#E0F2FE",
+    icon: <Icon.Cpu size={24} />,
+    items: [
+      "Answer Engine Optimization",
+      "AI Citation Readiness",
+      "Structured Data & Schema",
+      "Content Restructuring",
+      "LLM Discoverability",
+      "Competitive AI Visibility",
+    ],
+  },
+  {
+    title: "Content Gap Analysis",
+    description: "Identify missing topics, untapped opportunities, and strategic gaps in your existing content library.",
+    color: "#F1F5F9",
+    icon: <Icon.Compass size={24} />,
+    items: [
+      "Topic Coverage Mapping",
+      "Competitor Content Analysis",
+      "Buyer Journey Gaps",
+      "Keyword Opportunities",
+      "Content Prioritization",
+      "Roadmap Recommendations",
     ],
   },
 ];
