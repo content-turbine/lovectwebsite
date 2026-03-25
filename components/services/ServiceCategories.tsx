@@ -278,7 +278,9 @@ export default function ServiceCategories() {
           ))}
         </StrategyGrid>
 
-        <SubSectionHeader style={{ marginTop: '3rem' }}>
+        <SubSectionDivider />
+
+        <SubSectionHeader>
           <SubSectionIcon><Icon.RefreshCw size={20} /></SubSectionIcon>
           <SubSectionTitle>Optimize & Review</SubSectionTitle>
           <SubSectionDesc>Improve what you already have with expert analysis</SubSectionDesc>
