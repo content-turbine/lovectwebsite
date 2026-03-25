@@ -396,7 +396,43 @@ const StageLabel = styled.span`
   margin-bottom: 0.75rem;
 `;
 
-const SectionHeader = styled.div`
+const SubSectionHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+`;
+
+const SubSectionIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(44, 206, 210, 0.1);
+  color: ${({ theme }) => theme.colors.teal};
+`;
+
+const SubSectionTitle = styled.h3`
+  font-family: "Gilroy", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.text};
+  margin: 0;
+`;
+
+const SubSectionDesc = styled.p`
+  font-family: "Averta", sans-serif;
+  font-size: 0.95rem;
+  color: ${({ theme }) => theme.colors.text};
+  opacity: 0.5;
+  margin: 0;
+  width: 100%;
+`;
+
+
   margin-bottom: 2.5rem;
 `;
 
