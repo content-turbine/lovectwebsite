@@ -425,6 +425,19 @@ const SubSectionTitle = styled.h3`
   margin: 0;
 `;
 
+const SubSectionDivider = styled.hr`
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    ${({ theme }) => theme.colors.teal}44 20%,
+    ${({ theme }) => theme.colors.teal}44 80%,
+    transparent 100%
+  );
+  margin: 3.5rem 0 2.5rem;
+`;
+
 const SubSectionDesc = styled.p`
   font-family: "Averta", sans-serif;
   font-size: 0.95rem;
