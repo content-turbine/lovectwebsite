@@ -278,7 +278,9 @@ export default function ServiceCategories() {
           ))}
         </StrategyGrid>
 
-        <SubSectionHeader style={{ marginTop: '3rem' }}>
+        <SubSectionDivider />
+
+        <SubSectionHeader>
           <SubSectionIcon><Icon.RefreshCw size={20} /></SubSectionIcon>
           <SubSectionTitle>Optimize & Review</SubSectionTitle>
           <SubSectionDesc>Improve what you already have with expert analysis</SubSectionDesc>
@@ -421,6 +423,19 @@ const SubSectionTitle = styled.h3`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.text};
   margin: 0;
+`;
+
+const SubSectionDivider = styled.hr`
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    ${({ theme }) => theme.colors.teal}44 20%,
+    ${({ theme }) => theme.colors.teal}44 80%,
+    transparent 100%
+  );
+  margin: 3.5rem 0 2.5rem;
 `;
 
 const SubSectionDesc = styled.p`
