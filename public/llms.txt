@@ -1,0 +1,17 @@
+# Content Turbine
+
+> AI-assisted, human-approved technical marketing content that helps tech leaders build authority and drive results.
+
+Content Turbine is a technical marketing agency that produces high-quality content for developer-focused and B2B tech companies, combining AI efficiency with human expertise and editorial review.
+
+## Pages
+
+- [Home](/): What Content Turbine does and how it helps tech leaders.
+- [About](/about): The team, story, and approach behind Content Turbine.
+- [Services](/services): Technical marketing services — create, optimize, and review.
+- [AI](/ai): How Content Turbine blends AI assistance with human approval.
+- [Contact](/contact): Get in touch and book a discovery call.
+
+## Optional
+
+- [Privacy](/privacy): Privacy policy.

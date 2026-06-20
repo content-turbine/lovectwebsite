@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://contentturbine.com
+Host: https://lovectwebsite.lovable.app
 
 # Sitemaps
-Sitemap: https://contentturbine.com/sitemap.xml
+Sitemap: https://lovectwebsite.lovable.app/sitemap.xml
