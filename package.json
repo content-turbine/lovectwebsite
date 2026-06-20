@@ -26,6 +26,7 @@
     "react-dom": "^18.3.1",
     "react-feather": "^2.0.9",
     "react-google-recaptcha": "^2.1.0",
+    "react-helmet-async": "^3.0.0",
     "react-hook-form": "^7.27.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.4.0",
