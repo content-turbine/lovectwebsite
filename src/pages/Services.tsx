@@ -16,9 +16,9 @@ export default function Services() {
             "@context": "https://schema.org",
             "@type": "Service",
             serviceType: "Technical marketing content",
-            provider: { "@id": "https://www.contentturbine.dev/#organization" },
+            provider: { "@id": "https://www.contentturbine.com/#organization" },
             areaServed: "Worldwide",
-            url: "https://www.contentturbine.dev/services",
+            url: "https://www.contentturbine.com/services",
             description:
               "Create, optimize, and review technical marketing content for tech companies.",
             hasOfferCatalog: {
@@ -66,8 +66,8 @@ export default function Services() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.dev/" },
-              { "@type": "ListItem", position: 2, name: "Services", item: "https://www.contentturbine.dev/services" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.com/" },
+              { "@type": "ListItem", position: 2, name: "Services", item: "https://www.contentturbine.com/services" },
             ],
           },
         ]}

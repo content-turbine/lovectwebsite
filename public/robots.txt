@@ -22,7 +22,7 @@ User-agent: Google-Extended
 Allow: /
 
 # Host
-Host: https://www.contentturbine.dev
+Host: https://www.contentturbine.com
 
 # Sitemaps
-Sitemap: https://www.contentturbine.dev/sitemap.xml
+Sitemap: https://www.contentturbine.com/sitemap.xml

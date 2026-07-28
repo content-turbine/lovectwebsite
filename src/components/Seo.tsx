@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const BASE_URL = "https://www.contentturbine.dev";
+const BASE_URL = "https://www.contentturbine.com";
 
 interface SeoProps {
   title: string;

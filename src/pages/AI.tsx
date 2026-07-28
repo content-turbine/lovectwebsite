@@ -15,11 +15,11 @@ export default function AI() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            url: "https://www.contentturbine.dev/ai",
+            url: "https://www.contentturbine.com/ai",
             name: "AI-Assisted, Human-Approved Content",
             description:
               "How Content Turbine combines AI efficiency with human editorial review to produce trustworthy technical marketing content.",
-            about: { "@id": "https://www.contentturbine.dev/#organization" },
+            about: { "@id": "https://www.contentturbine.com/#organization" },
           },
           {
             "@context": "https://schema.org",
@@ -47,8 +47,8 @@ export default function AI() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.dev/" },
-              { "@type": "ListItem", position: 2, name: "AI", item: "https://www.contentturbine.dev/ai" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.com/" },
+              { "@type": "ListItem", position: 2, name: "AI", item: "https://www.contentturbine.com/ai" },
             ],
           },
         ]}
