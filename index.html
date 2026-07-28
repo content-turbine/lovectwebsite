@@ -7,7 +7,7 @@
     <meta name="description" content="AI-assisted, human-approved technical marketing content that helps tech leaders build authority and drive results." />
     <meta property="og:title" content="Content Turbine — Technical Marketing for Tech Leaders" />
     <meta property="og:description" content="AI-assisted, human-approved technical marketing content for tech leaders." />
-    <meta property="og:url" content="https://lovectwebsite.lovable.app/" />
+    <meta property="og:url" content="https://www.contentturbine.dev/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -17,24 +17,89 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Content Turbine",
-        "url": "https://lovectwebsite.lovable.app/",
-        "description": "AI-assisted, human-approved technical marketing content for tech leaders.",
-        "logo": "https://lovectwebsite.lovable.app/apple-touch-icon.png"
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Content Turbine",
-        "url": "https://lovectwebsite.lovable.app/"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.contentturbine.dev/#organization",
+            "name": "Content Turbine",
+            "url": "https://www.contentturbine.dev/",
+            "description": "Content Turbine is a technical marketing agency that produces developer-focused content \u2014 strategy, creation, and optimization \u2014 for B2B tech companies.",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.contentturbine.dev/apple-touch-icon.png"
+            },
+            "knowsAbout": [
+              "Technical content marketing",
+              "Developer marketing",
+              "SEO for B2B software",
+              "Answer engine optimization",
+              "Technical documentation",
+              "Developer tutorials"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/company/content-turbine",
+              "https://x.com/contentturbine"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.contentturbine.dev/#website",
+            "name": "Content Turbine",
+            "url": "https://www.contentturbine.dev/",
+            "publisher": { "@id": "https://www.contentturbine.dev/#organization" },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://www.contentturbine.dev/#service",
+            "name": "Content Turbine",
+            "url": "https://www.contentturbine.dev/",
+            "parentOrganization": { "@id": "https://www.contentturbine.dev/#organization" },
+            "areaServed": "Worldwide",
+            "serviceType": "Technical content marketing agency"
+          }
+        ]
       }
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static fallback so non-JS crawlers and AI answer engines can read and follow the site. Replaced by React on hydration. -->
+      <header>
+        <p>Content Turbine</p>
+        <nav aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/ai">AI &amp; AEO</a>
+          <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+        </nav>
+      </header>
+      <main>
+        <h1>Technical marketing content for developer-focused companies</h1>
+        <p>
+          Content Turbine is a technical content agency for B2B software and developer-tool
+          companies. We run strategy, production, and optimization of technical content
+          &mdash; guides, tutorials, documentation, and thought leadership &mdash; written with
+          subject-matter experts and optimized for both search engines and AI answer engines.
+        </p>
+        <h2>What we do</h2>
+        <ul>
+          <li><strong>Discovery:</strong> a 30-minute session to assess fit, goals, and current content state.</li>
+          <li><strong>Strategy:</strong> stakeholder interviews, SEO/AEO strategy, and an editorial roadmap.</li>
+          <li><strong>Create:</strong> developer content, thought leadership, and product marketing assets.</li>
+          <li><strong>Optimize:</strong> content audits, performance analysis, and continuous improvement.</li>
+        </ul>
+        <h2>Who we help</h2>
+        <p>
+          Founders, heads of marketing, developer relations leads, and product marketers at
+          technical B2B companies who need credible content that engineers actually trust.
+        </p>
+        <h2>Get in touch</h2>
+        <p><a href="/contact">Book a discovery call with Content Turbine</a>.</p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

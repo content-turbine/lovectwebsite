@@ -1,17 +1,36 @@
 # Content Turbine
 
-> AI-assisted, human-approved technical marketing content that helps tech leaders build authority and drive results.
+> Content Turbine is a technical content agency for B2B software and developer-tool companies. We run strategy, production, and optimization of technical content — guides, tutorials, documentation, sample apps, and thought leadership — written with subject-matter experts and optimized for both search engines and AI answer engines.
 
-Content Turbine is a technical marketing agency that produces high-quality content for developer-focused and B2B tech companies, combining AI efficiency with human expertise and editorial review.
+Site: https://www.contentturbine.dev
+Contact: https://www.contentturbine.dev/contact
+
+## What Content Turbine does
+
+- **Discovery** — a 30-minute session to assess fit, goals, and the current state of your content.
+- **Strategy** — stakeholder interviews ("brain dumps"), SEO/AEO research, and an editorial roadmap.
+- **Create** — developer content, thought leadership, and product marketing assets.
+- **Optimize** — content audits, performance analysis, and continuous improvement.
+
+## Who it is for
+
+Founders, heads of marketing, developer relations leads, and product marketers at technical B2B companies who need content developers actually trust.
+
+## Key facts
+
+- Every piece is expert-sourced and human-reviewed; AI is used for research and drafting only, never published raw.
+- Engagements start with a free 30-minute discovery call.
+- Services are delivered as packages rather than one-off deliverables.
+- Content is optimized for traditional SEO and answer engines (Google AI Overviews, ChatGPT, Perplexity, Claude).
 
 ## Pages
 
-- [Home](/): What Content Turbine does and how it helps tech leaders.
-- [About](/about): The team, story, and approach behind Content Turbine.
-- [Services](/services): Technical marketing services — create, optimize, and review.
-- [AI](/ai): How Content Turbine blends AI assistance with human approval.
-- [Contact](/contact): Get in touch and book a discovery call.
+- [Home](https://www.contentturbine.dev/): What Content Turbine does and how it helps tech leaders.
+- [About](https://www.contentturbine.dev/about): The team, story, and approach behind Content Turbine.
+- [Services](https://www.contentturbine.dev/services): Strategy, creation, and optimization services.
+- [AI](https://www.contentturbine.dev/ai): How AI assistance and human approval work together.
+- [Contact](https://www.contentturbine.dev/contact): Book a discovery call.
 
 ## Optional
 
-- [Privacy](/privacy): Privacy policy.
+- [Privacy](https://www.contentturbine.dev/privacy): Privacy policy.

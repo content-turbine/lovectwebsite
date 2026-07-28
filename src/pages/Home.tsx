@@ -6,6 +6,7 @@ import WhoWeHelp from "../../components/home/WhoWeHelp";
 import Resources from "../../components/home/Resources";
 import LetsConnect from "../../components/home/LetsConnect";
 import TrustedBy from "../../components/TrustedBy";
+import FAQ, { faqJsonLd } from "../../components/home/FAQ";
 
 export default function Home() {
   return (
@@ -17,18 +18,17 @@ export default function Home() {
         jsonLd={[
           {
             "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Content Turbine",
-            url: "https://lovectwebsite.lovable.app/",
+            "@type": "WebPage",
+            "@id": "https://www.contentturbine.dev/#webpage",
+            url: "https://www.contentturbine.dev/",
+            name: "Content Turbine — Technical Marketing for Tech Leaders",
             description:
               "AI-assisted, human-approved technical marketing content for tech leaders.",
+            isPartOf: { "@id": "https://www.contentturbine.dev/#website" },
+            about: { "@id": "https://www.contentturbine.dev/#organization" },
+            inLanguage: "en",
           },
-          {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Content Turbine",
-            url: "https://lovectwebsite.lovable.app/",
-          },
+          faqJsonLd,
         ]}
       />
       <NewHero />
@@ -36,6 +36,7 @@ export default function Home() {
       <HowItWorks />
       <WhoWeHelp />
       <Resources />
+      <FAQ />
       <LetsConnect />
       <TrustedBy />
     </>
