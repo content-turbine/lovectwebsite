@@ -16,7 +16,7 @@ export default function LetsConnect() {
 
   return (
     <Container>
-      <img src={"assets/illustrations/connect.svg"} />
+      <img src={"assets/illustrations/connect.svg"} alt="Illustration of people connecting" />
       <Content>
         <HeroTitle>Ready to turbocharge your</HeroTitle>
         <TypeText>
@@ -64,7 +64,7 @@ const Content = styled.div`
   }
 `;
 
-const HeroTitle = styled(Title)`
+const HeroTitle = styled(Title).attrs({ as: "h2" })`
   font-size: 2.5rem;
   border: none;
 

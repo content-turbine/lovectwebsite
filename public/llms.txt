@@ -1,0 +1,36 @@
+# Content Turbine
+
+> Content Turbine is a technical content agency for B2B software and developer-tool companies. We run strategy, production, and optimization of technical content — guides, tutorials, documentation, sample apps, and thought leadership — written with subject-matter experts and optimized for both search engines and AI answer engines.
+
+Site: https://www.contentturbine.com
+Contact: https://www.contentturbine.com/contact
+
+## What Content Turbine does
+
+- **Discovery** — a 30-minute session to assess fit, goals, and the current state of your content.
+- **Strategy** — stakeholder interviews ("brain dumps"), SEO/AEO research, and an editorial roadmap.
+- **Create** — developer content, thought leadership, and product marketing assets.
+- **Optimize** — content audits, performance analysis, and continuous improvement.
+
+## Who it is for
+
+Founders, heads of marketing, developer relations leads, and product marketers at technical B2B companies who need content developers actually trust.
+
+## Key facts
+
+- Every piece is expert-sourced and human-reviewed; AI is used for research and drafting only, never published raw.
+- Engagements start with a free 30-minute discovery call.
+- Services are delivered as packages rather than one-off deliverables.
+- Content is optimized for traditional SEO and answer engines (Google AI Overviews, ChatGPT, Perplexity, Claude).
+
+## Pages
+
+- [Home](https://www.contentturbine.com/): What Content Turbine does and how it helps tech leaders.
+- [About](https://www.contentturbine.com/about): The team, story, and approach behind Content Turbine.
+- [Services](https://www.contentturbine.com/services): Strategy, creation, and optimization services.
+- [AI](https://www.contentturbine.com/ai): How AI assistance and human approval work together.
+- [Contact](https://www.contentturbine.com/contact): Book a discovery call.
+
+## Optional
+
+- [Privacy](https://www.contentturbine.com/privacy): Privacy policy.

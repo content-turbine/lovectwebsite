@@ -2,8 +2,27 @@
 User-agent: *
 Allow: /
 
+# AI answer engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Host
-Host: https://contentturbine.com
+Host: https://www.contentturbine.com
 
 # Sitemaps
-Sitemap: https://contentturbine.com/sitemap.xml
+Sitemap: https://www.contentturbine.com/sitemap.xml
