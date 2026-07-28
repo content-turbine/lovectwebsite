@@ -12,6 +12,7 @@
     "@material-ui/icons": "^4.11.3",
     "@material-ui/utils": "^4.11.3",
     "@mui/icons-material": "^5.8.4",
+    "@supabase/supabase-js": "^2.111.0",
     "@types/react-dom": "^19.2.3",
     "@types/react-google-recaptcha": "^2.1.5",
     "@vercel/analytics": "^2.0.1",
