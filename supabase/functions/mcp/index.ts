@@ -9,7 +9,7 @@ import { defineMcp } from "npm:@lovable.dev/mcp-js@0.25.0";
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.25.0";
 
 // src/lib/mcp/content.ts
-var SITE_URL = "https://www.contentturbine.dev";
+var SITE_URL = "https://www.contentturbine.com";
 var overview = {
   name: "Content Turbine",
   summary: "Content Turbine is a content agency for developer-focused and technical B2B companies. We handle strategy, production, and distribution of technical content so engineering and marketing teams do not have to.",

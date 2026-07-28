@@ -14,18 +14,18 @@ export default function About() {
           {
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            url: "https://www.contentturbine.dev/about",
+            url: "https://www.contentturbine.com/about",
             name: "About Content Turbine",
             description:
               "The team, story, and approach behind Content Turbine — a technical content agency for developer-focused B2B companies.",
-            mainEntity: { "@id": "https://www.contentturbine.dev/#organization" },
+            mainEntity: { "@id": "https://www.contentturbine.com/#organization" },
           },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.dev/" },
-              { "@type": "ListItem", position: 2, name: "About", item: "https://www.contentturbine.dev/about" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.com/" },
+              { "@type": "ListItem", position: 2, name: "About", item: "https://www.contentturbine.com/about" },
             ],
           },
         ]}

@@ -19,13 +19,13 @@ export default function Home() {
           {
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "@id": "https://www.contentturbine.dev/#webpage",
-            url: "https://www.contentturbine.dev/",
+            "@id": "https://www.contentturbine.com/#webpage",
+            url: "https://www.contentturbine.com/",
             name: "Content Turbine — Technical Marketing for Tech Leaders",
             description:
               "AI-assisted, human-approved technical marketing content for tech leaders.",
-            isPartOf: { "@id": "https://www.contentturbine.dev/#website" },
-            about: { "@id": "https://www.contentturbine.dev/#organization" },
+            isPartOf: { "@id": "https://www.contentturbine.com/#website" },
+            about: { "@id": "https://www.contentturbine.com/#organization" },
             inLanguage: "en",
           },
           faqJsonLd,

@@ -1,7 +1,7 @@
 // Public marketing content exposed through the MCP server.
 // Mirrors what is already published on contentturbine.com.
 
-export const SITE_URL = "https://www.contentturbine.dev";
+export const SITE_URL = "https://www.contentturbine.com";
 
 export const overview = {
   name: "Content Turbine",
