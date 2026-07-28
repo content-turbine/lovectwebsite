@@ -11,6 +11,25 @@ export default function Contact() {
         title="Contact Content Turbine — Book a Discovery Call"
         description="Get in touch with Content Turbine to discuss your technical marketing strategy and book a discovery call with our team."
         path="/contact"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            url: "https://www.contentturbine.dev/contact",
+            name: "Contact Content Turbine",
+            description:
+              "Book a 30-minute discovery call with Content Turbine to discuss your technical content strategy.",
+            mainEntity: { "@id": "https://www.contentturbine.dev/#organization" },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.contentturbine.dev/" },
+              { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.contentturbine.dev/contact" },
+            ],
+          },
+        ]}
       />
       <Hero />
       <CalendlyEmbed />
