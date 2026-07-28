@@ -19,7 +19,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Content Turbine",
-            url: "https://lovectwebsite.lovable.app/",
+            url: "https://www.contentturbine.dev/",
             description:
               "AI-assisted, human-approved technical marketing content for tech leaders.",
           },
@@ -27,7 +27,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Content Turbine",
-            url: "https://lovectwebsite.lovable.app/",
+            url: "https://www.contentturbine.dev/",
           },
         ]}
       />
