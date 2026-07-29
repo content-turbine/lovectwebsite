@@ -3,7 +3,7 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.25.0";
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.25.0";
 
 // src/lib/mcp/tools/get-company-overview.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.25.0";
@@ -254,11 +254,16 @@ var get_contact_info_default = defineTool4({
 });
 
 // src/lib/mcp/index.ts
+var projectRef = "vboahhutuxjmsvscegfx";
 var mcp_default = defineMcp({
   name: "content-turbine-mcp",
   title: "Content Turbine",
   version: "0.1.0",
-  instructions: "Public tools for Content Turbine, a content agency for developer-focused and technical B2B companies. Use `get_company_overview` for what the agency does and how it works, `list_services` for service offerings by stage, `list_resources` for free frameworks and checklists, and `get_contact_info` to find out how to get in touch or book a discovery call.",
+  instructions: "Tools for Content Turbine, a content agency for developer-focused and technical B2B companies. Use `get_company_overview` for what the agency does and how it works, `list_services` for service offerings by stage, `list_resources` for free frameworks and checklists, and `get_contact_info` to find out how to get in touch or book a discovery call.",
+  auth: auth.oauth.issuer({
+    issuer: `https://${projectRef}.supabase.co/auth/v1`,
+    acceptedAudiences: "authenticated"
+  }),
   tools: [get_company_overview_default, list_services_default, list_resources_default, get_contact_info_default]
 });
 

@@ -14,6 +14,9 @@ import AIPage from "./pages/AI";
 import WritersPortalAgreementPage from "./pages/WritersPortalAgreement";
 import ResourceLandingPage from "./pages/ResourceLanding";
 import CitablePage from "./pages/Citable";
+import ServiceDetailPage from "./pages/ServiceDetail";
+import LoginPage from "./pages/Login";
+import OAuthConsentPage from "./pages/OAuthConsent";
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:slug" element={<ServiceDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/freelance" element={<FreelancePage />} />
@@ -31,6 +35,8 @@ function App() {
           <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
           <Route path="/resources/:slug" element={<ResourceLandingPage />} />
           <Route path="/citable" element={<CitablePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsentPage />} />
         </Routes>
       </Layout>
       <Analytics />

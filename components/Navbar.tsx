@@ -4,6 +4,7 @@ import styled, { css, keyframes } from "styled-components";
 import { rgba } from "polished";
 import { sizeAndDown } from "../styles/responsive";
 import * as Icon from "react-feather";
+import { serviceDetails } from "../src/data/serviceDetails";
 
 interface NLinkProps {
   name: string;
@@ -19,6 +20,11 @@ const resourceDropdownItems = [
   { name: "AEO Playbook", pathname: "/resources/aeo-playbook" },
 ];
 
+const serviceDropdownItems = [
+  ...serviceDetails.map((s) => ({ name: s.navName, pathname: `/services/${s.slug}` })),
+  { name: "All Services", pathname: "/services" },
+];
+
 export const navbar_links: NLinkProps[] = [
   {
     name: "Home",
@@ -29,6 +35,8 @@ export const navbar_links: NLinkProps[] = [
     name: "Services",
     pathname: "/services",
     isButton: false,
+    isDropdown: true,
+    dropdownItems: serviceDropdownItems,
   },
   {
     name: "Resources",
@@ -51,7 +59,7 @@ export const navbar_links: NLinkProps[] = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const toggleMenu = () => {
     if (document !== null && window !== null) {
@@ -68,27 +76,28 @@ export default function Navbar() {
 
   const renderNavLink = (l: NLinkProps, isMobile: boolean = false) => {
     if (l.isDropdown && l.dropdownItems) {
+      const isOpen = openDropdown === l.name;
       return (
         <DropdownContainer
           key={"nav_link_" + l.name}
-          onMouseEnter={() => !isMobile && setDropdownOpen(true)}
-          onMouseLeave={() => !isMobile && setDropdownOpen(false)}
+          onMouseEnter={() => !isMobile && setOpenDropdown(l.name)}
+          onMouseLeave={() => !isMobile && setOpenDropdown(null)}
         >
           <DropdownTrigger
             $isButton={false}
-            onClick={() => isMobile && setDropdownOpen(!dropdownOpen)}
+            onClick={() => isMobile && setOpenDropdown(isOpen ? null : l.name)}
           >
             {l.name}
             <Icon.ChevronDown size={16} style={{ marginLeft: "4px" }} />
           </DropdownTrigger>
-          <DropdownMenu $isOpen={isMobile ? dropdownOpen : undefined} $isMobile={isMobile}>
+          <DropdownMenu $isOpen={isMobile ? isOpen : undefined} $isMobile={isMobile}>
             {l.dropdownItems.map((item) => (
               <DropdownItem
                 key={item.pathname}
                 to={item.pathname}
                 onClick={() => {
                   if (menuOpen) toggleMenu();
-                  setDropdownOpen(false);
+                  setOpenDropdown(null);
                 }}
               >
                 {item.name}
