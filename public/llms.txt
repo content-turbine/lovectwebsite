@@ -31,7 +31,7 @@ Founders, heads of marketing, developer relations leads, and product marketers a
 - [Answer Engine Optimization (AEO)](https://www.contentturbine.com/services/answer-engine-optimization): Getting cited by ChatGPT, Perplexity, Google AI Overviews, and Claude.
 - [LinkedIn Thought Leadership](https://www.contentturbine.com/services/linkedin-thought-leadership): Interview-led executive ghostwriting for technical founders.
 - [Developer Content & Documentation](https://www.contentturbine.com/services/developer-content): Quickstarts, tutorials, API docs, and sample apps written by engineers.
-- [SEO & Content Strategy](https://www.contentturbine.com/services/technical-seo-content): Keyword and prompt research, topic clusters, editorial roadmaps.
+- [Written Case Studies](https://www.contentturbine.com/services/written-case-studies): Interview-led customer case studies with verified results.
 - [Content Audits & Refreshes](https://www.contentturbine.com/services/content-audits): Scoring an existing library and refreshing what performs.
 - [AI](https://www.contentturbine.com/ai): How AI assistance and human approval work together.
 - [Contact](https://www.contentturbine.com/contact): Book a discovery call.

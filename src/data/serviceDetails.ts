@@ -267,84 +267,85 @@ export const serviceDetails: ServiceDetail[] = [
     ],
   },
   {
-    slug: "technical-seo-content",
-    navName: "SEO & Content Strategy",
-    title: "SEO & Content Strategy",
-    metaTitle: "Technical SEO & Content Strategy for B2B Software | Content Turbine",
+    slug: "written-case-studies",
+    navName: "Written Case Studies",
+    title: "Written Case Studies",
+    metaTitle: "Written Customer Case Studies for B2B Software | Content Turbine",
     metaDescription:
-      "Keyword research, topic clusters, and editorial roadmaps built for technical B2B audiences and answer engines. See the process, deliverables, and FAQs.",
+      "Interview-led written case studies that read like real customer stories, not sales pitches. See our process, deliverables, timelines, and FAQs.",
     definition:
-      "SEO and content strategy is the process of deciding which topics a company should own, in what order, and in what format — grounded in search demand, buyer intent, competitive difficulty, and the company's own technical expertise.",
+      "A written case study is a short, structured customer story that documents the problem a buyer faced, the solution they adopted, and the measurable results they achieved — written from a recorded interview with the customer so the narrative and the numbers come from them, not from marketing.",
     intro: [
-      "Most technical companies do not have a writing problem; they have a prioritization problem. Effort gets spread across topics with no search demand, no differentiation, or no path to a product conversation.",
-      "We build a roadmap that starts from what your engineers uniquely know, filters it through real demand data, and sequences it into clusters that compound in authority instead of competing with each other.",
+      "Most case studies are written to satisfy internal stakeholders, so they read like a sales pitch wearing a customer's name. Prospects skim them, distrust them, and move on. The story that actually converts is the one your customer would tell a peer over coffee: what was broken, what they tried, what changed, and what it was worth.",
+      "Content Turbine runs case studies as a managed program. We handle customer outreach and scheduling, conduct the interview, verify the metrics with your team, and deliver a publish-ready story plus the pull quotes, one-pager, and social snippets your sales team will actually use.",
     ],
     whoItsFor: [
-      "Teams publishing consistently but seeing flat organic growth",
-      "Companies entering a new category or launching a second product line",
-      "Marketing leads who need a defensible roadmap to present internally",
+      "B2B software teams whose sales cycle stalls at the proof stage",
+      "Marketing leads who need customer proof but cannot chase customers for interviews",
+      "Companies entering a new segment that need reference stories for that buyer",
     ],
     steps: [
       {
-        name: "Expertise inventory",
+        name: "Select the right customers",
         detail:
-          "Interviews with engineering, product, and support to surface the problems your team solves that competitors cannot credibly write about.",
+          "We work with your customer success and sales teams to shortlist accounts that match the segments you want to sell into, and prioritize the ones with quantifiable outcomes.",
       },
       {
-        name: "Demand and difficulty research",
+        name: "Handle outreach and scheduling",
         detail:
-          "Keyword and prompt research across search engines and answer engines, scored by volume, intent, difficulty, and proximity to your product.",
+          "We write the invitation, manage follow-ups, confirm approval requirements, and book the interview — so getting a customer on the calendar is not another task on your list.",
       },
       {
-        name: "Cluster design",
+        name: "Run the customer interview",
         detail:
-          "Topics are grouped into pillar-and-spoke clusters with a defined internal linking model, so each new page strengthens the ones around it.",
+          "A 30–45 minute recorded conversation with a trained interviewer who digs past the talking points into the before state, the evaluation, the rollout, and the specific results.",
       },
       {
-        name: "Technical SEO audit",
+        name: "Write and verify",
         detail:
-          "Crawlability, indexation, rendering, site structure, schema, and Core Web Vitals reviewed, with fixes ranked by traffic impact against effort.",
+          "Our writers shape the transcript into a problem–solution–results narrative in the customer's own voice, and every metric is checked against your data before it appears in print.",
       },
       {
-        name: "Roadmap and forecast",
+        name: "Approval and repurposing",
         detail:
-          "A quarter-by-quarter publishing plan with traffic and pipeline forecasts, briefs for the first cluster, and a reporting dashboard.",
+          "We manage the customer's review and legal sign-off, then package the story as a web page, a PDF one-pager, pull quotes, and social snippets for sales enablement.",
       },
     ],
     comparison: {
-      caption: "Ad hoc publishing vs. cluster-based strategy",
-      columns: ["Dimension", "Ad hoc publishing", "Cluster-based strategy"],
+      caption: "Marketing-written case studies vs. interview-led case studies",
+      columns: ["Dimension", "Marketing-written", "Interview-led (Content Turbine)"],
       rows: [
-        ["Topic selection", "Whatever is top of mind", "Scored on demand, difficulty, and product fit"],
-        ["Internal linking", "Incidental", "Designed pillar-and-spoke model"],
-        ["Authority effect", "Each post starts from zero", "Pages compound within a cluster"],
-        ["Answer engine fit", "Rarely considered", "Prompt research included alongside keywords"],
-        ["Reporting", "Pageviews", "Cluster rankings, conversions, and citation share"],
+        ["Source material", "Internal notes and CRM data", "Recorded interview with the customer"],
+        ["Voice", "Company voice with a customer quote bolted on", "The customer's own words and framing"],
+        ["Results", "Vague improvements", "Verified metrics with context"],
+        ["Customer coordination", "Falls to your team", "We handle outreach, scheduling, and approvals"],
+        ["Prospect reaction", "Reads as a pitch, gets skimmed", "Reads as peer proof, gets finished"],
+        ["Output", "One page", "Web page, PDF one-pager, quotes, social snippets"],
       ],
     },
     deliverables: [
-      "Keyword and prompt research set",
-      "Topic cluster map with internal linking model",
-      "Technical SEO audit with prioritized fixes",
-      "Quarterly editorial roadmap and forecast",
-      "Content briefs for the first cluster",
+      "Customer shortlist and outreach handled end to end",
+      "Recorded and transcribed customer interview",
+      "Publish-ready written case study (800–1,200 words)",
+      "PDF one-pager for sales enablement",
+      "Pull quotes and social snippets, plus managed customer approval",
     ],
     faqs: [
       {
-        q: "How long before an SEO strategy produces traffic?",
-        a: "For a domain with existing authority, expect movement in three months and meaningful compounding by month six. New domains typically take six to twelve months.",
+        q: "What is a written case study?",
+        a: "A written case study is a structured customer story covering the problem, the solution, and the measurable results, sourced from an interview with the customer so the narrative and metrics come directly from them.",
       },
       {
-        q: "Do you include answer engines in keyword research?",
-        a: "Yes. We research the prompts buyers use in ChatGPT and Perplexity alongside traditional keywords, because the two demand curves are not identical.",
+        q: "How long does one case study take?",
+        a: "Roughly three to four weeks end to end: about a week for outreach and scheduling, one week to interview and draft, and one to two weeks for internal and customer approval.",
       },
       {
-        q: "Can you work with our existing content team?",
-        a: "Often we do. Many clients use us for strategy, briefs, and technical review while their in-house writers produce the drafts.",
+        q: "How much of our team's time is required?",
+        a: "About an hour total — a short kickoff to pick accounts, plus review of the draft. We run the customer outreach, the interview, and the approval chase ourselves.",
       },
       {
-        q: "What if our content is already ranking?",
-        a: "Then the fastest wins are usually refreshes and internal linking rather than net-new pages. We prioritize accordingly after the audit.",
+        q: "What if the customer will not share hard numbers?",
+        a: "We use relative or directional metrics the customer will approve — percentage improvements, time saved per week, headcount avoided — which are usually enough to make the story credible without exposing sensitive figures.",
       },
     ],
   },
