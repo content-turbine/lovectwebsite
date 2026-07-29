@@ -3,6 +3,7 @@ import Hero from "../../components/services/Hero";
 import ServiceCategories from "../../components/services/ServiceCategories";
 import FAQ from "../../components/services/FAQ";
 import TrustedBy from "../../components/TrustedBy";
+import ServiceIndex from "../../components/services/ServiceIndex";
 
 export default function Services() {
   return (
@@ -73,6 +74,7 @@ export default function Services() {
         ]}
       />
       <Hero />
+      <ServiceIndex />
       <ServiceCategories />
       <TrustedBy />
       <FAQ />
