@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Import page components
 import HomePage from "./pages/Home";
@@ -40,6 +41,7 @@ function App() {
         </Routes>
       </Layout>
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
