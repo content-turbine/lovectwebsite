@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 
 const Section = styled.section`
-  padding: 8rem 2rem;
+  padding: 2rem 2rem 6rem;
   background: ${({ theme }) => theme.colors.background};
 
   ${sizeAndDown("md")} {
-    padding: 4rem 1.5rem;
+    padding: 1.5rem 1.5rem 4rem;
   }
 `;
 
@@ -150,19 +150,19 @@ const VSBadge = styled.span`
 `;
 
 const oldWayItems = [
-  { icon: "📝", text: "Generic content mills and freelancer marketplaces" },
-  { icon: "🔍", text: "Keyword-stuffed blog posts for SEO" },
-  { icon: "📄", text: "One-off articles that decay over time" },
-  { icon: "🤖", text: "AI-generated content with no expertise" },
-  { icon: "📊", text: "Vanity metrics: views and shares" },
+  { icon: "🔍", text: "Written for Google's crawler, hoping a human clicks" },
+  { icon: "📝", text: "One keyword, one blog post, repeat" },
+  { icon: "📄", text: "Success measured by page-one rankings" },
+  { icon: "🤖", text: "Raw AI output, published as-is" },
+  { icon: "📊", text: "Tracked pageviews and rankings" },
 ];
 
 const newWayItems = [
-  { icon: "🧠", text: "SME-driven content with deep technical depth" },
-  { icon: "🎯", text: "Structured for AI answers (GEO/AEO) + SEO" },
-  { icon: "📚", text: "Thought leadership topics that compound" },
-  { icon: "⚡", text: "AI as accelerator, humans as experts" },
-  { icon: "📈", text: "Business outcomes: pipeline and authority" },
+  { icon: "🎯", text: "Structured so ChatGPT and Perplexity can actually cite it" },
+  { icon: "🧠", text: "Topic clusters that build one authoritative source" },
+  { icon: "✅", text: "Success measured by getting cited in the answer" },
+  { icon: "🧑‍💻", text: "AI drafts, subject-matter experts verify and sharpen" },
+  { icon: "📈", text: "Tracked citation share and pipeline" },
 ];
 
 export default function Differentiator() {

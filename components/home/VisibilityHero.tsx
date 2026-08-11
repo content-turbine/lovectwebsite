@@ -121,7 +121,7 @@ const Subtitle = styled.p`
 const Form = styled.form`
   display: flex;
   gap: 0.75rem;
-  max-width: 480px;
+  max-width: 560px;
 
   ${sizeAndDown("sm")} {
     flex-direction: column;
@@ -129,12 +129,12 @@ const Form = styled.form`
 `;
 
 const EmailInput = styled.input`
-  flex: 1;
+  flex: 1.4;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.06);
-  padding: 0.9rem 1.1rem;
-  font-size: 0.95rem;
+  padding: 1.1rem 1.25rem;
+  font-size: 1.05rem;
   font-family: "Averta", sans-serif;
   color: #fff;
 
@@ -152,9 +152,9 @@ const SubmitButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.5rem;
+  padding: 1.1rem 1.5rem;
   font-family: "Averta", sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   white-space: nowrap;
   border: none;
@@ -471,7 +471,7 @@ export default function VisibilityHero() {
                     disabled={status === "submitting"}
                   />
                   <SubmitButton type="submit" disabled={status === "submitting"}>
-                    {status === "submitting" ? "Sending..." : "Get Your AI Visibility Report for Free"}
+                    {status === "submitting" ? "Sending..." : "Get AI visibility report"}
                   </SubmitButton>
                 </Form>
               )}

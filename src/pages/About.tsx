@@ -1,6 +1,7 @@
 import Seo from "../components/Seo";
 import Timeline from "../../components/about/Timeline";
 import Team from "../../components/about/Team";
+import ExpertOrigins from "../../components/about/ExpertOrigins";
 import TrustedBy from "../../components/TrustedBy";
 
 export default function About() {
@@ -32,6 +33,7 @@ export default function About() {
       />
       <Timeline />
       <Team />
+      <ExpertOrigins />
       <TrustedBy />
     </>
   );

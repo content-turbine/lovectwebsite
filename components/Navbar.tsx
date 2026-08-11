@@ -14,12 +14,6 @@ interface NLinkProps {
   dropdownItems?: { name: string; pathname: string }[];
 }
 
-const resourceDropdownItems = [
-  { name: "AI Content Framework", pathname: "/blog/topic-clusters-still-beat-keyword-lists" },
-  { name: "Content Audit Checklist", pathname: "/blog/auditing-developer-content-beyond-does-it-rank" },
-  { name: "AEO Playbook", pathname: "/blog/why-ai-engines-cite-one-source-not-five" },
-];
-
 const serviceDropdownItems = [
   ...serviceDetails.map((s) => ({ name: s.navName, pathname: `/services/${s.slug}` })),
   { name: "All Services", pathname: "/services" },
@@ -37,13 +31,6 @@ export const navbar_links: NLinkProps[] = [
     isButton: false,
     isDropdown: true,
     dropdownItems: serviceDropdownItems,
-  },
-  {
-    name: "Resources",
-    pathname: "/resources",
-    isButton: false,
-    isDropdown: true,
-    dropdownItems: resourceDropdownItems,
   },
   {
     name: "About",
@@ -146,7 +133,7 @@ export default function Navbar() {
             <Logo>
               <img src={"/assets/logo-mark.png"} alt="Content Turbine" />
               <LogoText>
-                Content<LogoAccent>Turbine</LogoAccent>
+                Content <LogoAccent>Turbine</LogoAccent>
               </LogoText>
             </Logo>
           </Link>
