@@ -7,6 +7,7 @@ import WhoWeHelp from "../../components/home/WhoWeHelp";
 import CaseStudies from "../../components/home/CaseStudies";
 import Resources from "../../components/home/Resources";
 import TrustedBy from "../../components/TrustedBy";
+import TrustedByLogos from "../../components/TrustedByLogos";
 import FAQ, { faqJsonLd } from "../../components/home/FAQ";
 
 export default function Home() {
@@ -33,12 +34,13 @@ export default function Home() {
         ]}
       />
       <VisibilityHero />
-      <TrustedBy />
+      <TrustedByLogos />
       <VisibilityFeatures />
       <Differentiator />
       <HowItWorks />
       <WhoWeHelp />
       <CaseStudies />
+      <TrustedBy />
       <Resources />
       <FAQ />
     </>
