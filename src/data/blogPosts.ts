@@ -3,6 +3,7 @@ export type BlogCategory = "Writing" | "Strategy" | "Data";
 export interface BlogPostSection {
   heading: string;
   paragraphs: string[];
+  items?: string[];
 }
 
 export interface BlogPost {
@@ -76,27 +77,156 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         heading: "Extractability",
-        paragraphs: [
-          "1. Does the opening paragraph state a direct definition or answer, before any preamble? 2. Are your subheadings phrased as the actual questions a reader would ask, not generic labels like \"Overview\"? 3. Can each paragraph stand alone if quoted out of context, without relying on the previous paragraph to make sense? 4. Are lists and steps marked up as real HTML lists, not paragraphs with dashes?",
+        paragraphs: [],
+        items: [
+          "Does the opening paragraph state a direct definition or answer, before any preamble?",
+          "Are your subheadings phrased as the actual questions a reader would ask, not generic labels like \"Overview\"?",
+          "Can each paragraph stand alone if quoted out of context, without relying on the previous paragraph to make sense?",
+          "Are lists and steps marked up as real HTML lists, not paragraphs with dashes?",
         ],
       },
       {
         heading: "Evidence and specificity",
-        paragraphs: [
-          "5. Does every claim that could be a statistic actually cite a number, a source, or your own data — not a vague qualifier like \"many\" or \"most\"? 6. If you're comparing two things, is there an actual comparison table, not just prose describing both? 7. Have you cut filler sentences that exist only to hit a word count — models tend to skip padding when choosing what to quote.",
+        paragraphs: [],
+        items: [
+          "Does every claim that could be a statistic actually cite a number, a source, or your own data — not a vague qualifier like \"many\" or \"most\"?",
+          "If you're comparing two things, is there an actual comparison table, not just prose describing both?",
+          "Have you cut filler sentences that exist only to hit a word count? Models tend to skip padding when choosing what to quote.",
         ],
       },
       {
         heading: "Machine access",
-        paragraphs: [
-          "8. Does your robots.txt allow GPTBot, PerplexityBot, and ClaudeBot, or are you accidentally blocking the crawlers you're trying to get cited by? 9. Do you have Organization, Article, and FAQPage schema where relevant, and is it actually valid — not just present? 10. Is the page reachable without JavaScript rendering, or does content only appear after client-side hydration that a crawler might not wait for?",
+        paragraphs: [],
+        items: [
+          "Does your robots.txt allow GPTBot, PerplexityBot, and ClaudeBot, or are you accidentally blocking the crawlers you're trying to get cited by?",
+          "Do you have Organization, Article, and FAQPage schema where relevant, and is it actually valid, not just present?",
+          "Is the page reachable without JavaScript rendering, or does content only appear after client-side hydration that a crawler might not wait for?",
         ],
       },
       {
         heading: "Consistency and maintenance",
         paragraphs: [
-          "11. Does your brand name, product name, and key terminology match exactly across this page and your other properties — inconsistent naming weakens the entity signals models rely on. 12. Is this page on a re-check schedule, so a definition or number that goes stale doesn't sit there getting (mis)quoted for the next two years?",
           "Run all 12 before you hit publish, and most of the work of getting cited is already done — the rest is consistency over time.",
+        ],
+        items: [
+          "Does your brand name, product name, and key terminology match exactly across this page and your other properties? Inconsistent naming weakens the entity signals models rely on.",
+          "Is this page on a re-check schedule, so a definition or number that goes stale doesn't sit there getting misquoted for the next two years?",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ghostwriting-doesnt-mean-impersonating-you",
+    title: "Ghostwriting Doesn't Mean Impersonating You",
+    category: "Writing",
+    authorName: "Sharal Pinto",
+    date: "2026-07-03",
+    readTime: "6 min read",
+    metaDescription:
+      "The real failure mode in executive ghostwriting isn't \"it doesn't sound like them\" — it's a flattened version of them that only exists in LinkedIn posts.",
+    excerpt:
+      "The real failure mode in executive ghostwriting isn't \"it doesn't sound like them.\" It's a flattened version of them that only exists in LinkedIn posts.",
+    intro: [
+      "Every founder who has tried ghostwriting worries about the same thing: will it sound like me? That's the wrong worry. A competent writer can match sentence rhythm and vocabulary from a few samples. The actual failure mode is subtler — a post that technically sounds like the founder but only ever says things a LinkedIn post would say: safe, upbeat, missing the specific complaint or opinion they'd actually voice in a room.",
+    ],
+    sections: [
+      {
+        heading: "The interview is the product, not the writing",
+        paragraphs: [
+          "If a ghostwriter starts from a topic and asks \"what do you think about X,\" they'll get the sanitized answer a founder gives a journalist. The material worth publishing comes out when you ask about a specific decision instead: why did you turn down that acquisition offer, what did you get wrong in the last hiring round, what's the one thing competitors do that you refuse to copy.",
+          "That's why the interview structure matters more than the drafting. A recorded 30-minute conversation built around specific, recent decisions produces four to six posts of raw material. A generic \"brain dump\" session produces one usable post and a lot of throat-clearing.",
+        ],
+      },
+      {
+        heading: "Cadence beats inspiration",
+        paragraphs: [
+          "Founders who post when they feel inspired top out at one or two posts a month, and the gaps between them are where an audience forgets you exist. The fix isn't motivation — it's decoupling publishing from mood by running the interview on a fixed schedule regardless of whether that week feels eventful.",
+          "In practice, a founder who commits to one recorded interview every two weeks ends up with more publishable material than one, because most of what's worth saying only becomes obvious in hindsight, a week or two after the decision, not in the moment.",
+        ],
+      },
+      {
+        heading: "The moderation problem nobody mentions",
+        paragraphs: [
+          "The comments are where a ghostwritten program is won or lost, and it's the part founders plan for the least. A post that gets real engagement generates replies that deserve a personal response, not a canned one — and if nobody's watching the thread, the two best comments sit unanswered next to a reply from a stranger trying to sell SEO services.",
+          "Someone needs to flag which threads are worth the founder's actual time within a few hours of posting, not a few days later when the conversation has already moved on.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "what-refresh-it-actually-means",
+    title: "What \"Refresh It\" Actually Means: The Four Outcomes of a Content Audit",
+    category: "Strategy",
+    authorName: "Sharal Pinto",
+    date: "2026-07-17",
+    readTime: "7 min read",
+    metaDescription:
+      "A content audit that ends in a spreadsheet of scores isn't finished. Every URL needs one of four classifications: keep, refresh, consolidate, or retire.",
+    excerpt:
+      "A content audit that ends in a spreadsheet of scores isn't finished yet. Every URL needs one of four classifications, each with a different job to do next.",
+    intro: [
+      "\"We should refresh our old content\" is the default conclusion of almost every content audit, and it's usually wrong for at least half the library. Refreshing is the right call for exactly one kind of page. The other three outcomes get skipped because they're less satisfying to say out loud, not because they matter less.",
+    ],
+    sections: [
+      {
+        heading: "Keep: don't touch what's still working",
+        paragraphs: [
+          "A page ranking well, converting, and still technically accurate needs nothing — and the biggest risk to it is an editor who can't resist \"improving\" something that isn't broken. The instinct to touch every page in an audit is worth resisting on the ones that are already earning their place.",
+        ],
+      },
+      {
+        heading: "Refresh: real demand, decaying execution",
+        paragraphs: [
+          "This is the case that gets all the attention because it's the highest-leverage: a page with existing links, history, and residual search demand that's underperforming because the code samples are outdated, the stats are three years old, or a competitor published something more current. Refreshing it is cheaper than writing something new and inherits authority a fresh page would have to earn from zero.",
+        ],
+      },
+      {
+        heading: "Consolidate: three pages fighting each other",
+        paragraphs: [
+          "Most libraries accumulate near-duplicate pages over time — three \"getting started\" guides written by three different people over three years, each targeting a slightly different version of the same query. They cannibalize each other's rankings instead of reinforcing one. The fix is merging them into one canonical page and redirecting the others, not refreshing all three in parallel.",
+        ],
+      },
+      {
+        heading: "Retire: no demand left to serve",
+        paragraphs: [
+          "Some pages covered a feature that got deprecated, a partnership that ended, or a trend that expired. No amount of refreshing brings back search demand that no longer exists. The honest move is to redirect or remove it, not spend a writer's afternoon polishing a page nobody is going to find.",
+          "A content audit that only produces scores without forcing this classification just tells you what you probably already suspected. The classification is the actual deliverable — it's what turns a spreadsheet into a work queue.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "three-places-ai-drafts-actually-lie",
+    title: "The Three Places AI Drafts Actually Lie",
+    category: "Writing",
+    authorName: "Sharal Pinto",
+    date: "2026-07-30",
+    readTime: "7 min read",
+    metaDescription:
+      "AI-drafted content doesn't fail on grammar. It fails in three specific, recurring ways — and knowing the pattern is faster than reading every sentence with equal suspicion.",
+    excerpt:
+      "AI-drafted content doesn't fail on grammar. It fails in three specific, recurring ways, and knowing the pattern is faster than reading every sentence with equal suspicion.",
+    intro: [
+      "\"Read it carefully\" isn't a review process, it's a hope. Reviewers who treat every sentence as equally suspect burn hours and still miss things, because the actual failure modes of AI-drafted content cluster in three predictable places. Knowing where to look is faster than reading everything twice.",
+    ],
+    sections: [
+      {
+        heading: "Invented statistics that sound exactly right",
+        paragraphs: [
+          "A model asked to support a claim will often produce a specific-sounding number — \"73% of engineering teams\" — that isn't hallucinated in an obviously wrong way; it's plausible enough to pass a skim. The tell isn't that the number looks fake, it's that it can't be traced to a source. Every statistic in an AI draft needs a citation checked against a real document, not a gut check on whether it sounds reasonable.",
+        ],
+      },
+      {
+        heading: "Citations that say something adjacent, not the claim itself",
+        paragraphs: [
+          "A more subtle failure than a fabricated source is a real source that gets misrepresented — a study about correlation cited as if it proved causation, or a quote pulled from context that reverses its original meaning. This one survives a fact-check that only confirms the source exists, because the source does exist. It only gets caught by someone who actually opens the link and reads what it says.",
+        ],
+      },
+      {
+        heading: "Code that reads correctly and doesn't run",
+        paragraphs: [
+          "Generated code samples are fluent in the syntax of whatever language they're written in, which is exactly why they're dangerous to publish unverified: a method that doesn't exist on that SDK version, a parameter order that's plausible but wrong, an import that was renamed two releases ago. It looks right to anyone who doesn't actually execute it.",
+          "The only reliable check is running the sample against the real product, not reading it and deciding it looks plausible — which is the same standard a reader will apply, right up until it fails for them.",
         ],
       },
     ],

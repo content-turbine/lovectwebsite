@@ -5,7 +5,6 @@ import HowItWorks from "../../components/home/HowItWorks";
 import WhoWeHelp from "../../components/home/WhoWeHelp";
 import CaseStudies from "../../components/home/CaseStudies";
 import Resources from "../../components/home/Resources";
-import LetsConnect from "../../components/home/LetsConnect";
 import TrustedBy from "../../components/TrustedBy";
 import FAQ, { faqJsonLd } from "../../components/home/FAQ";
 
@@ -39,7 +38,6 @@ export default function Home() {
       <CaseStudies />
       <Resources />
       <FAQ />
-      <LetsConnect />
       <TrustedBy />
     </>
   );

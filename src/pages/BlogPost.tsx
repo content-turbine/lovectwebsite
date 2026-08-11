@@ -71,6 +71,13 @@ export default function BlogPost() {
         {post.sections.map((section) => (
           <section key={section.heading}>
             <h2>{section.heading}</h2>
+            {section.items && (
+              <ChecklistItems>
+                {section.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ChecklistItems>
+            )}
             {section.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -169,6 +176,18 @@ const Byline = styled.p`
   font-size: 0.95rem !important;
   opacity: 0.6 !important;
   margin: 0 0 2rem !important;
+`;
+
+const ChecklistItems = styled.ol`
+  padding-left: 1.25rem;
+  margin: 0 0 1.5rem;
+
+  li {
+    font-size: 1.08rem;
+    line-height: 1.75;
+    opacity: 0.85;
+    margin-bottom: 0.75rem;
+  }
 `;
 
 const Cta = styled.section`

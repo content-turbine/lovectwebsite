@@ -13,6 +13,10 @@ const ROUTES = [
   "/citable",
   "/blog",
   "/blog/how-we-measure-ai-citation-share",
+  "/blog/aeo-checklist-before-you-publish",
+  "/blog/ghostwriting-doesnt-mean-impersonating-you",
+  "/blog/what-refresh-it-actually-means",
+  "/blog/three-places-ai-drafts-actually-lie",
 ];
 
 for (const route of ROUTES) {
