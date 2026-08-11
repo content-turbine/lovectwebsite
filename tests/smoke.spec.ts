@@ -17,6 +17,10 @@ const ROUTES = [
   "/blog/ghostwriting-doesnt-mean-impersonating-you",
   "/blog/what-refresh-it-actually-means",
   "/blog/three-places-ai-drafts-actually-lie",
+  "/blog/topic-clusters-still-beat-keyword-lists",
+  "/blog/auditing-developer-content-beyond-does-it-rank",
+  "/blog/why-ai-engines-cite-one-source-not-five",
+  "/resources/ai-content-framework",
 ];
 
 for (const route of ROUTES) {

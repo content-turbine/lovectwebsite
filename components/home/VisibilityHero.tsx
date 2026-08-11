@@ -435,7 +435,7 @@ export default function VisibilityHero() {
       }
 
       setStatus("submitted");
-      toast.success("Thanks -- our team will reach out to schedule your strategy call.");
+      toast.success("Thanks -- our team is putting together your AI visibility report and will reach out to walk you through it.");
     } catch (err) {
       setStatus("idle");
       toast.error(err instanceof Error ? err.message : "Something went wrong. Please try again.");
@@ -458,7 +458,8 @@ export default function VisibilityHero() {
 
               {status === "submitted" ? (
                 <ConfirmationCard>
-                  Thanks -- our team will reach out to schedule your strategy call.
+                  Thanks -- our team is putting together your AI visibility report and will
+                  reach out to walk you through it.
                 </ConfirmationCard>
               ) : (
                 <Form onSubmit={handleSubmit} id="get-report">
@@ -470,7 +471,7 @@ export default function VisibilityHero() {
                     disabled={status === "submitting"}
                   />
                   <SubmitButton type="submit" disabled={status === "submitting"}>
-                    {status === "submitting" ? "Sending..." : "Get a Free Strategy Call"}
+                    {status === "submitting" ? "Sending..." : "Get Your AI Visibility Report for Free"}
                   </SubmitButton>
                 </Form>
               )}

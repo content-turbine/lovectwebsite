@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
@@ -12,7 +12,6 @@ import PrivacyPage from "./pages/Privacy";
 import FreelancePage from "./pages/Freelance";
 import AIPage from "./pages/AI";
 import WritersPortalAgreementPage from "./pages/WritersPortalAgreement";
-import ResourceLandingPage from "./pages/ResourceLanding";
 import CitablePage from "./pages/Citable";
 import ServiceDetailPage from "./pages/ServiceDetail";
 import BlogPage from "./pages/Blog";
@@ -33,7 +32,10 @@ function App() {
           <Route path="/freelance" element={<FreelancePage />} />
           <Route path="/ai" element={<AIPage />} />
           <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
-          <Route path="/resources/:slug" element={<ResourceLandingPage />} />
+          {/* Old lead-magnet pages, redirected to their equivalent blog articles */}
+          <Route path="/resources/ai-content-framework" element={<Navigate to="/blog/topic-clusters-still-beat-keyword-lists" replace />} />
+          <Route path="/resources/content-audit-checklist" element={<Navigate to="/blog/auditing-developer-content-beyond-does-it-rank" replace />} />
+          <Route path="/resources/aeo-playbook" element={<Navigate to="/blog/why-ai-engines-cite-one-source-not-five" replace />} />
           <Route path="/citable" element={<CitablePage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />

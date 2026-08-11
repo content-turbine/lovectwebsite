@@ -231,6 +231,136 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "topic-clusters-still-beat-keyword-lists",
+    title: "Topic Clusters Still Beat Keyword Lists, Even for AI Search",
+    category: "Strategy",
+    authorName: "Sharal Pinto",
+    date: "2026-08-04",
+    readTime: "8 min read",
+    metaDescription:
+      "A flat list of keyword-targeted posts and a topic cluster look similar in a spreadsheet. They perform completely differently once AI engines are the ones reading your site.",
+    excerpt:
+      "A flat list of keyword-targeted posts and a topic cluster look similar in a spreadsheet. They perform completely differently once AI engines are the ones reading your site.",
+    intro: [
+      "Most content plans are still a spreadsheet of keywords, one row per post, sorted by search volume. That approach produced fine results for a decade of Google rankings, and it's exactly the structure that falls apart once AI engines are the ones parsing your site — because a model isn't ranking pages against a query, it's trying to assemble an answer from whatever it can find, and a pile of disconnected posts gives it nothing to assemble from.",
+      "The fix isn't a new tactic, it's the old one done properly: a pillar page and a cluster of supporting pages that actually link to each other and agree with each other. Most teams say they do this. Few actually do.",
+    ],
+    sections: [
+      {
+        heading: "A keyword list produces orphan pages",
+        paragraphs: [
+          "Row 47 in a keyword spreadsheet becomes a blog post that links to nothing and gets linked from nothing, because the spreadsheet has no concept of relationship between rows. Six months later you have eighty posts and no page a reader — or a model — would recognize as the canonical one on any given topic.",
+          "A cluster starts from the opposite direction: pick the handful of topics you actually want to be known for, write one comprehensive pillar page per topic, then build supporting pages that each answer one narrow sub-question and link back to the pillar. The volume of content can be identical. The shape is not.",
+        ],
+      },
+      {
+        heading: "Pillar structure is a trust signal, not just internal linking",
+        paragraphs: [
+          "Internal links get talked about as an SEO mechanic, but their real function is telling any reader — human or model — which page you consider authoritative on a topic. A model retrieving passages about your category is more likely to surface and trust a page that other pages on your own site treat as the reference, the same way a human would trust the page every other page cites.",
+          "This is also why clusters compound and keyword lists don't: every new supporting page you publish adds another vote of confidence to the pillar, instead of just adding another disconnected row to the spreadsheet.",
+        ],
+      },
+      {
+        heading: "One canonical definition, everywhere",
+        paragraphs: [
+          "A cluster forces a decision a keyword list never does: pick one definition of your core term and use it identically on the pillar and every supporting page. Teams without that discipline end up with three pages defining the same concept three slightly different ways, written by three different people over two years — which reads as inconsistency to a model deciding which of your pages to trust as the source of truth.",
+        ],
+      },
+      {
+        heading: "Where this breaks down",
+        paragraphs: [
+          "Clusters fail when the pillar page is written first and the supporting pages are backfilled to justify it, instead of built from real questions a buyer actually asks. That produces a tidy internal-linking diagram and content nobody searches for. Start the cluster from the sales calls and support tickets, not the content calendar.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "auditing-developer-content-beyond-does-it-rank",
+    title: "Auditing Developer Content: What We Actually Check Beyond \"Does It Rank\"",
+    category: "Data",
+    authorName: "Sharal Pinto",
+    date: "2026-08-07",
+    readTime: "9 min read",
+    metaDescription:
+      "Ranking well and being technically correct are unrelated properties of a developer doc. Here's what we actually check when auditing docs, tutorials, and API references.",
+    excerpt:
+      "Ranking well and being technically correct are unrelated properties of a developer doc. Here's what we actually check when we audit one.",
+    intro: [
+      "A developer tutorial can rank on page one, get steady traffic, and still be actively wrong — a deprecated method call, a parameter order that changed two major versions ago, a code sample that throws on a fresh install. Traffic tells you a page is findable. It tells you nothing about whether the thing a developer copy-pastes from it actually works.",
+      "That gap is why a technical content audit needs a different checklist than a general SEO audit. Below is what we actually check, not what a rank-tracking tool can check for us.",
+    ],
+    sections: [
+      {
+        heading: "Technical accuracy isn't a proofread",
+        paragraphs: [
+          "A proofread catches typos and awkward phrasing. It does not catch a method that was renamed in the SDK's last major release, because the sentence describing it still reads perfectly grammatically. Every technical claim — a method signature, a default value, a supported platform — gets checked against the current version of the actual product, not against how confident the sentence sounds.",
+        ],
+      },
+      {
+        heading: "Every code sample gets executed, not read",
+        paragraphs: [
+          "This is the single highest-value check in a developer content audit and the one most likely to get skipped, because reading code and running code both feel like verification. They aren't the same. We run every sample in a clean environment against the current SDK before a page passes audit, and it's routine to find imports that no longer resolve or a config key that was renamed.",
+        ],
+      },
+      {
+        heading: "Accessibility and readability are pass/fail, not a score",
+        paragraphs: [],
+        items: [
+          "Does every code block have a language annotation, so syntax highlighting and screen readers both handle it correctly?",
+          "Do images and diagrams have real alt text describing what they show, not the filename?",
+          "Is there a heading structure a reader can actually navigate with, or is the whole page one wall of H2s with no H3s beneath them?",
+        ],
+      },
+      {
+        heading: "The prioritization step most audits skip",
+        paragraphs: [
+          "A spreadsheet of forty pages with pass/fail scores isn't a plan, it's a list. We rank failing pages by current traffic and inbound link count before anyone starts fixing anything, because a broken code sample on a page getting ten visits a month is a very different priority than the same problem on your most-linked getting-started guide. Fix in traffic order, not alphabetical order.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "why-ai-engines-cite-one-source-not-five",
+    title: "Why AI Engines Cite One Source and Not the Five Others Saying the Same Thing",
+    category: "Strategy",
+    authorName: "Sharal Pinto",
+    date: "2026-08-10",
+    readTime: "7 min read",
+    metaDescription:
+      "Being correct is table stakes. When five pages all say roughly the same true thing, here's what actually determines which one gets cited.",
+    excerpt:
+      "Being correct is table stakes. When five pages all say roughly the same true thing, here's what actually determines which one gets cited.",
+    intro: [
+      "Run the same prompt against ChatGPT or Perplexity often enough and a pattern shows up: on any contested topic, there are usually five or six pages that all say something roughly correct, and the model consistently picks one of them to cite. It's rarely the most comprehensive page, and it's almost never the oldest. Correctness turns out to be the floor everyone already cleared, not the thing separating the cited page from the other four.",
+    ],
+    sections: [
+      {
+        heading: "Specificity beats agreement",
+        paragraphs: [
+          "\"Caching improves performance\" and \"caching cut our p95 API latency from 340ms to 60ms after we added a 5-minute TTL on the product endpoint\" are both true. Only one of them is quotable, because a model generating an answer needs a passage it can lift with a concrete claim attached — a number, a named tool, a specific before-and-after. The vaguer of two equally correct pages loses by default, not because it's wrong.",
+        ],
+      },
+      {
+        heading: "Named authorship is a citation signal",
+        paragraphs: [
+          "A claim attributed to a named person with a stated role reads as more citable than the identical claim published anonymously, and it's a pattern that shows up consistently across engines. This isn't the model checking credentials — it's that named authorship correlates with the kind of accountable, specific writing that tends to be extractable in the first place. Anonymous corporate copy tends to hedge; a named person willing to put their title next to a claim tends not to.",
+        ],
+      },
+      {
+        heading: "Freshness timestamps outrank freshness claims",
+        paragraphs: [
+          "A page that says \"updated for 2026\" in the copy and a page with a visible, structured last-modified date are not equally fresh to a model — only the second one is verifiably fresh. If your CMS doesn't expose a real modified date in the page's metadata, a claim of currency in the prose is just more prose, and it competes with every other page also claiming to be current.",
+        ],
+      },
+      {
+        heading: "The uncomfortable implication",
+        paragraphs: [
+          "If five pages already say the same true thing, publishing a sixth that says it the same way doesn't add a citation opportunity — it adds another page competing for the same slot. The move that actually shifts citation share is adding the specific number, the named source, or the structured comparison none of the existing five have, not writing a better-phrased version of what they already say.",
+        ],
+      },
+    ],
+  },
 ];
 
 export const getBlogPost = (slug?: string) => blogPosts.find((p) => p.slug === slug);

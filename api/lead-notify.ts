@@ -36,7 +36,7 @@ export default async function handler(req: VercelRequestLike, res: VercelRespons
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        text: `:zap: New AI-visibility lead: *${email}* — requested a strategy call at ${new Date().toISOString()}`,
+        text: `:zap: New AI-visibility lead: *${email}* — requested their AI visibility report at ${new Date().toISOString()}`,
       }),
     });
 

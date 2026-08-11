@@ -15,9 +15,9 @@ interface NLinkProps {
 }
 
 const resourceDropdownItems = [
-  { name: "AI Content Framework", pathname: "/resources/ai-content-framework" },
-  { name: "Content Audit Checklist", pathname: "/resources/content-audit-checklist" },
-  { name: "AEO Playbook", pathname: "/resources/aeo-playbook" },
+  { name: "AI Content Framework", pathname: "/blog/topic-clusters-still-beat-keyword-lists" },
+  { name: "Content Audit Checklist", pathname: "/blog/auditing-developer-content-beyond-does-it-rank" },
+  { name: "AEO Playbook", pathname: "/blog/why-ai-engines-cite-one-source-not-five" },
 ];
 
 const serviceDropdownItems = [
@@ -56,7 +56,7 @@ export const navbar_links: NLinkProps[] = [
     isButton: false,
   },
   {
-    name: "Let's Chat",
+    name: "Book Free Strategy Call",
     pathname: "/contact",
     isButton: true,
   },
