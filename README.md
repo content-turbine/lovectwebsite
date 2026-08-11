@@ -39,3 +39,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - Updated content should be put in the [Testimonials.tsx](https://github.com/content-turbine/content-turbine-website/blob/main/components/home/Testimonials.tsx#L15-L48) file
 - The icons mentioned in the testimonials data should be placed inside the `icons` folder inside `public/assets`
+
+## Smoke test
+
+Before (and after) deploying, run the Playwright smoke test to catch a
+blank/unstyled production build before it ships:
+
+```bash
+npx playwright install chromium   # one-time local setup
+npm run test:smoke
+```
+
+This builds the app, serves the production bundle, and checks in a real
+browser that the app actually mounts (not just the static crawler-fallback
+markup in `index.html`) and that its CSS loaded.
