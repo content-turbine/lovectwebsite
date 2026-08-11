@@ -21,6 +21,10 @@ const ROUTES = [
   "/blog/auditing-developer-content-beyond-does-it-rank",
   "/blog/why-ai-engines-cite-one-source-not-five",
   "/resources/ai-content-framework",
+  "/privacy",
+  "/terms",
+  "/cookies",
+  "/ai-data-use",
 ];
 
 for (const route of ROUTES) {

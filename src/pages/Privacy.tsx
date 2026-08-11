@@ -1,5 +1,5 @@
 import Seo from "../components/Seo";
-import Policy from "../../components/privacy/Policy";
+import PrivacyPolicy from "../../components/legal/PrivacyPolicy";
 
 export default function Privacy() {
   return (
@@ -9,7 +9,7 @@ export default function Privacy() {
         description="Read the Content Turbine privacy policy to learn how we collect, use, and protect your personal information."
         path="/privacy"
       />
-      <Policy />
+      <PrivacyPolicy />
     </>
   );
 }

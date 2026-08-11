@@ -25,8 +25,11 @@ export default function Footer() {
               <FooterLink to="/contact">Contact</FooterLink>
             </LinkColumn>
             <LinkColumn>
-              <ColumnTitle>Resources</ColumnTitle>
+              <ColumnTitle>Legal</ColumnTitle>
               <FooterLink to="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/terms">Terms of Service</FooterLink>
+              <FooterLink to="/cookies">Cookie Policy</FooterLink>
+              <FooterLink to="/ai-data-use">AI &amp; Data Use Policy</FooterLink>
             </LinkColumn>
           </LinksSection>
 
@@ -57,7 +60,7 @@ export default function Footer() {
           <BottomLinks>
             <Link to="/privacy">Privacy</Link>
             <span>•</span>
-            <Link to="/writers_portal_agreement">Terms</Link>
+            <Link to="/terms">Terms</Link>
           </BottomLinks>
         </BottomRow>
       </Container>

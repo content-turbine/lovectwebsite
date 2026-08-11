@@ -9,6 +9,9 @@ import AboutPage from "./pages/About";
 import ServicesPage from "./pages/Services";
 import ContactPage from "./pages/Contact";
 import PrivacyPage from "./pages/Privacy";
+import TermsPage from "./pages/Terms";
+import CookiesPage from "./pages/Cookies";
+import AIDataUsePage from "./pages/AIDataUse";
 import FreelancePage from "./pages/Freelance";
 import AIPage from "./pages/AI";
 import WritersPortalAgreementPage from "./pages/WritersPortalAgreement";
@@ -29,6 +32,9 @@ function App() {
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/cookies" element={<CookiesPage />} />
+          <Route path="/ai-data-use" element={<AIDataUsePage />} />
           <Route path="/freelance" element={<FreelancePage />} />
           <Route path="/ai" element={<AIPage />} />
           <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
