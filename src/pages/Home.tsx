@@ -1,5 +1,6 @@
 import Seo from "../components/Seo";
-import NewHero from "../../components/home/NewHero";
+import VisibilityHero from "../../components/home/VisibilityHero";
+import VisibilityFeatures from "../../components/home/VisibilityFeatures";
 import Differentiator from "../../components/home/Differentiator";
 import HowItWorks from "../../components/home/HowItWorks";
 import WhoWeHelp from "../../components/home/WhoWeHelp";
@@ -12,8 +13,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Content Turbine — Technical Marketing for Tech Leaders"
-        description="AI-assisted, human-approved technical marketing content that helps tech leaders build authority and drive results."
+        title="Content Turbine — See How Visible Your Brand Is in AI Answers"
+        description="We scan how ChatGPT, Gemini, and Perplexity see your brand, then our expert content team executes the strategy to get you cited."
         path="/"
         jsonLd={[
           {
@@ -21,9 +22,9 @@ export default function Home() {
             "@type": "WebPage",
             "@id": "https://www.contentturbine.com/#webpage",
             url: "https://www.contentturbine.com/",
-            name: "Content Turbine — Technical Marketing for Tech Leaders",
+            name: "Content Turbine — See How Visible Your Brand Is in AI Answers",
             description:
-              "AI-assisted, human-approved technical marketing content for tech leaders.",
+              "We scan how AI answer engines see your brand, then our expert content team executes the strategy to get you cited.",
             isPartOf: { "@id": "https://www.contentturbine.com/#website" },
             about: { "@id": "https://www.contentturbine.com/#organization" },
             inLanguage: "en",
@@ -31,14 +32,15 @@ export default function Home() {
           faqJsonLd,
         ]}
       />
-      <NewHero />
+      <VisibilityHero />
+      <TrustedBy />
+      <VisibilityFeatures />
       <Differentiator />
       <HowItWorks />
       <WhoWeHelp />
       <CaseStudies />
       <Resources />
       <FAQ />
-      <TrustedBy />
     </>
   );
 }

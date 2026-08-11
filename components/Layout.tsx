@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import { Toaster } from "react-hot-toast";
 import { conf } from "../constants";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -64,6 +65,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <LayoutContainer>
       <GlobalStyle />
+      <Toaster position="bottom-center" />
       <Navbar />
       <Main>{children}</Main>
       <Footer />

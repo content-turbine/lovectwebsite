@@ -4,7 +4,7 @@ import React, { useState, ChangeEvent } from "react";
 import styled from "styled-components";
 import { sizeAndDown } from "../styles/responsive";
 import { Title } from "./styled";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { CFade } from "./Animation";
 
 export default function Newsletter() {
@@ -46,8 +46,6 @@ export default function Newsletter() {
         </div>
         <img src={"assets/illustrations/mail.svg"} alt="Newsletter" />
       </CFade>
-
-      <Toaster position="bottom-center" reverseOrder={false} />
     </Container>
   );
 }
