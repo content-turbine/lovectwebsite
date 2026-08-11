@@ -92,7 +92,7 @@ const createCategories: ServiceCategory[] = [
     icon: <Icon.Award size={24} />,
     items: [
       "Blog Articles",
-      "Whitepapers & Ebooks",
+      "Survey-Driven Whitepapers",
       "Industry Reports",
       "Email Newsletters",
       "Podcasts",
@@ -123,6 +123,7 @@ const optimizeCategories: ServiceCategory[] = [
     icon: <Icon.CheckCircle size={24} />,
     items: [
       "Technical Accuracy Review",
+      "AI Content Review",
       "Clarity & Readability",
       "Messaging Alignment",
       "Developer Experience Audit",

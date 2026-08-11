@@ -16,6 +16,8 @@ export interface ServiceDetail {
   };
   deliverables: string[];
   faqs: { q: string; a: string }[];
+  /** Illustrative sample output shown as "See it in action" — not real client claims. */
+  examples?: { title: string; excerpt: string }[];
 }
 
 export const serviceDetails: ServiceDetail[] = [
@@ -330,6 +332,18 @@ export const serviceDetails: ServiceDetail[] = [
       "PDF one-pager for sales enablement",
       "Pull quotes and social snippets, plus managed customer approval",
     ],
+    examples: [
+      {
+        title: "Sample opening — a mid-market DevOps platform",
+        excerpt:
+          "\"We were manually triaging alerts across four dashboards before a customer ever saw a problem,\" says their VP of Engineering. \"Within a quarter of adopting the product, that triage step disappeared entirely.\"",
+      },
+      {
+        title: "Sample pull quote — an API infrastructure company",
+        excerpt:
+          "\"The rollout took an afternoon, not the two-week integration project we'd budgeted for.\" — Director of Platform Engineering.",
+      },
+    ],
     faqs: [
       {
         q: "What is a written case study?",
@@ -412,6 +426,18 @@ export const serviceDetails: ServiceDetail[] = [
       "Redirect and consolidation plan",
       "Executed refreshes for the top-priority pages",
     ],
+    examples: [
+      {
+        title: "Sample classification row — a 400-page docs library",
+        excerpt:
+          "\"/blog/api-rate-limits-2023\" — scored 4/10 extractability, 6/10 search performance. Classification: refresh. Reasoning: still ranks for a live query, but predates current rate-limit tiers and has no schema markup.",
+      },
+      {
+        title: "Sample refresh note — a developer-tool blog",
+        excerpt:
+          "Consolidated three overlapping \"getting started\" posts into one canonical quickstart, added FAQPage schema, redirected the other two. Estimated effort: 3 hours.",
+      },
+    ],
     faqs: [
       {
         q: "How often should we audit our content?",
@@ -428,6 +454,170 @@ export const serviceDetails: ServiceDetail[] = [
       {
         q: "Do you also check AI citability during the audit?",
         a: "Yes. Every page is scored for extractability — definition-lead openings, question-shaped headings, schema, and self-contained passages — alongside its search metrics.",
+      },
+    ],
+  },
+  {
+    slug: "survey-driven-whitepapers",
+    navName: "Survey-Driven Whitepapers",
+    title: "Survey-Driven Whitepapers",
+    metaTitle: "Survey-Driven Whitepapers for B2B Tech | Content Turbine",
+    metaDescription:
+      "Original-research whitepapers built on a survey of your own audience, not recycled industry stats. See our process, deliverables, and FAQs.",
+    definition:
+      "A survey-driven whitepaper is a research report built on data your company collected first-hand — a survey of your customers, prospects, or industry peers — rather than on citations pulled from other people's studies.",
+    intro: [
+      "Most B2B whitepapers cite the same handful of third-party reports everyone else in the category already cited last quarter. Nobody links to them, because there is nothing in them that could not have come from a competitor's whitepaper too.",
+      "Content Turbine runs the whole research cycle: we design the survey instrument, help you field it against your own audience or a panel, analyze the results, and write the findings up as a whitepaper with charts and quotes that only exist because you ran the study. Original data is also the asset most likely to earn backlinks and get cited by AI answer engines, since it cannot be found anywhere else.",
+    ],
+    whoItsFor: [
+      "B2B software companies that want a flagship thought-leadership asset for a category they want to own",
+      "Marketing teams with access to a customer base or industry audience but no research design experience",
+      "Companies whose existing whitepapers cite the same third-party stats as every competitor",
+    ],
+    steps: [
+      {
+        name: "Define the research question",
+        detail:
+          "We start from the point of view you want the data to support, then design the smallest survey that could credibly prove or complicate it.",
+      },
+      {
+        name: "Design and field the survey",
+        detail:
+          "We write the questionnaire, choose the sample (your customer list, a panel, or both), and manage fielding through to a statistically usable response count.",
+      },
+      {
+        name: "Analyze the results",
+        detail:
+          "We cross-tabulate by segment, flag the findings that are genuinely surprising, and discard the ones that just confirm what everyone already assumed.",
+      },
+      {
+        name: "Write and design the report",
+        detail:
+          "The whitepaper leads with the most citable findings, includes original charts, and is written to be excerpted — one strong stat per section that a journalist or another blog could quote with attribution.",
+      },
+      {
+        name: "Package for distribution",
+        detail:
+          "We deliver the full report, a gated landing page, an executive-summary one-pager, and a set of standalone stat graphics for social and outreach.",
+      },
+    ],
+    comparison: {
+      caption: "Survey-driven whitepapers vs. secondary-research whitepapers",
+      columns: ["Dimension", "Secondary research", "Survey-driven (Content Turbine)"],
+      rows: [
+        ["Source of data", "Citations from other companies' studies", "A survey fielded against your own audience"],
+        ["Differentiation", "Same stats as every competitor", "Findings that exist nowhere else"],
+        ["Backlink potential", "Low — nothing new to cite", "High — journalists and bloggers cite original data"],
+        ["AI citation potential", "Low — models already know the source", "High — original data is a distinct source to cite"],
+        ["Lead time", "Days", "4–6 weeks including fielding"],
+      ],
+    },
+    deliverables: [
+      "Survey instrument design and fielding management",
+      "Cross-tabulated analysis by segment",
+      "Publish-ready whitepaper with original charts",
+      "Gated landing page and executive-summary one-pager",
+      "Standalone stat graphics for social and outreach",
+    ],
+    faqs: [
+      {
+        q: "How many survey responses do we need?",
+        a: "For directional, citable findings, 150–300 responses is usually enough; more is better for segment-level cross-tabs. We size the target during the research-question stage so fielding has a clear finish line.",
+      },
+      {
+        q: "Do we need our own audience to survey?",
+        a: "It helps, but is not required. We can field against a third-party panel matching your target buyer profile if your own list is too small.",
+      },
+      {
+        q: "How is this different from a regular whitepaper?",
+        a: "A regular whitepaper synthesizes existing knowledge. A survey-driven whitepaper generates new data first, then synthesizes that — which is what makes it citable by other publications and by AI answer engines.",
+      },
+      {
+        q: "How long does the whole process take?",
+        a: "Four to six weeks end to end: about two weeks to design and field the survey, one to two weeks to analyze, and one to two weeks to write and design the final report.",
+      },
+    ],
+  },
+  {
+    slug: "ai-content-review",
+    navName: "AI Content Review",
+    title: "AI Content Review",
+    metaTitle: "AI Content Review & Fact-Checking | Content Turbine",
+    metaDescription:
+      "Human review of AI-drafted or AI-assisted content before it publishes — fact-checking, hallucination detection, brand voice, and citation validity.",
+    definition:
+      "AI content review is a per-piece editorial pass on AI-drafted or AI-assisted content — checking every factual claim, code sample, and citation against a real source, catching hallucinations, and rewriting anything that doesn't match your brand voice, before the piece is published.",
+    intro: [
+      "AI drafts move fast, which is exactly why they need a slower, skeptical read before anything goes out under your name. A fluent paragraph and an accurate paragraph are not the same thing, and AI-generated content fails in ways a normal editorial pass isn't built to catch: invented statistics, misattributed quotes, plausible-sounding but wrong technical claims, and citations to sources that say something different than claimed.",
+      "Content Turbine reviewers verify every checkable claim against a primary source, run technical claims and code samples past someone who can actually evaluate them, and edit the surviving draft into your brand voice — so AI stays the accelerator and a human stays the one who is accountable for what ships.",
+    ],
+    whoItsFor: [
+      "Marketing teams producing a high volume of AI-drafted content who need a quality gate before publish",
+      "Companies that got burned by an AI-generated post citing a source that didn't say what the post claimed",
+      "Technical teams whose AI-assisted docs and tutorials need a real engineer to verify the code actually works",
+    ],
+    steps: [
+      {
+        name: "Claim extraction",
+        detail:
+          "We pull out every factual claim, statistic, quote, and citation in the draft into a checklist, separate from stylistic issues.",
+      },
+      {
+        name: "Source verification",
+        detail:
+          "Each claim is checked against a primary source. Anything that can't be verified — including plausible-sounding hallucinated statistics — is flagged or cut.",
+      },
+      {
+        name: "Technical and code review",
+        detail:
+          "Code samples, API usage, and technical claims are reviewed by someone with the relevant background, and code is run rather than eyeballed where feasible.",
+      },
+      {
+        name: "Voice and brand edit",
+        detail:
+          "The verified draft is edited into your brand voice and editorial standards — AI drafts are often generically fluent but stylistically flat.",
+      },
+      {
+        name: "Delivery with an audit trail",
+        detail:
+          "You get the cleaned draft plus a log of what was flagged, corrected, or cut and why, so the review is defensible, not just a stamp of approval.",
+      },
+    ],
+    comparison: {
+      caption: "Standard editing vs. AI content review",
+      columns: ["Dimension", "Standard editorial pass", "AI content review"],
+      rows: [
+        ["Primary risk assumed", "Awkward phrasing, typos", "Invented facts, wrong citations, broken code"],
+        ["Verification method", "Read-through", "Claim-by-claim source check"],
+        ["Code samples", "Not typically reviewed", "Run or reviewed by a technical reviewer"],
+        ["Output", "Cleaner draft", "Cleaner draft plus a flagged-claims audit trail"],
+        ["Best used for", "Human-written first drafts", "Any AI-drafted or AI-assisted content before publish"],
+      ],
+    },
+    deliverables: [
+      "Claim-by-claim fact-check against primary sources",
+      "Technical and code-sample verification",
+      "Brand-voice edit of the verified draft",
+      "Audit trail of flagged, corrected, and cut claims",
+      "Publish-ready final draft",
+    ],
+    faqs: [
+      {
+        q: "What counts as AI-assisted content?",
+        a: "Anything where an AI tool generated a full or partial draft — blog posts, docs, social copy, LinkedIn posts — regardless of how much a human then edited it before it reached us.",
+      },
+      {
+        q: "How is this different from your Content Audits service?",
+        a: "Content Audits scores an entire already-published library and decides what to keep, refresh, consolidate, or retire. AI Content Review is a pre-publish gate on individual pieces, usually AI-drafted, before they ever go live.",
+      },
+      {
+        q: "Can you review content in a language other than English?",
+        a: "Our core review process is English-first. Talk to us about your specific language and we'll tell you honestly whether we can staff it.",
+      },
+      {
+        q: "How fast is the turnaround?",
+        a: "Most single pieces (under 2,000 words) return within 2 business days. Larger technical pieces with code samples can take longer depending on how much needs to be run and verified.",
       },
     ],
   },

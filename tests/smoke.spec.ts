@@ -3,7 +3,17 @@ import { test, expect } from "@playwright/test";
 // Matches theme.tsx colors.primary ("#26474E"), rendered on Navbar's <nav id="navbar">.
 const THEME_PRIMARY_RGB = "rgb(38, 71, 78)";
 
-const ROUTES = ["/", "/about", "/services", "/contact", "/citable"];
+const ROUTES = [
+  "/",
+  "/about",
+  "/services",
+  "/services/survey-driven-whitepapers",
+  "/services/ai-content-review",
+  "/contact",
+  "/citable",
+  "/blog",
+  "/blog/how-we-measure-ai-citation-share",
+];
 
 for (const route of ROUTES) {
   test(`${route} mounts the app and loads styles`, async ({ page }) => {

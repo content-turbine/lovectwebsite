@@ -51,6 +51,11 @@ export const navbar_links: NLinkProps[] = [
     isButton: false,
   },
   {
+    name: "Blog",
+    pathname: "/blog",
+    isButton: false,
+  },
+  {
     name: "Let's Chat",
     pathname: "/contact",
     isButton: true,

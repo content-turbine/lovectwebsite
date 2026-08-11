@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
-import { Para, Title } from "../styled";
+import { Title } from "../styled";
 
-interface TeamMember {
+export interface TeamMember {
   photo: string;
   name: string;
+  role: string;
+  bio: string;
 }
 
-const teamMembers: TeamMember[] = [
+export const teamMembers: TeamMember[] = [
   {
     photo: "sharal_edited.jpeg",
     name: "Sharal Pinto",
+    role: "Founder",
+    bio: "Leads Content Turbine's strategy and team, drawing on a background across engineering, technical sales, and marketing to help tech companies build content programs that hold up to a technical audience.",
   },
 ];
 
@@ -19,7 +23,7 @@ export default function Team() {
   return (
     <Wrapper>
       <CFade>
-        <Title>Founder</Title>
+        <Title>Team</Title>
         <CardsContainer>
           {teamMembers.map((item, index) => (
             <Card key={index}>
@@ -31,17 +35,21 @@ export default function Team() {
 
               <div className="content">
                 <h1>{item.name}</h1>
+                <h3>{item.role}</h3>
+                <p>{item.bio}</p>
               </div>
             </Card>
           ))}
+          <PlaceholderCard>
+            <div className="content">
+              <h1>Join the team</h1>
+              <p>
+                We're growing — writers and strategists we bring on will get a
+                byline here and on every piece they publish.
+              </p>
+            </div>
+          </PlaceholderCard>
         </CardsContainer>
-        <Para>
-          Our team, led by Sharal Pinto, comprises a diverse set of individuals
-          who come with a stellar track record. From thought leaders to
-          engineering, technical sales, and marketing experts, these individuals
-          are known to excel at helping tech companies exceed their marketing
-          goals and steer their teams to new heights.
-        </Para>
       </CFade>
     </Wrapper>
   );
@@ -57,28 +65,19 @@ const Wrapper = styled.div`
   max-width: 1500px;
   padding: 2rem 0;
 
-  p {
-    font-size: 1.5rem;
-    max-width: 85ch;
-  }
-
   ${sizeAndDown("md")} {
     margin: 1rem;
   }
 `;
 
 const CardsContainer = styled.div`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
   width: 100%;
-  justify-content: space-around;
 
   p {
-    font-size: 1.25rem;
-  }
-
-  ${sizeAndDown("md")} {
-    flex-direction: column;
+    font-size: 1.05rem;
   }
 `;
 
@@ -98,6 +97,8 @@ const Card = styled.div`
 
   p {
     color: #7a7878;
+    text-align: center;
+    line-height: 1.6;
   }
 
   .content {
@@ -106,17 +107,13 @@ const Card = styled.div`
     align-items: center;
     justify-content: center;
 
-    padding: 4rem 0 1rem 0;
-    width: 60%;
+    padding: 4rem 1.5rem 1.5rem;
+    width: 100%;
 
     border-radius: 10px;
 
-    h1 {
-      white-space: nowrap;
-    }
-
     ${sizeAndDown("md")} {
-      width: 85%;
+      width: 100%;
     }
   }
 
@@ -129,5 +126,35 @@ const Card = styled.div`
     box-shadow: rgb(0 0 0 / 25%) 0px 1px 8px -3px;
 
     margin: 1rem 0 -4rem 0;
+  }
+`;
+
+const PlaceholderCard = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 220px;
+  border: 2px dashed rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    opacity: 0.6;
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    color: #7a7878;
+    font-size: 0.95rem;
+    margin: 0;
   }
 `;

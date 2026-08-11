@@ -15,6 +15,8 @@ import WritersPortalAgreementPage from "./pages/WritersPortalAgreement";
 import ResourceLandingPage from "./pages/ResourceLanding";
 import CitablePage from "./pages/Citable";
 import ServiceDetailPage from "./pages/ServiceDetail";
+import BlogPage from "./pages/Blog";
+import BlogPostPage from "./pages/BlogPost";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route path="/writers_portal_agreement" element={<WritersPortalAgreementPage />} />
           <Route path="/resources/:slug" element={<ResourceLandingPage />} />
           <Route path="/citable" element={<CitablePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
         </Routes>
       </Layout>
       <Analytics />

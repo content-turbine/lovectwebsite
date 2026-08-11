@@ -147,6 +147,18 @@ export default function ServiceDetailPage() {
           </Bullets>
         </section>
 
+        {service.examples && (
+          <section aria-labelledby="examples">
+            <h2 id="examples">See it in action</h2>
+            {service.examples.map((ex) => (
+              <Example key={ex.title}>
+                <h3>{ex.title}</h3>
+                <p>{ex.excerpt}</p>
+              </Example>
+            ))}
+          </section>
+        )}
+
         <section aria-labelledby="faq">
           <h2 id="faq">Frequently asked questions</h2>
           {service.faqs.map((f) => (
@@ -338,6 +350,24 @@ const TableWrap = styled.div`
   tbody th {
     font-weight: 700;
     width: 28%;
+  }
+`;
+
+const Example = styled.blockquote`
+  margin: 0 0 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid ${({ theme }) => rgba(theme.colors.primary, 0.35)};
+  background: ${({ theme }) => rgba(theme.colors.primary, 0.04)};
+
+  h3 {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  p {
+    margin: 0;
+    font-style: italic;
   }
 `;
 
