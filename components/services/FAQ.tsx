@@ -20,14 +20,14 @@ const data: DropdownData[] = [
       "As you can see from our services, we offer the whole suite of services any tech firm needs. When it comes to content specifically, our writers are experts from various disciplines like engineering, technical sales, and marketing. We hold the content we produce to high quality standards and ensure that it is engaging and relevant to your audience.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title:
       "Can I just get specific services like whitepapers or blogs from Content Turbine?",
     description:
       "No, you'll have to select one of the packages we've listed above, to begin with. In our free consultation call, we can guide you to select the best package according to your needs and even customize it if required.",
   },
   {
-    color: "#26474E",
+    color: "#0F1B3D",
     title: "Do you offer free trials?",
     description:
       "No, we don't offer free trials. However, you can see our work and get started with a pilot program once you get in touch with us.",

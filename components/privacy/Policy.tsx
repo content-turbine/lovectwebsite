@@ -11,7 +11,7 @@ export default function Policy() {
           className="gilroy rem-3"
           style={{
             textAlign: "center",
-            borderBottom: "2px solid #2CCED2",
+            borderBottom: "2px solid #3B82F6",
           }}
         >
           <b>TERMS AND CONDITIONS</b>
@@ -644,7 +644,7 @@ export default function Policy() {
         <h2 className="gilroy rem-3"
           style={{
             textAlign: "center",
-            borderBottom: "2px solid #2CCED2",
+            borderBottom: "2px solid #3B82F6",
           }}
         >
           <b>PRIVACY POLICY</b>

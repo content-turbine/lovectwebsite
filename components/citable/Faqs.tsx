@@ -20,13 +20,13 @@ const data: DropdownData[] = [
       "Making sure AI answer engines (ChatGPT, Gemini, Claude, Perplexity, Google AI Overviews) can find, understand, and cite your content -- the AI-era counterpart to SEO.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title: `How is ${PRODUCT_NAME} different from AEO monitoring dashboards?`,
     description:
       "Most tools only tell you whether you're cited. We also build the machine-readable layer (JSON-LD + MCP endpoints) that makes you citable in the first place, then test whether it's working.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title: "Do I need to change my site to use this?",
     description:
       "No. We generate JSON-LD suggestions and an MCP layer without requiring a rebuild or a CMS plugin -- you review and ship the fixes on your own schedule.",
@@ -38,7 +38,7 @@ const data: DropdownData[] = [
       "It crawls a handful of your public pages and checks title tags, meta descriptions, canonical URLs, and existing structured data (JSON-LD) -- the raw materials answer engines need to cite you accurately.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title: "When do I get full access?",
     description:
       "We're onboarding from the waitlist in order, with priority for people who refer others. Join above to lock in your spot.",

@@ -365,7 +365,7 @@ const StageMarker = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(44, 206, 210, 0.3);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
   z-index: 2;
 
   ${sizeAndDown("md")} {
@@ -393,7 +393,7 @@ const StageLabel = styled.span`
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.teal};
-  background: rgba(44, 206, 210, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   padding: 0.35rem 0.75rem;
   border-radius: 100px;
   margin-bottom: 0.75rem;
@@ -414,7 +414,7 @@ const SubSectionIcon = styled.div`
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(44, 206, 210, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   color: ${({ theme }) => theme.colors.teal};
 `;
 

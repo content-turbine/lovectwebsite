@@ -34,8 +34,7 @@ const Label = styled.p`
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.text};
-  opacity: 0.5;
+  color: ${({ theme }) => theme.colors.teal};
   margin: 0 0 2rem;
 `;
 

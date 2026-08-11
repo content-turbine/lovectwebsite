@@ -144,7 +144,10 @@ export default function Navbar() {
         <div className="logo">
           <Link to="/">
             <Logo>
-              <img src={"/assets/logo.svg"} alt="Content Turbine Logo" />
+              <img src={"/assets/logo-mark.png"} alt="Content Turbine" />
+              <LogoText>
+                Content<LogoAccent>Turbine</LogoAccent>
+              </LogoText>
             </Logo>
           </Link>
         </div>
@@ -443,8 +446,19 @@ const Logo = styled.span`
   cursor: pointer;
 
   img {
-    margin-right: 1rem;
-    height: 90px;
-    aspect-ratio: 1/1;
+    margin-right: 0.75rem;
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.55));
   }
+`;
+
+const LogoText = styled.span`
+  color: ${({ theme }) => theme.colors.light};
+  font-family: "Averta", sans-serif;
+`;
+
+const LogoAccent = styled.span`
+  color: ${({ theme }) => theme.colors.teal};
 `;

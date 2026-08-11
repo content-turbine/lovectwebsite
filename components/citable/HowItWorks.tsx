@@ -8,7 +8,7 @@ import { PRODUCT_NAME } from "./config";
 const STEPS = [
   {
     verb: "Crawl",
-    color: "#2CCED2",
+    color: "#3B82F6",
     body: "We map your public site -- pages, headings, existing structured data, robots.txt, sitemaps -- the same way answer engines and their crawlers do.",
   },
   {
@@ -18,7 +18,7 @@ const STEPS = [
   },
   {
     verb: "Expose",
-    color: "#2CCED2",
+    color: "#3B82F6",
     body: "That graph becomes queryable through MCP -- resources, tools, and prompts -- so AI agents can pull real facts about your brand, not guesses.",
   },
   {

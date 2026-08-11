@@ -39,7 +39,7 @@ const resourcesData: ResourceData[] = [
       "Optimize for both traditional SEO and answer engines",
       "Measure what actually matters in the AI era",
     ],
-    gradient: "linear-gradient(135deg, #2CCED2 0%, #1a8f92 100%)",
+    gradient: "linear-gradient(135deg, #3B82F6 0%, #1e40af 100%)",
     icon: <Icon.FileText size={32} />,
   },
   {

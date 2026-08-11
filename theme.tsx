@@ -2,13 +2,13 @@ import { DefaultTheme } from "styled-components";
 
 export const theme: DefaultTheme = {
   colors: {
-    primary: "#26474E",
-    text: "#17252A",
-    background: "#F5FBFF",
+    primary: "#0F1B3D",
+    text: "#111827",
+    background: "#F8FAFC",
     light: "#ffffff",
     dark: "#111111",
     peach: "#F9968B",
-    teal: "#2CCED2",
+    teal: "#3B82F6",
   },
   borderRadius: "10px",
 };

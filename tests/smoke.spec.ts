@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-// Matches theme.tsx colors.primary ("#26474E"), rendered on Navbar's <nav id="navbar">.
-const THEME_PRIMARY_RGB = "rgb(38, 71, 78)";
+// Matches theme.tsx colors.primary ("#0F1B3D"), rendered on Navbar's <nav id="navbar">.
+const THEME_PRIMARY_RGB = "rgb(15, 27, 61)";
 
 const ROUTES = [
   "/",

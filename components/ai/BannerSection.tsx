@@ -7,7 +7,7 @@ const BannerSection = () => {
         <h6
           className="gilroy"
           style={{
-            color: "#26474E",
+            color: "#0F1B3D",
             fontStyle: "normal",
             fontWeight: "800",
             fontSize: "40px",
@@ -22,7 +22,7 @@ const BannerSection = () => {
         <p
           className="averta"
           style={{
-            color: "#26474E",
+            color: "#0F1B3D",
             fontStyle: "normal",
             fontWeight: "400",
             fontSize: "24px",

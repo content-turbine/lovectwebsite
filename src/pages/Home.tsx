@@ -2,9 +2,7 @@ import Seo from "../components/Seo";
 import VisibilityHero from "../../components/home/VisibilityHero";
 import VisibilityFeatures from "../../components/home/VisibilityFeatures";
 import Differentiator from "../../components/home/Differentiator";
-import HowItWorks from "../../components/home/HowItWorks";
 import WhoWeHelp from "../../components/home/WhoWeHelp";
-import CaseStudies from "../../components/home/CaseStudies";
 import Resources from "../../components/home/Resources";
 import TrustedBy from "../../components/TrustedBy";
 import TrustedByLogos from "../../components/TrustedByLogos";
@@ -37,9 +35,7 @@ export default function Home() {
       <TrustedByLogos />
       <VisibilityFeatures />
       <Differentiator />
-      <HowItWorks />
       <WhoWeHelp />
-      <CaseStudies />
       <TrustedBy />
       <Resources />
       <FAQ />

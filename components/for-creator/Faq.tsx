@@ -20,13 +20,13 @@ const data: DropdownData[] = [
       "Each writer applying must pass a screening process designed to measure subject matter expertise, professionalism, and communication skills. The full screening process takes between a couple of days to a week to complete.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title: "Are we a bidding marketplace?",
     description:
       "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
   },
   {
-    color: "#26474E",
+    color: "#0F1B3D",
     title: "How is my rating determined overall?",
     description:
       "Your overall rating is determined using a complex combination score that includes the content rating, client approval rate, number of completed and client-accepted gigs, and account age.",
@@ -210,7 +210,7 @@ const Heading = styled(Title)`
   font-size: 3rem;
   text-align: center;
   border: none;
-  color: #2CCED2;
+  color: #3B82F6;
 
   ${sizeAndDown("md")} {
     font-size: 2.5rem;

@@ -19,13 +19,13 @@ const data: DropdownData[] = [
       "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title: "Who is this for?",
     description:
       "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
   },
   {
-    color: "#2CCED2",
+    color: "#3B82F6",
     title: "Who is this for?",
     description:
       "No, we are not. Our matching engine tries to match gigs to writers based on the skillset. In addition, our clients can select certain writers as their preferred ones based on previously completed tasks.",
@@ -193,7 +193,7 @@ const Heading = styled(Title)`
   font-size: 3rem;
   text-align: center;
   border: none;
-  color: #26474E;
+  color: #0F1B3D;
 
   ${sizeAndDown("md")} {
     font-size: 2.5rem;

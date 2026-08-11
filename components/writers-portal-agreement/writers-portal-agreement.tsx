@@ -11,7 +11,7 @@ export default function WritersPortalAgreement() {
           className="gilroy rem-3"
           style={{
             textAlign: "center",
-            borderBottom: "2px solid #2CCED2",
+            borderBottom: "2px solid #3B82F6",
           }}
         >
           <b>Content Turbine Writers Portal Agreement</b>

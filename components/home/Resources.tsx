@@ -163,7 +163,7 @@ const resources = [
     title: "The AI-Era Content Strategy Framework",
     description: "A step-by-step framework to build content that performs in Google, AI Overviews, and LLM-based tools.",
     cta: "Download Framework",
-    gradient: "linear-gradient(135deg, #2CCED2 0%, #1a8f92 100%)",
+    gradient: "linear-gradient(135deg, #3B82F6 0%, #1e40af 100%)",
     href: "/resources/ai-content-framework",
   },
   {

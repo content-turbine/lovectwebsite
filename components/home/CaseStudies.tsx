@@ -77,14 +77,14 @@ const ServiceTag = styled(Link)`
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.teal};
-  background: rgba(44, 206, 210, 0.12);
+  background: rgba(59, 130, 246, 0.12);
   padding: 0.35rem 0.75rem;
   border-radius: 100px;
   margin-bottom: 1.25rem;
   text-decoration: none;
 
   &:hover {
-    background: rgba(44, 206, 210, 0.22);
+    background: rgba(59, 130, 246, 0.22);
   }
 `;
 

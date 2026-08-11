@@ -32,7 +32,7 @@ const statusMetrics = [
 
 const barMetrics = [
   { label: "Citation Coverage", hint: "How often you're cited", value: 58, color: "#22C55E" },
-  { label: "Citation Share", hint: "How often you win", value: 31, color: "#8B5CF6" },
+  { label: "Citation Share", hint: "How often you win", value: 31, color: "#F9968B" },
   { label: "Answer Match", hint: "How well you answer", value: 76, color: "#3B82F6" },
 ];
 
@@ -44,7 +44,7 @@ const pulse = keyframes`
 const StyledHero = styled.section`
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 78% 25%, #4c3d9a30 0%, transparent 55%),
+  background: radial-gradient(circle at 78% 25%, ${({ theme }) => theme.colors.teal}20 0%, transparent 55%),
     linear-gradient(180deg, ${({ theme }) => theme.colors.primary} 0%, #142326 100%);
   padding: 6rem 2rem 5rem;
 
@@ -55,7 +55,7 @@ const StyledHero = styled.section`
     right: -10%;
     width: 60%;
     height: 120%;
-    background: radial-gradient(circle, #6366f125 0%, transparent 70%);
+    background: radial-gradient(circle, ${({ theme }) => theme.colors.teal}20 0%, transparent 70%);
     animation: ${pulse} 8s ease-in-out infinite;
   }
 
@@ -96,10 +96,7 @@ const Title = styled.h1`
   margin: 0 0 1.25rem 0;
 
   span {
-    background: linear-gradient(90deg, #60a5fa 0%, #a855f7 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: ${({ theme }) => theme.colors.teal};
   }
 
   ${sizeAndDown("md")} {
@@ -114,6 +111,11 @@ const Subtitle = styled.p`
   color: rgba(255, 255, 255, 0.65);
   margin: 0 0 2rem 0;
   max-width: 480px;
+
+  strong {
+    color: ${({ theme }) => theme.colors.light};
+    font-weight: 700;
+  }
 `;
 
 const Form = styled.form`
@@ -142,7 +144,7 @@ const EmailInput = styled.input`
 
   &:focus {
     outline: none;
-    border-color: #8b5cf6;
+    border-color: ${({ theme }) => theme.colors.teal};
   }
 `;
 
@@ -157,13 +159,15 @@ const SubmitButton = styled.button`
   white-space: nowrap;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal} 0%, ${({ theme }) => theme.colors.primary} 100%);
   color: #fff;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
 
   &:hover:not(:disabled) {
     transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35);
   }
 
   &:disabled {
@@ -172,31 +176,12 @@ const SubmitButton = styled.button`
   }
 `;
 
-const TrustRow = styled.div`
-  display: flex;
-  gap: 1.75rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-`;
-
-const TrustItem = styled.span`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-
-  svg {
-    color: #8b5cf6;
-  }
-`;
-
 const ConfirmationCard = styled.div`
   max-width: 480px;
   padding: 1.5rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(139, 92, 246, 0.4);
+  border: 1px solid ${({ theme }) => theme.colors.teal}40;
   color: #fff;
   font-size: 1.05rem;
 `;
@@ -233,9 +218,9 @@ const SampleTag = styled.span`
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #8b5cf6;
-  background: #8b5cf615;
-  border: 1px solid #8b5cf640;
+  color: ${({ theme }) => theme.colors.peach};
+  background: ${({ theme }) => theme.colors.peach}15;
+  border: 1px solid ${({ theme }) => theme.colors.peach}40;
   padding: 0.15rem 0.5rem;
   border-radius: 100px;
 `;
@@ -308,7 +293,7 @@ const Gauge = styled.div<{ $pct: number }>`
   background: conic-gradient(
     #22c55e 0deg ${({ $pct }) => $pct * 1.2}deg,
     #f59e0b ${({ $pct }) => $pct * 1.2}deg ${({ $pct }) => $pct * 1.2 + 65}deg,
-    #3b82f6 ${({ $pct }) => $pct * 1.2 + 65}deg 360deg
+    ${({ theme }) => theme.colors.teal} ${({ $pct }) => $pct * 1.2 + 65}deg 360deg
   );
   display: flex;
   align-items: center;
@@ -413,7 +398,7 @@ const FooterMuted = styled.span`
 `;
 
 const FooterLink = styled.a`
-  color: #3b82f6;
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
@@ -467,8 +452,8 @@ export default function VisibilityHero() {
                 See how visible your brand is <span>in AI answers.</span>
               </Title>
               <Subtitle>
-                Content Turbine scans the places AI looks, analyzes what it finds, and shows you
-                how to get cited more often -- then our content team executes the fix.
+                ChatGPT, Gemini, and Perplexity are already citing someone in your space.{" "}
+                <strong>Our expert content team makes sure it's you.</strong>
               </Subtitle>
 
               {status === "submitted" ? (
@@ -476,31 +461,18 @@ export default function VisibilityHero() {
                   Thanks -- our team will reach out to schedule your strategy call.
                 </ConfirmationCard>
               ) : (
-                <>
-                  <Form onSubmit={handleSubmit} id="get-report">
-                    <EmailInput
-                      type="email"
-                      placeholder="you@company.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      disabled={status === "submitting"}
-                    />
-                    <SubmitButton type="submit" disabled={status === "submitting"}>
-                      {status === "submitting" ? "Sending..." : "Get a Free Strategy Call"}
-                    </SubmitButton>
-                  </Form>
-                  <TrustRow>
-                    <TrustItem>
-                      <Icon.Zap size={14} /> Free in minutes
-                    </TrustItem>
-                    <TrustItem>
-                      <Icon.Shield size={14} /> No credit card
-                    </TrustItem>
-                    <TrustItem>
-                      <Icon.UserCheck size={14} /> A real person reviews every request
-                    </TrustItem>
-                  </TrustRow>
-                </>
+                <Form onSubmit={handleSubmit} id="get-report">
+                  <EmailInput
+                    type="email"
+                    placeholder="you@company.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={status === "submitting"}
+                  />
+                  <SubmitButton type="submit" disabled={status === "submitting"}>
+                    {status === "submitting" ? "Sending..." : "Get a Free Strategy Call"}
+                  </SubmitButton>
+                </Form>
               )}
             </Content>
 
