@@ -11,12 +11,13 @@ interface NLinkProps {
   pathname: string;
   isButton: boolean;
   isDropdown?: boolean;
+  dropdownLabel?: string;
   dropdownItems?: { name: string; pathname: string }[];
 }
 
-const serviceDropdownItems = [
+const solutionDropdownItems = [
   ...serviceDetails.map((s) => ({ name: s.navName, pathname: `/services/${s.slug}` })),
-  { name: "All Services", pathname: "/services" },
+  { name: "All Solutions", pathname: "/services" },
 ];
 
 export const navbar_links: NLinkProps[] = [
@@ -26,11 +27,12 @@ export const navbar_links: NLinkProps[] = [
     isButton: false,
   },
   {
-    name: "Services",
+    name: "Solutions",
     pathname: "/services",
     isButton: false,
     isDropdown: true,
-    dropdownItems: serviceDropdownItems,
+    dropdownLabel: "By Use Case",
+    dropdownItems: solutionDropdownItems,
   },
   {
     name: "About",
@@ -83,6 +85,7 @@ export default function Navbar() {
             <Icon.ChevronDown size={16} style={{ marginLeft: "4px" }} />
           </DropdownTrigger>
           <DropdownMenu $isOpen={isMobile ? isOpen : undefined} $isMobile={isMobile}>
+            {l.dropdownLabel && <DropdownLabel>{l.dropdownLabel}</DropdownLabel>}
             {l.dropdownItems.map((item) => (
               <DropdownItem
                 key={item.pathname}
@@ -304,6 +307,16 @@ const DropdownMenu = styled.div<{ $isOpen?: boolean; $isMobile?: boolean }>`
         visibility: ${$isOpen ? "visible" : "hidden"};
       }
     `}
+`;
+
+const DropdownLabel = styled.span`
+  display: block;
+  padding: 0.6rem 1.25rem 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${({ theme }) => rgba(theme.colors.light, 0.45)};
 `;
 
 const DropdownItem = styled(Link)`
