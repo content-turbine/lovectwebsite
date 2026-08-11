@@ -11,7 +11,7 @@ interface Testimonial {
   designation: string;
 }
 
-export const testimonials: Testimonial[] = [
+const testimonials: Testimonial[] = [
   {
     logo: "assets/icons/yugabytedb-logo.png",
     shortQuote: "We would not hesitate to recommend them or to use them again",

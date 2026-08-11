@@ -44,7 +44,8 @@ const pulse = keyframes`
 const StyledHero = styled.section`
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 78% 25%, #4c3d9a30 0%, transparent 55%), #0a0a12;
+  background: radial-gradient(circle at 78% 25%, #4c3d9a30 0%, transparent 55%),
+    linear-gradient(180deg, ${({ theme }) => theme.colors.primary} 0%, #142326 100%);
   padding: 6rem 2rem 5rem;
 
   &::before {
@@ -509,7 +510,7 @@ export default function VisibilityHero() {
                   <ReportTitle>AI VISIBILITY REPORT</ReportTitle>
                   <SampleTag>Sample</SampleTag>
                 </ReportTitleRow>
-                <ReportDomain>yourcompany.com</ReportDomain>
+                <ReportDomain>acme.com</ReportDomain>
               </ReportHeader>
 
               <ScoreArea>

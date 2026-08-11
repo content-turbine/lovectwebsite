@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import * as Icon from "react-feather";
 import { sizeAndDown } from "../../styles/responsive";
 import { CFade } from "../Animation";
 
 const Section = styled.section`
-  padding: 8rem 2rem;
+  padding: 4rem 2rem 6rem;
   background: ${({ theme }) => theme.colors.background};
 
   ${sizeAndDown("md")} {
-    padding: 4rem 1.5rem;
+    padding: 2.5rem 1.5rem 3rem;
   }
 `;
 
@@ -19,7 +20,7 @@ const Container = styled.div`
 
 const Header = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 `;
 
 const Eyebrow = styled.span`
@@ -90,7 +91,7 @@ const FeatureIcon = styled.div<{ $highlight?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.light};
   margin-bottom: 1.25rem;
 
   ${({ $highlight, theme }) =>
@@ -131,27 +132,27 @@ const FeatureDescription = styled.p<{ $highlight?: boolean }>`
 
 const features = [
   {
-    icon: "🔍",
+    icon: Icon.Search,
     title: "We scan where AI looks",
     description: "We analyze major AI engines and search surfaces to see what they find about you.",
   },
   {
-    icon: "🧪",
+    icon: Icon.MessageSquare,
     title: "We test what matters",
     description: "We test real buyer questions to see how often you're mentioned or cited.",
   },
   {
-    icon: "📊",
+    icon: Icon.BarChart2,
     title: "We score what counts",
     description: "Our scoring shows how visible, credible, and competitive you are.",
   },
   {
-    icon: "🎯",
+    icon: Icon.Target,
     title: "We prioritize what moves the needle",
     description: "A clear list of high-impact opportunities tailored to your content.",
   },
   {
-    icon: "🤝",
+    icon: Icon.Users,
     title: "We help you win in AI",
     description: "Our expert content team executes the strategy and improves your visibility.",
     highlight: true,
@@ -175,7 +176,9 @@ export default function VisibilityFeatures() {
           <Grid>
             {features.map((feature) => (
               <FeatureCard key={feature.title} $highlight={feature.highlight}>
-                <FeatureIcon $highlight={feature.highlight}>{feature.icon}</FeatureIcon>
+                <FeatureIcon $highlight={feature.highlight}>
+                  <feature.icon size={24} />
+                </FeatureIcon>
                 <FeatureTitle $highlight={feature.highlight}>{feature.title}</FeatureTitle>
                 <FeatureDescription $highlight={feature.highlight}>
                   {feature.description}

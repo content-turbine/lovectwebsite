@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { sizeAndDown } from "../styles/responsive";
 import { CFade } from "./Animation";
-import { testimonials } from "./TrustedBy";
+import { trustedLogos } from "../src/data/trustedLogos";
 
 export default function TrustedByLogos() {
   return (
@@ -9,7 +9,7 @@ export default function TrustedByLogos() {
       <CFade>
         <Label>Trusted by companies that build for tomorrow</Label>
         <LogoRow>
-          {testimonials.map((item) => (
+          {trustedLogos.map((item) => (
             <img key={item.name} src={item.logo} alt={item.name} />
           ))}
           <AndMore>and more</AndMore>
@@ -36,7 +36,7 @@ const Label = styled.p`
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.text};
   opacity: 0.5;
-  margin: 0 0 1.75rem;
+  margin: 0 0 2rem;
 `;
 
 const LogoRow = styled.div`
@@ -44,23 +44,29 @@ const LogoRow = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3rem;
-  max-width: 1000px;
+  gap: 3.5rem;
+  max-width: 1100px;
   margin: 0 auto;
 
   img {
-    height: 28px;
+    height: 42px;
     width: auto;
-    max-width: 130px;
+    max-width: 160px;
     object-fit: contain;
-    opacity: 0.85;
+    filter: grayscale(1);
+    opacity: 0.55;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   ${sizeAndDown("md")} {
-    gap: 2rem;
+    gap: 2.25rem;
 
     img {
-      height: 22px;
+      height: 32px;
     }
   }
 `;
