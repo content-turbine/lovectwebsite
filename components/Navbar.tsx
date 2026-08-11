@@ -450,7 +450,7 @@ const Logo = styled.span`
     height: 48px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.55));
+    filter: brightness(0) invert(1);
   }
 `;
 

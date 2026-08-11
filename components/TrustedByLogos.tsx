@@ -54,10 +54,11 @@ const LogoRow = styled.div`
     object-fit: contain;
     filter: grayscale(1);
     opacity: 0.55;
-    transition: opacity 0.2s ease-in-out;
+    transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
     &:hover {
-      opacity: 0.9;
+      filter: grayscale(0);
+      opacity: 1;
     }
   }
 
