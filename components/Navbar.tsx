@@ -129,14 +129,14 @@ export default function Navbar() {
     <>
       <Nav id="navbar">
         <div className="logo">
-          <Link to="/">
+          <LogoLink to="/">
             <Logo>
               <img src={"/assets/logo-mark.png"} alt="Content Turbine" />
               <LogoText>
                 Content <LogoAccent>Turbine</LogoAccent>
               </LogoText>
             </Logo>
-          </Link>
+          </LogoLink>
         </div>
         <Hamburger onClick={toggleMenu}>
           {menuOpen ? <Icon.X /> : <Icon.Menu />}
@@ -331,12 +331,17 @@ const Nav = styled.nav`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 8rem;
+  padding: 0.5rem 3rem;
   margin: 0 auto;
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: ${({ theme }) => theme.colors.primary};
+
+  ${sizeAndDown("lg")} {
+    padding: 0.5rem 1.5rem;
+  }
+
   ${sizeAndDown("sm")} {
     padding: 0.5rem 1rem;
   }
@@ -421,6 +426,10 @@ const MLinks = styled.div<MobileProps>`
         }
       `}
   }
+`;
+
+const LogoLink = styled(Link)`
+  text-decoration: none;
 `;
 
 const Logo = styled.span`
