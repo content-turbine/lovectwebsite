@@ -15,5 +15,5 @@ export const trustedLogos: TrustedLogo[] = [
   { name: "Macrometa", logo: "assets/icons/macrometa.png" },
   { name: "Supabase", logo: "assets/icons/supabase.svg" },
   { name: "YugabyteDB", logo: "assets/icons/yugabytedb-logo.png" },
-  { name: "Zoho", logo: "assets/icons/zoho.svg" },
+  { name: "Zoho", logo: "assets/icons/zoho.png" },
 ];
