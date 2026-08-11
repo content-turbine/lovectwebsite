@@ -40,15 +40,6 @@ export default function Team() {
               </div>
             </Card>
           ))}
-          <PlaceholderCard>
-            <div className="content">
-              <h1>Join the team</h1>
-              <p>
-                We're growing — writers and strategists we bring on will get a
-                byline here and on every piece they publish.
-              </p>
-            </div>
-          </PlaceholderCard>
         </CardsContainer>
       </CFade>
     </Wrapper>
@@ -126,35 +117,5 @@ const Card = styled.div`
     box-shadow: rgb(0 0 0 / 25%) 0px 1px 8px -3px;
 
     margin: 1rem 0 -4rem 0;
-  }
-`;
-
-const PlaceholderCard = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 220px;
-  border: 2px dashed rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem;
-  }
-
-  h1 {
-    font-size: 1.25rem;
-    opacity: 0.6;
-    margin: 0 0 0.5rem;
-  }
-
-  p {
-    color: #7a7878;
-    font-size: 0.95rem;
-    margin: 0;
   }
 `;
