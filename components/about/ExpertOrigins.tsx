@@ -15,8 +15,7 @@ export default function ExpertOrigins() {
   return (
     <Container>
       <CFade>
-        <Eyebrow>Our Network</Eyebrow>
-        <Title>Led by experts from</Title>
+        <Title>Our Expert Network</Title>
         <Subtitle>
           300+ technical content experts from various organizations bring real engineering and
           product experience to every piece we ship.
@@ -41,14 +40,6 @@ const Container = styled.div`
   ${sizeAndDown("md")} {
     padding: 2rem 1.5rem 3rem;
   }
-`;
-
-const Eyebrow = styled.span`
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.teal};
 `;
 
 const Title = styled.h2`
