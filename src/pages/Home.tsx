@@ -3,7 +3,6 @@ import VisibilityHero from "../../components/home/VisibilityHero";
 import VisibilityFeatures from "../../components/home/VisibilityFeatures";
 import Differentiator from "../../components/home/Differentiator";
 import WhoWeHelp from "../../components/home/WhoWeHelp";
-import Resources from "../../components/home/Resources";
 import TrustedBy from "../../components/TrustedBy";
 import TrustedByLogos from "../../components/TrustedByLogos";
 import FAQ, { faqJsonLd } from "../../components/home/FAQ";
@@ -37,7 +36,6 @@ export default function Home() {
       <Differentiator />
       <WhoWeHelp />
       <TrustedBy />
-      <Resources />
       <FAQ />
     </>
   );

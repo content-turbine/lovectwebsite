@@ -210,7 +210,7 @@ const NavLinkStyled = styled(Link)<{ $isButton: boolean }>`
   ${(props) =>
     props.$isButton &&
     css`
-      background-color: ${({ theme }) => theme.colors.peach};
+      background: linear-gradient(135deg, ${({ theme }) => theme.colors.teal} 0%, ${({ theme }) => theme.colors.primary} 100%);
       padding: 0.75rem;
       border-radius: 10px;
 
