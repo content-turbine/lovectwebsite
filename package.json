@@ -1,6 +1,7 @@
 {
   "name": "content-turbine-website",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

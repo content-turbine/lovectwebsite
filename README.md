@@ -1,55 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Content Turbine website
 
-## Getting Started 
+The Content Turbine website is a React single-page application for the
+company's AI-visibility and expert content services. It explains the service
+offering, publishes thought leadership, showcases client work, and converts
+visitors into qualified leads.
 
-First, run the development server:
+## What the website includes
+
+- A homepage focused on brand visibility in AI answer engines such as
+  ChatGPT, Gemini, and Perplexity.
+- Service, about, contact, legal, and freelance pages.
+- A blog with data-driven posts, topic pages, and individual article routes.
+- Case-study and client-trust content.
+- A Citable product landing page with a lightweight website-audit experience.
+- A Calendly booking experience on the contact page.
+- A homepage lead form that sends qualified work-email submissions to a
+  server-side notification endpoint.
+
+## Technology
+
+- React and TypeScript
+- Vite for local development and production builds
+- React Router for client-side routes
+- styled-components for component styling
+- React Helmet Async for page metadata and structured data
+- Vercel Analytics
+- Playwright for browser smoke tests
+
+## Local development
+
+### Prerequisites
+
+- Node.js 20 or newer
+- npm
+
+Install dependencies and run the local development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-**Note**: Remember to add a environment variables available in the `.env.template.` file in the vercel deployment settings.
-
-## Updating Testimonials
-
-- Updated content should be put in the [Testimonials.tsx](https://github.com/content-turbine/content-turbine-website/blob/main/components/home/Testimonials.tsx#L15-L48) file
-- The icons mentioned in the testimonials data should be placed inside the `icons` folder inside `public/assets`
-
-## Smoke test
-
-Before (and after) deploying, run the Playwright smoke test to catch a
-blank/unstyled production build before it ships:
+Vite prints the local address when it starts. Use that address in your
+browser. To create a production build, run:
 
 ```bash
-npx playwright install chromium   # one-time local setup
-npm run test:smoke
+npm run build
+npm run preview
 ```
 
-This builds the app, serves the production bundle, and checks in a real
-browser that the app actually mounts (not just the static crawler-fallback
-markup in `index.html`) and that its CSS loaded.
+## Configuration
+
+Copy `.env.example` to `.env.local` and set only the integrations you plan to
+use.
+
+| Variable | Purpose |
+| --- | --- |
+| `VITE_CITABLE_API_URL` | Public base URL for the Citable quick-audit API. |
+| `SLACK_WEBHOOK_URL` | Server-side Slack webhook used for homepage lead notifications. Never prefix this value with `VITE_`. |
+
+The Citable waitlist also requires a LaunchList form key. Set it in
+`components/citable/config.ts` as described in `WAITLIST_SETUP.md`.
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server. |
+| `npm run build` | Create a production build. |
+| `npm run build:dev` | Create a development-mode build. |
+| `npm run preview` | Serve the production build locally. |
+| `npm run test:smoke` | Run the Playwright browser smoke suite. |
+
+For the first local smoke-test run, install the Playwright browser:
+
+```bash
+npx playwright install chromium
+```
+
+## Project structure
+
+- `src/pages/` — route-level page components
+- `components/` — reusable site sections and feature components
+- `src/data/` — blog, service, client, and case-study data
+- `styles/` — global, responsive, and component CSS
+- `public/` — static fonts, images, icons, and social assets
+- `api/` — server-side endpoints used by the hosted site
+- `tests/` — browser smoke tests
+
+## Deployment
+
+The frontend is a Vite build. The `api/lead-notify.ts` endpoint is intended
+for a serverless host that supports the repository's `api/` functions, with
+`SLACK_WEBHOOK_URL` configured as a server-side environment variable.
