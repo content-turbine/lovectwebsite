@@ -49,7 +49,7 @@ export default function Home() {
           <div style={{ width: "min(330px, calc(100vw - 2.5rem))", marginBottom: "0.8rem", padding: "1.1rem", borderRadius: "16px", color: "white", background: "#163538", boxShadow: "0 18px 50px rgba(0,0,0,.28)", fontFamily: "Averta, Arial, sans-serif" }}>
             <strong>Your AI visibility guide</strong>
             <p style={{ margin: ".5rem 0 .8rem", color: "rgba(255,255,255,.75)", fontSize: ".9rem", lineHeight: 1.45 }}>Explore how brands earn citations in AI answers.</p>
-            <button type="button" onClick={openReport} style={{ width: "100%", marginTop: ".45rem", padding: ".65rem", textAlign: "left", color: "white", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.16)", borderRadius: "8px", cursor: "pointer" }}>How does the free report work?</button>
+            <button type="button" onClick={() => { window.location.href = "/blog/how-we-measure-ai-citation-share"; }} style={{ width: "100%", marginTop: ".45rem", padding: ".65rem", textAlign: "left", color: "white", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.16)", borderRadius: "8px", cursor: "pointer" }}>How do we measure AI citation share?</button>
             <button type="button" onClick={openReport} style={{ width: "100%", marginTop: ".45rem", padding: ".65rem", textAlign: "left", color: "white", background: "rgba(255,255,255,.1)", border: "1px solid rgba(255,255,255,.16)", borderRadius: "8px", cursor: "pointer" }}>Get my AI visibility report →</button>
           </div>
         )}
