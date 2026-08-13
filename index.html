@@ -17,6 +17,60 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
     <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      /* Keep the crawlable fallback visually consistent until React takes over. */
+      #root {
+        min-height: 100vh;
+        background: linear-gradient(180deg, #102326 0%, #173437 100%);
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      #root > header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 1.25rem 2rem;
+      }
+      #root > header p {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+      #root > header nav,
+      #root > main h2,
+      #root > main ul,
+      #root > main h2 + p {
+        display: none;
+      }
+      #root > main {
+        box-sizing: border-box;
+        max-width: 1240px;
+        min-height: 74vh;
+        margin: 0 auto;
+        padding: clamp(5rem, 12vw, 9rem) 2rem 4rem;
+      }
+      #root > main h1 {
+        max-width: 690px;
+        margin: 0 0 1.25rem;
+        font-size: clamp(2.3rem, 5vw, 4.5rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+      }
+      #root > main p {
+        max-width: 640px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+        font-size: clamp(1rem, 1.7vw, 1.2rem);
+        line-height: 1.7;
+      }
+      #root > main a { color: #93e6d8; }
+      @media (max-width: 640px) {
+        #root > header,
+        #root > main { padding-left: 1.25rem; padding-right: 1.25rem; }
+      }
+    </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
