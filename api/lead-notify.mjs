@@ -1,16 +1,25 @@
-import { isWorkEmail } from "../src/utils/workEmail";
+function isWorkEmail(email) {
+  const domain = email.split("@")[1]?.toLowerCase();
+  if (!domain) return false;
 
-interface VercelRequestLike {
-  method?: string;
-  body?: unknown;
+  const personalDomains = new Set([
+    "gmail.com",
+    "googlemail.com",
+    "yahoo.com",
+    "outlook.com",
+    "hotmail.com",
+    "live.com",
+    "icloud.com",
+    "me.com",
+    "aol.com",
+    "proton.me",
+    "protonmail.com",
+  ]);
+
+  return !personalDomains.has(domain);
 }
 
-interface VercelResponseLike {
-  status(code: number): VercelResponseLike;
-  json(body: unknown): void;
-}
-
-export default async function handler(req: VercelRequestLike, res: VercelResponseLike) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" });
     return;
@@ -40,9 +49,7 @@ export default async function handler(req: VercelRequestLike, res: VercelRespons
       }),
     });
 
-    if (!slackRes.ok) {
-      throw new Error(`Slack webhook responded with ${slackRes.status}`);
-    }
+    if (!slackRes.ok) throw new Error(`Slack webhook responded with ${slackRes.status}`);
 
     res.status(200).json({ ok: true });
   } catch (err) {
