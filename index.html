@@ -17,60 +17,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
     <link rel="manifest" href="/site.webmanifest" />
-    <style>
-      /* Keep the crawlable fallback visually consistent until React takes over. */
-      #root {
-        min-height: 100vh;
-        background: linear-gradient(180deg, #102326 0%, #173437 100%);
-        color: #fff;
-        font-family: Arial, sans-serif;
-      }
-      #root > header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 1.25rem 2rem;
-      }
-      #root > header p {
-        margin: 0;
-        font-size: 1.15rem;
-        font-weight: 700;
-      }
-      #root > header nav,
-      #root > main h2,
-      #root > main ul,
-      #root > main h2 + p {
-        display: none;
-      }
-      #root > main {
-        box-sizing: border-box;
-        max-width: 1240px;
-        min-height: 74vh;
-        margin: 0 auto;
-        padding: clamp(5rem, 12vw, 9rem) 2rem 4rem;
-      }
-      #root > main h1 {
-        max-width: 690px;
-        margin: 0 0 1.25rem;
-        font-size: clamp(2.3rem, 5vw, 4.5rem);
-        line-height: 1.08;
-        letter-spacing: -0.04em;
-      }
-      #root > main p {
-        max-width: 640px;
-        margin: 0;
-        color: rgba(255, 255, 255, 0.76);
-        font-size: clamp(1rem, 1.7vw, 1.2rem);
-        line-height: 1.7;
-      }
-      #root > main a { color: #93e6d8; }
-      @media (max-width: 640px) {
-        #root > header,
-        #root > main { padding-left: 1.25rem; padding-right: 1.25rem; }
-      }
-    </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -121,52 +67,7 @@
     </script>
   </head>
   <body>
-    <div id="root">
-      <!-- Static fallback so non-JS crawlers and AI answer engines can read and follow the site. Replaced by React on hydration. -->
-      <header>
-        <p>Content Turbine</p>
-        <nav aria-label="Primary">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/services/answer-engine-optimization">Answer Engine Optimization (AEO)</a>
-          <a href="/services/linkedin-thought-leadership">LinkedIn Thought Leadership</a>
-          <a href="/services/developer-content">Developer Content &amp; Docs</a>
-          <a href="/services/written-case-studies">Written Case Studies</a>
-          <a href="/services/content-audits">Content Audits &amp; Refreshes</a>
-          <a href="/services/survey-driven-whitepapers">Survey-Driven Whitepapers</a>
-          <a href="/services/ai-content-review">AI Content Review</a>
-          <a href="/ai">AI &amp; AEO</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy</a>
-        </nav>
-      </header>
-      <main>
-        <h1>See how visible your brand is in AI answers</h1>
-        <p>
-          ChatGPT, Gemini, and Perplexity are already citing someone in your space. Content
-          Turbine scans how AI answer engines see your brand, then our expert content team
-          executes the technical marketing strategy &mdash; guides, tutorials, documentation,
-          and thought leadership, written with subject-matter experts &mdash; to get you cited,
-          not just ranked.
-        </p>
-        <h2>What we do</h2>
-        <ul>
-          <li><strong>Discovery:</strong> a 30-minute session to assess fit, goals, and current content state.</li>
-          <li><strong>Strategy:</strong> stakeholder interviews, SEO/AEO strategy, and an editorial roadmap.</li>
-          <li><strong>Create:</strong> developer content, thought leadership, and product marketing assets.</li>
-          <li><strong>Optimize:</strong> content audits, performance analysis, and continuous improvement.</li>
-        </ul>
-        <h2>Who we help</h2>
-        <p>
-          Founders, heads of marketing, developer relations leads, and product marketers at
-          technical B2B companies who need credible content that engineers actually trust.
-        </p>
-        <h2>Get in touch</h2>
-        <p><a href="/contact">Book a discovery call with Content Turbine</a>.</p>
-      </main>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
