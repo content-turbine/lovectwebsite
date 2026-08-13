@@ -6,6 +6,7 @@ import WhoWeHelp from "../../components/home/WhoWeHelp";
 import TrustedBy from "../../components/TrustedBy";
 import TrustedByLogos from "../../components/TrustedByLogos";
 import FAQ, { faqJsonLd } from "../../components/home/FAQ";
+import AvatarGuide from "../../components/AvatarGuide";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
       <WhoWeHelp />
       <TrustedBy />
       <FAQ />
+      <AvatarGuide />
     </>
   );
 }
