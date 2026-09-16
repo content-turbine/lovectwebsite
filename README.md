@@ -9,7 +9,7 @@ visitors into qualified leads.
 
 - A homepage focused on brand visibility in AI answer engines such as
   ChatGPT, Gemini, and Perplexity.
-- Service, about, contact, legal, and freelance pages.
+- Service, about, contact, and legal pages.
 - A blog with data-driven posts, topic pages, and individual article routes.
 - Case-study and client-trust content.
 - A Citable product landing page with a lightweight website-audit experience.
