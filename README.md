@@ -9,7 +9,7 @@ visitors into qualified leads.
 
 - A homepage focused on brand visibility in AI answer engines such as
   ChatGPT, Gemini, and Perplexity.
-- Service, about, contact, legal, and freelance pages.
+- Service, about, contact, and legal pages.
 - A blog with data-driven posts, topic pages, and individual article routes.
 - Case-study and client-trust content.
 - A Citable product landing page with a lightweight website-audit experience.
@@ -58,6 +58,9 @@ use.
 | --- | --- |
 | `VITE_CITABLE_API_URL` | Public base URL for the Citable quick-audit API. |
 | `SLACK_WEBHOOK_URL` | Server-side Slack webhook used for homepage lead notifications. Never prefix this value with `VITE_`. |
+| `AEO_API_URL` | Server-side AEO service base URL; production uses `https://api.contentturbine.com`. |
+| `AEO_SERVICE_TOKEN` | Server-only bearer token used to queue reports. Never expose or prefix with `VITE_`. |
+| `AEO_CALLBACK_TOKEN` | Server-only token that authenticates completion/failure callbacks before they post to Slack. |
 
 The Citable waitlist also requires a LaunchList form key. Set it in
 `components/citable/config.ts` as described in `WAITLIST_SETUP.md`.
@@ -90,6 +93,7 @@ npx playwright install chromium
 
 ## Deployment
 
-The frontend is a Vite build. The `api/lead-notify.ts` endpoint is intended
-for a serverless host that supports the repository's `api/` functions, with
-`SLACK_WEBHOOK_URL` configured as a server-side environment variable.
+The frontend is a Vite build. The `api/lead-notify.mjs` endpoint is intended
+for a serverless host that supports the repository's `api/` functions. Configure
+`SLACK_WEBHOOK_URL`, `AEO_API_URL`, `AEO_SERVICE_TOKEN`, and
+`AEO_CALLBACK_TOKEN` as server-side environment variables.
