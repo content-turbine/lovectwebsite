@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/freelance",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",
