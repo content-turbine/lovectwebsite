@@ -58,6 +58,8 @@ use.
 | --- | --- |
 | `VITE_CITABLE_API_URL` | Public base URL for the Citable quick-audit API. |
 | `SLACK_WEBHOOK_URL` | Server-side Slack webhook used for homepage lead notifications. Never prefix this value with `VITE_`. |
+| `AEO_API_URL` | Server-side AEO service base URL; production uses `https://api.contentturbine.com`. |
+| `AEO_SERVICE_TOKEN` | Server-only bearer token used to queue reports. Never expose or prefix with `VITE_`. |
 
 The Citable waitlist also requires a LaunchList form key. Set it in
 `components/citable/config.ts` as described in `WAITLIST_SETUP.md`.
@@ -90,6 +92,7 @@ npx playwright install chromium
 
 ## Deployment
 
-The frontend is a Vite build. The `api/lead-notify.ts` endpoint is intended
-for a serverless host that supports the repository's `api/` functions, with
-`SLACK_WEBHOOK_URL` configured as a server-side environment variable.
+The frontend is a Vite build. The `api/lead-notify.mjs` endpoint is intended
+for a serverless host that supports the repository's `api/` functions. Configure
+`SLACK_WEBHOOK_URL`, `AEO_API_URL`, and `AEO_SERVICE_TOKEN` as server-side
+environment variables.
