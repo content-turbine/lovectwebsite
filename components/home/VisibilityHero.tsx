@@ -411,6 +411,11 @@ type FormStatus = "idle" | "submitting" | "submitted";
 export default function VisibilityHero() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [correlationId] = useState(() =>
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -426,7 +431,7 @@ export default function VisibilityHero() {
       const res = await fetch("/api/lead-notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: validation.data.email }),
+        body: JSON.stringify({ email: validation.data.email, correlationId }),
       });
 
       if (!res.ok) {
