@@ -105,7 +105,11 @@ export default async function handler(req, res) {
     const slackRes = await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
+      body: JSON.stringify({
+        text,
+        unfurl_links: false,
+        unfurl_media: false,
+      }),
     });
     if (!slackRes.ok) {
       throw new Error(`Slack webhook responded with ${slackRes.status}`);
