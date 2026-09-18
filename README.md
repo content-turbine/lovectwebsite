@@ -16,6 +16,9 @@ visitors into qualified leads.
 - A Calendly booking experience on the contact page.
 - A homepage lead form that sends qualified work-email submissions to a
   server-side notification endpoint.
+- A dogfood-only Agent Visibility sensor for `contentturbine.com` that records
+  declared AI crawlers, AI referrals, machine-readable endpoint requests, and
+  probable automated browser activity in the AEO backend.
 
 ## Technology
 
@@ -65,6 +68,12 @@ use.
 The Citable waitlist also requires a LaunchList form key. Set it in
 `components/citable/config.ts` as described in `WAITLIST_SETUP.md`.
 
+The Vercel routing middleware uses the existing `AEO_API_URL` and
+`AEO_SERVICE_TOKEN` values to forward candidate agent requests. The browser
+sensor sends only automation-signaled page views through the same-origin
+`/api/agent-event` function. Raw visitor IP addresses are not sent to the AEO
+backend.
+
 ## Scripts
 
 | Command | Description |
@@ -89,6 +98,7 @@ npx playwright install chromium
 - `styles/` — global, responsive, and component CSS
 - `public/` — static fonts, images, icons, and social assets
 - `api/` — server-side endpoints used by the hosted site
+- `middleware.ts` — Vercel request-level Agent Visibility detection
 - `tests/` — browser smoke tests
 
 ## Deployment
