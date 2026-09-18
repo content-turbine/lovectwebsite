@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Analytics } from "@vercel/analytics/react";
+import { AgentVisibility } from "./components/AgentVisibility";
 
 // Import page components
 import HomePage from "./pages/Home";
@@ -23,6 +24,7 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <AgentVisibility />
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
